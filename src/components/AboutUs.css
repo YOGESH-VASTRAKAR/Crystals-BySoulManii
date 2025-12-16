@@ -2,7 +2,6 @@
    ABOUT US SECTION STYLES
    =========================================== */
 
-/* Root Variables from HeroSection */
 :root {
   --font-title: 'Vendya', serif;
   --font-signature: 'Autography', cursive;
@@ -277,7 +276,7 @@ p.mb-0 {
   position: absolute;
   left: -35px;
   top: -35px;
-  background: url('quote.png') no-repeat white;
+  background: url('custom.png') no-repeat white;
   background-size: 60%;
   width: 126px;
   height: 100px;
@@ -290,7 +289,7 @@ p.mb-0 {
   position: absolute;
   right: -35px;
   bottom: -34px;
-  background: url('quote.png') no-repeat white;
+  background: url('custom.png') no-repeat white;
   background-size: 60%;
   width: 126px;
   height: 100px;

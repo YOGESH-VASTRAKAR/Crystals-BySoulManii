@@ -1,4 +1,4 @@
-/* Testimonials.css - LINE AND CIRCLE REMOVED */
+
 
 .testimonial-area {
   --font-title: 'Vendya', serif;
@@ -152,7 +152,7 @@
   position: absolute;
   left: -35px;
   top: -35px;
-  background: url('quote.png')
+  background: url('custom.png')
     no-repeat white;
   background-size: 60%;
   width: 126px;
@@ -166,7 +166,7 @@
   position: absolute;
   right: -35px;
   bottom: -34px;
-  background: url('quote.png')
+  background: url('custom.png')
     no-repeat white;
   background-size: 60%;
   width: 126px;
