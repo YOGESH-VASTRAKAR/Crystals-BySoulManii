@@ -1,0 +1,485 @@
+:root {
+  --font-title: 'Vendya', serif;
+  --font-signature: 'Autography', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  
+  /* Color Variables from Header */
+  --bs-primary: #9d69cb;
+  --bs-primary-dark: #5a0db3;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-white: #ffffff;
+  --bs-black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.creative-showcase--slider {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  color: var(--bs-white);
+  background-color: var(--bs-dark);
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.creative-showcase--slider .swiper-slide {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  padding: 0 !important; /* Remove padding for header overlap */
+}
+
+.creative-showcase--slider .swiper-slide .slide-bg {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.creative-showcase--slider .swiper-slide .overlay-dark:before {
+  opacity: .3;
+  background: var(--bs-dark);
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.creative-showcase--slider .swiper-slide .overlay-light:before {
+  opacity: .3;
+  background: var(--bs-white);
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.creative-showcase--slider .swiper-slide .video-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.creative-showcase--slider .swiper-slide .video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.swiper-slide .slide-bg .slide-container {
+  max-width: 1320px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 7;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center; /* Vertically center content */
+}
+
+.slide-bg .slide-container .slide-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 80px; /* Space for fixed header */
+}
+
+.slide-container .slide-row .slider-content {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+  margin-left: 8.33333333%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.slider-content .slide-subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--bs-white);
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  font-family: var(--font-title);
+}
+
+.slider-content .slide-heading {
+  font-size: 100px;
+  color: var(--bs-white);
+  margin: 0px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.slider-content .slide-heading a {
+  text-decoration: none;
+  color: var(--bs-white);
+  outline: none;
+  transition: color 0.3s ease;
+  font-family: inherit;
+}
+
+/* Hover effect removed for all slides */
+.slider-content .slide-heading a:hover {
+  color: var(--bs-white); /* Removed purple hover color */
+}
+
+/* New description styles */
+.slider-content .slide-description {
+  font-size: 18px;
+  color: var(--bs-white);
+  margin-bottom: 25px;
+  max-width: 600px;
+  line-height: 1.6;
+  opacity: 0.9;
+  font-weight: 300;
+  font-family: var(--font-body);
+}
+
+/* Removed overlay-light specific styles since slide 3 uses overlay-dark */
+/* .overlay-light .slider-content .slide-description {
+  color: var(--bs-dark);
+} */
+
+/* ===========================================
+   HERO SECTION CTA BUTTON STYLES (Header Social Buttons Style)
+   =========================================== */
+
+.slider-content .slide-cta {
+  margin-top: 20px;
+}
+
+.slider-content .slide-cta .cta-button {
+  display: inline-block;
+  padding: 12px 35px;
+  background: transparent;
+  color: var(--bs-white);
+  border: 2px solid var(--bs-white);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  font-family: var(--font-body);
+  position: relative;
+  border-radius: 0.25rem !important;
+  overflow: visible !important;
+}
+
+/* Button Before/After Effects - EXACTLY LIKE HEADER SOCIAL BUTTONS */
+.slider-content .slide-cta .cta-button::before,
+.slider-content .slide-cta .cta-button::after {
+  position: absolute;
+  content: "";
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  top: -5px;
+  left: -5px;
+  opacity: 1 !important;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.slider-content .slide-cta .cta-button::before {
+  top: -10px;
+  height: calc(100% + 20px);
+  border-left: 2px solid var(--bs-white);
+  border-right: 2px solid var(--bs-white);
+}
+
+.slider-content .slide-cta .cta-button::after {
+  left: -10px;
+  width: calc(100% + 20px);
+  border-top: 2px solid var(--bs-white);
+  border-bottom: 2px solid var(--bs-white);
+}
+
+/* Hover Effects - EXACTLY LIKE HEADER SOCIAL BUTTONS */
+.slider-content .slide-cta .cta-button:hover {
+  background: var(--bs-white) !important;
+  color: var(--bs-primary) !important;
+  border-color: var(--bs-white) !important;
+  transform: translateY(-2px);
+}
+
+.slider-content .slide-cta .cta-button:hover i {
+  color: var(--bs-primary) !important;
+}
+
+/* Agar aap overlay-light class ka use karte hain to */
+.overlay-light .slider-content .slide-cta .cta-button {
+  color: var(--bs-dark);
+  border-color: var(--bs-dark);
+}
+
+.overlay-light .slider-content .slide-cta .cta-button::before,
+.overlay-light .slider-content .slide-cta .cta-button::after {
+  border-color: var(--bs-dark) !important;
+}
+
+.overlay-light .slider-content .slide-cta .cta-button:hover {
+  background: var(--bs-dark) !important;
+  color: var(--bs-white) !important;
+  border-color: var(--bs-dark) !important;
+}
+
+.overlay-light .slider-content .slide-cta .cta-button:hover i {
+  color: var(--bs-white) !important;
+}
+
+/* Hide default swiper navigation buttons */
+.creative-showcase--slider .swiper-button-prev,
+.creative-showcase--slider .swiper-button-next {
+  display: none !important;
+}
+
+/* Custom navigation buttons */
+.creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom,
+.creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: auto;
+  color: var(--bs-white);
+  z-index: 9;
+  cursor: pointer;
+  width: auto;
+  bottom: 30px;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: normal;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom:hover,
+.creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom:hover {
+  opacity: 0.8;
+}
+
+.creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom {
+  right: 120px;
+}
+
+.creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom {
+  left: 120px;
+}
+
+.creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom i {
+  margin-right: 25px;
+}
+
+.creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom i {
+  margin-left: 25px;
+}
+
+.creative-showcase--slider .banner-horizental .swiper-pagination {
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+.creative-showcase--slider .banner-horizental .swiper-pagination-bullet {
+  background: transparent;
+  margin: 0 10px !important;
+  opacity: 1;
+  width: 16px;
+  height: 16px;
+}
+
+.creative-showcase--slider .banner-horizental .path {
+  display: none;
+  stroke: var(--bs-white);
+}
+
+.creative-showcase--slider .banner-horizental .swiper-pagination-bullet circle:last-child {
+  fill: var(--bs-white);
+}
+
+.creative-showcase--slider .banner-horizental .swiper-pagination-bullet-active .path {
+  display: inline-block !important;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash linear 10s;
+  animation-iteration-count: unset;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Removed overlay-light adjustments for navigation buttons */
+/* .overlay-light .creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom,
+.overlay-light .creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom {
+  color: var(--bs-dark);
+}
+
+.overlay-light .creative-showcase--slider .banner-horizental .swiper-pagination-bullet circle:last-child {
+  fill: var(--bs-dark);
+}
+
+.overlay-light .creative-showcase--slider .banner-horizental .path {
+  stroke: var(--bs-dark);
+} */
+
+/* ====================== Responsive Ipad =============================== */
+@media (max-width: 991px) {
+  .slide-container .slide-row .slider-content {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-left: 0px;
+  }
+  
+  .slider-content .slide-heading {
+    font-size: 72px;
+  }
+  
+  .slider-content .slide-description {
+    font-size: 16px;
+    max-width: 500px;
+  }
+  
+  /* Button Responsive */
+  .slider-content .slide-cta .cta-button {
+    padding: 10px 30px;
+    font-size: 15px;
+  }
+  
+  .creative-showcase--slider .banner-horizental .swiper-pagination {
+    display: none;
+  }
+  
+  .creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom {
+    left: 15px;
+  }
+  
+  .creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom {
+    right: 15px;
+  }
+  
+  .slide-bg .slide-container .slide-row {
+    padding-top: 70px; /* Adjust for mobile header */
+  }
+}
+
+/* ====================== Responsive Iphone =============================== */
+@media screen and (max-width: 767px) {
+  .slide-container .slide-row .slider-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  .slider-content .slide-heading {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+  
+  .slider-content .slide-subtitle {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  
+  .slider-content .slide-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  /* Button Responsive */
+  .slider-content .slide-cta .cta-button {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+  
+  .creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom,
+  .creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom {
+    font-size: 14px;
+  }
+  
+  .creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom i,
+  .creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom i {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  .slide-bg .slide-container .slide-row {
+    padding-top: 60px; /* Adjust for mobile header */
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .slider-content .slide-heading {
+    font-size: 36px;
+  }
+  
+  .slider-content .slide-description {
+    font-size: 13px;
+  }
+  
+  /* Button Responsive */
+  .slider-content .slide-cta .cta-button {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  
+  .creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom,
+  .creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom {
+    font-size: 12px;
+    bottom: 20px;
+  }
+  
+  .slide-bg .slide-container .slide-row {
+    padding-top: 50px; /* Adjust for mobile header */
+  }
+}

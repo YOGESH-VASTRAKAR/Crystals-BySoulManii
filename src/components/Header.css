@@ -1,0 +1,909 @@
+/* ===========================================
+   HEADER STYLES - Fixed for Transparency & Scroll
+   =========================================== */
+
+/* Import Font Variables from index.css */
+@import '../index.css';
+
+/* Font Variables */
+:root {
+  --font-title: 'Vendya', serif;
+  --font-signature: 'Autography', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  
+  /* Color Variables */
+  --bs-primary: #9d69cb;
+  --bs-primary-dark: #5a0db3;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-white: #ffffff;
+}
+
+/* Spinner */
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed !important;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+/* Button Base Styles */
+.btn {
+    position: relative;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.btn-dark,
+.btn-primary {
+    margin: 10px;
+}
+
+/* Primary Button with Before/After Effects */
+.btn-primary {
+    position: relative;
+}
+
+.btn-primary::before,
+.btn-primary::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    top: -5px;
+    left: -5px;
+}
+
+.btn-primary::before {
+    top: -10px;
+    height: calc(100% + 20px);
+    border-left: 2px solid var(--bs-primary);
+    border-right: 2px solid var(--bs-primary);
+}
+
+.btn-primary::after {
+    left: -10px;
+    width: calc(100% + 20px);
+    border-top: 2px solid var(--bs-primary);
+    border-bottom: 2px solid var(--bs-primary);
+}
+
+/* Dark Button with Before/After Effects */
+.btn-dark::before,
+.btn-dark::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    top: -5px;
+    left: -5px;
+}
+
+.btn-dark::before {
+    top: -10px;
+    height: calc(100% + 20px);
+    border-left: 2px solid var(--bs-dark);
+    border-right: 2px solid var(--bs-dark);
+}
+
+.btn-dark::after {
+    left: -10px;
+    width: calc(100% + 20px);
+    border-top: 2px solid var(--bs-dark);
+    border-bottom: 2px solid var(--bs-dark);
+}
+
+/*** Navbar ***/
+.sticky-top {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 1020;
+}
+
+/* ===========================================
+   DESKTOP HEADER FIXES
+   =========================================== */
+
+/* Desktop Header Container - Transparent by default */
+.container-fluid.sticky-top.p-0.d-none.d-lg-block {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+    z-index: 1020 !important;
+}
+
+/* Desktop Header - SCROLLED STATE */
+.container-fluid.sticky-top.p-0.d-none.d-lg-block.header-scrolled {
+    background-color: var(--bs-white) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Navbar Base */
+.navbar.navbar-light.p-0 {
+    padding: 0 !important;
+}
+
+/* Brand Section with Logo - FIXED */
+.navbar-brand.py-1.px-3.me-0 {  
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem !important;
+    margin-right: 0 !important;
+}
+
+/* Logo Styling - FIXED */
+.brand-logo {
+    height: 80px; /* Reduced from 100px */
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* Navbar Toggler */
+.navbar-toggler.me-4 {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    padding: 0.5rem 0.75rem !important;
+    margin-right: 1rem !important;
+    border-radius: 0.25rem !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease !important;
+    outline: none !important;
+}
+
+.navbar-toggler.me-4:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.navbar-toggler.me-4:focus {
+    box-shadow: 0 0 0 0.25rem rgba(106, 17, 203, 0.25) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(33, 37, 41, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    width: 1.25em !important;
+    height: 1.25em !important;
+}
+
+/* Navbar Collapse - Desktop */
+.navbar-collapse.p-3 {
+    padding: 1rem !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+}
+
+/* Bootstrap default collapse behavior for desktop */
+.navbar-collapse {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-basis: 100%;
+    flex-grow: 1;
+}
+
+/* Navigation Links - Desktop */
+.navbar-nav.mx-auto {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Navigation links - DEFAULT (transparent header) */
+.navbar .navbar-nav .nav-link {
+    margin: 0 12px !important;
+    padding: 0 !important;
+    outline: none !important;
+    font-family: var(--font-title) !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: var(--bs-white) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Navigation links - SCROLLED STATE */
+.container-fluid.sticky-top.p-0.d-none.d-lg-block.header-scrolled .navbar .navbar-nav .nav-link {
+    color: var(--bs-dark) !important;
+    text-shadow: none !important;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--bs-primary) !important;
+}
+
+/* Social Media Buttons - Desktop */
+.social-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 25px !important;
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+/* Social icons - DEFAULT (transparent header) */
+.social-icons-container .btn.btn-primary.btn-sm-square {
+    margin: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0.25rem !important;
+    background-color: transparent !important;
+    border: 2px solid var(--bs-white) !important;
+    color: var(--bs-white) !important;
+    transition: all 0.5s ease !important;
+    position: relative;
+    overflow: visible;
+}
+
+/* Social icons - SCROLLED STATE */
+.container-fluid.sticky-top.p-0.d-none.d-lg-block.header-scrolled .social-icons-container .btn.btn-primary.btn-sm-square {
+    border: 2px solid var(--bs-primary) !important;
+    color: var(--bs-primary) !important;
+}
+
+/* Social Media Buttons Before/After Effects */
+.social-icons-container .btn.btn-primary.btn-sm-square::before,
+.social-icons-container .btn.btn-primary.btn-sm-square::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    top: -5px;
+    left: -5px;
+    opacity: 1 !important;
+    pointer-events: none;
+}
+
+/* DEFAULT border color */
+.social-icons-container .btn.btn-primary.btn-sm-square::before,
+.social-icons-container .btn.btn-primary.btn-sm-square::after {
+    border-color: var(--bs-white) !important;
+}
+
+.social-icons-container .btn.btn-primary.btn-sm-square::before {
+    top: -10px;
+    height: calc(100% + 20px);
+    border-left: 2px solid var(--bs-white);
+    border-right: 2px solid var(--bs-white);
+}
+
+.social-icons-container .btn.btn-primary.btn-sm-square::after {
+    left: -10px;
+    width: calc(100% + 20px);
+    border-top: 2px solid var(--bs-white);
+    border-bottom: 2px solid var(--bs-white);
+}
+
+/* SCROLLED STATE border color */
+.container-fluid.sticky-top.p-0.d-none.d-lg-block.header-scrolled .social-icons-container .btn.btn-primary.btn-sm-square::before,
+.container-fluid.sticky-top.p-0.d-none.d-lg-block.header-scrolled .social-icons-container .btn.btn-primary.btn-sm-square::after {
+    border-color: var(--bs-primary) !important;
+}
+
+/* Social Media Hover Effects */
+.social-icons-container .btn.btn-primary.btn-sm-square:hover {
+    background: var(--bs-white) !important;
+    color: var(--bs-primary) !important;
+    border-color: var(--bs-white) !important;
+}
+
+.social-icons-container .btn.btn-primary.btn-sm-square:hover i {
+    color: var(--bs-primary) !important;
+}
+
+/* SCROLLED STATE hover */
+.container-fluid.sticky-top.p-0.d-none.d-lg-block.header-scrolled .social-icons-container .btn.btn-primary.btn-sm-square:hover {
+    background: var(--bs-primary) !important;
+    color: var(--bs-white) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.container-fluid.sticky-top.p-0.d-none.d-lg-block.header-scrolled .social-icons-container .btn.btn-primary.btn-sm-square:hover i {
+    color: var(--bs-white) !important;
+}
+
+/* Additional Navbar Button Styling */
+.navbar .btn-primary {
+    border-width: 2px !important;
+    background: transparent !important;
+}
+
+.navbar .btn-primary:hover {
+    background: var(--bs-primary) !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link {
+        margin-left: 0 !important;
+        padding: 10px 0 !important;
+        font-family: var(--font-title) !important;
+    }
+    
+    /* FIXED: Mobile navbar collapse */
+    .navbar-collapse {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: var(--bs-white) !important;
+        padding: 1.5rem !important;
+        border-radius: 0 0 1rem 1rem !important;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1) !important;
+        margin-top: 0 !important;
+        flex-direction: column !important;
+        z-index: 1000;
+    }
+    
+    /* FIXED: Hide collapsed navbar by default on mobile */
+    .navbar-collapse:not(.show) {
+        display: none !important;
+    }
+    
+    /* FIXED: Show navbar when expanded */
+    .navbar-collapse.show {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .navbar-nav.mx-auto {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+        margin-bottom: 1.5rem !important;
+        width: 100%;
+    }
+    
+    .social-icons-container {
+        justify-content: center !important;
+        margin-top: 1rem !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        width: 100%;
+    }
+    
+    /* Logo adjustment for mobile */
+    .brand-logo {
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 65px;
+    }
+    
+    .navbar-toggler.me-4 {
+        margin-right: 0.75rem !important;
+        padding: 0.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo {
+        height: 60px;
+    }
+    
+    .navbar .navbar-nav .nav-link {
+        font-size: 16px !important;
+    }
+}
+
+/* React Bootstrap Specific Fixes */
+.navbar-nav .nav-item {
+    list-style: none !important;
+}
+
+/* Fix for React Bootstrap Active States */
+.nav-link.active {
+    color: var(--bs-primary) !important;
+}
+
+/* Smooth Transitions */
+.navbar,
+.navbar-nav .nav-link,
+.btn {
+    transition: all 0.5s ease !important;
+}
+
+/* Smooth collapse animation */
+.navbar-collapse {
+    transition: all 0.3s ease-in-out !important;
+}
+
+/* ===========================================
+   MOBILE HEADER FIXES
+   =========================================== */
+
+/* Mobile Header - ALWAYS TRANSPARENT by default */
+.mobile-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 80px !important;
+  z-index: 1021 !important;
+  background-color: transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Mobile Header - SCROLLED STATE */
+.mobile-header.header-scrolled {
+  background-color: var(--bs-white) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Header Row */
+.header-row {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* Mobile Logo - FIXED */
+.mobile-logo {
+  height: 70px !important; /* Increased from 60px */
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* ===========================================
+   HAMBURGER ICON STYLES
+   =========================================== */
+
+/* Menu Toggle Button */
+.menu-toggle {
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  padding: 0 !important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1022;
+}
+
+/* Hamburger List */
+.menu-toggle ul {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-toggle ul li {
+  position: absolute;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 90%;
+  height: 3px;
+  background: var(--bs-white); /* White for transparent header */
+  border-radius: 20px;
+  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+/* Hamburger scrolled state - DARK */
+.mobile-header.header-scrolled .menu-toggle ul li {
+  background: var(--bs-dark) !important;
+}
+
+/* Hamburger Lines Position */
+.menu-toggle ul li:nth-of-type(1) {
+  top: 25%;
+}
+
+.menu-toggle ul li:nth-of-type(2),
+.menu-toggle ul li:nth-of-type(3) {
+  top: 50%;
+}
+
+.menu-toggle ul li:nth-of-type(4) {
+  top: 75%;
+}
+
+/* Active State - Transform to X */
+.menu-toggle.active ul li:nth-of-type(1) {
+  top: -25%;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.5);
+}
+
+.menu-toggle.active ul li:nth-of-type(2) {
+  transform: translateY(-50%) rotate(45deg);
+  background: #fff;
+}
+
+.menu-toggle.active ul li:nth-of-type(3) {
+  transform: translateY(-50%) rotate(-45deg);
+  background: #fff;
+}
+
+.menu-toggle.active ul li:nth-of-type(4) {
+  top: 125%;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.5);
+}
+
+/* Hamburger in fullpage menu - ALWAYS WHITE */
+.fullpage-menu .menu-toggle.active ul li:nth-of-type(2),
+.fullpage-menu .menu-toggle.active ul li:nth-of-type(3) {
+  background: #fff !important;
+}
+
+/* Hover Effect */
+.menu-toggle:hover ul li {
+  background: var(--bs-primary);
+}
+
+.menu-toggle.active:hover ul li:nth-of-type(2),
+.menu-toggle.active:hover ul li:nth-of-type(3) {
+  background: #fff;
+  opacity: 0.9;
+}
+
+/* Hide old hamburger SVG */
+.hamburger,
+.hamburger path,
+.bar-1,
+.bar-2,
+.bar-3 {
+  display: none !important;
+}
+
+/* ===========================================
+   FULL PAGE MENU FIXES
+   =========================================== */
+
+.fullpage-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 1020;
+}
+
+.fullpage-menu-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 100px 60px;
+  position: relative;
+}
+
+/* Menu Background */
+.menu-bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.menu-bg span {
+  height: 33.334%;
+  width: 100%;
+  background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-primary) 100%);
+  display: block;
+  position: relative;
+  transform: translateX(100%);
+}
+
+/* Navigation */
+.fullpage-menu nav {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.fullpage-menu nav ul {
+  list-style-type: none;
+}
+
+.fullpage-menu nav li {
+  overflow: hidden;
+  transition: transform 300ms ease-in-out 0s;
+}
+
+.fullpage-menu nav li + li {
+  margin-top: 20px;
+}
+
+.fullpage-menu nav li a {
+  font-family: var(--font-title);
+  font-size: 54px;
+  color: var(--bs-white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: 1px;
+  transform: translateY(100%);
+}
+
+.fullpage-menu nav li:hover {
+  transform: translateX(50px);
+}
+
+.fullpage-menu nav li a:hover {
+  color: var(--bs-white) !important;
+  opacity: 0.9;
+}
+
+/* Header Footer */
+.header-nav-footer {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+}
+
+.social-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.social-links li {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--bs-white);
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.social-links li + li {
+  margin-left: 16px;
+}
+
+.social-links li:last-child {
+  margin-left: auto;
+}
+
+.social-links a {
+  color: var(--bs-white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+  opacity: 0.8;
+}
+
+.social-links i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+/* ===========================================
+   RESPONSIVE FIXES
+   =========================================== */
+
+/* Hide desktop header on mobile */
+@media (max-width: 991.98px) {
+  .container-fluid.sticky-top.p-0.d-none.d-lg-block {
+    display: none !important;
+  }
+  
+  /* Mobile header height adjustment */
+  .mobile-header {
+    height: 70px !important;
+  }
+  
+  .mobile-logo {
+    height: 60px !important; /* Adjusted */
+  }
+  
+  .header-row {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fullpage-menu-inner {
+    padding: 80px 30px;
+  }
+  
+  .fullpage-menu nav li a {
+    font-size: 42px;
+  }
+  
+  .header-nav-footer {
+    padding: 20px 30px;
+  }
+  
+  .social-links li {
+    font-size: 16px;
+  }
+  
+  .mobile-header {
+    height: 65px !important;
+  }
+  
+  
+  
+  .header-row {
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .fullpage-menu nav li a {
+    font-size: 32px;
+  }
+  
+  .social-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .social-links li + li {
+    margin-left: 0;
+  }
+  
+  .social-links li:last-child {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .header-row {
+    padding: 8px 15px;
+  }
+  
+  .mobile-header {
+    height: 60px !important;
+  }
+  
+  
+}
+
+@media screen and (max-width: 480px) {
+  .fullpage-menu nav li a {
+    font-size: 28px;
+  }
+  
+  .fullpage-menu-inner {
+    padding: 70px 20px;
+  }
+  
+  .mobile-header {
+    height: 55px !important;
+  }
+  
+ 
+}
+
+/* Ensure desktop navbar shows only on large screens */
+@media (min-width: 992px) {
+  .mobile-header,
+  .fullpage-menu {
+    display: none !important;
+  }
+  
+  .container-fluid.sticky-top.p-0.d-none.d-lg-block {
+    display: block !important;
+  }
+}
+
+/* Fix for Link styling in fullpage menu */
+.fullpage-menu nav li a {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Override bootstrap styles for mobile menu */
+.d-lg-none .navbar {
+  display: none !important;
+}
+
+/* Animation Classes */
+.menu-open {
+  overflow: hidden;
+}
+
+/* Fix for mobile header overlapping */
+body {
+  padding-top: 0 !important;
+}
+
+/* Ensure content flows properly */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix for logo visibility in transparent header */
+.navbar-brand.py-1.px-3.me-0 .brand-logo {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Fix for logo in scrolled state */
+.container-fluid.sticky-top.p-0.d-none.d-lg-block.header-scrolled .navbar-brand .brand-logo {
+  filter: none;
+}
+
+/* Mobile logo shadow fix */
+.mobile-header .mobile-logo {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.mobile-header.header-scrolled .mobile-logo {
+  filter: none;
+}

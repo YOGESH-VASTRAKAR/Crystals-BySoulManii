@@ -1,0 +1,511 @@
+/* Services.css - LINE AND CIRCLE REMOVED */
+
+.services-section {
+  --font-title: 'Vendya', serif;
+  --font-signature: 'Autography', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  --bs-primary: #9d69cb;
+  --bs-primary-dark: #5a0db3;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-white: #ffffff;
+  --bs-black: #000000;
+  position: relative;
+  font-family: var(--font-body);
+}
+
+.services-section .container-xxl.py-5 {
+  position: relative;
+  background: var(--bs-white);
+  overflow-x: hidden;
+}
+
+/* Background faded text for Services sections - NEW ADDITION */
+.services-background-text {
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.07); /* Very light purple */
+  font-family: var(--font-title);
+  letter-spacing: 5px;
+  line-height: 1;
+  z-index: 1; /* Lower z-index than content */
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Reiki section specific background text positioning - CHANGED TO LEFT */
+.reiki-bg-text {
+  left: -20px; /* Changed from right: -20px to left: -20px */
+  right: auto; /* Remove right positioning */
+  text-align: left; /* Changed from right to left */
+}
+
+.services-section .img-twice {
+  position: relative;
+}
+
+.services-section .img-twice::before {
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 80%;
+  top: 10%;
+  left: 20%;
+  border: 1rem solid #d8c4ea;
+  z-index: 1;
+  border-radius: 8px;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.services-section .img-fluid.bg-light.p-3 {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #d8c4ea !important;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.services-section .img-fluid.bg-light.p-3:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(106, 17, 203, 0.2);
+}
+
+.services-section .services-subtitle {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  color: var(--bs-black) !important;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-title);
+  line-height: 30px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.services-section .services-title-container {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-bottom: 0; /* Changed from 2rem to 0 since line removed */
+}
+
+.services-section .services-title {
+  font-weight: 700;
+  color: var(--bs-dark);
+  line-height: 1.3;
+  margin-top: 10px;
+  font-family: var(--font-signature);
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+}
+
+.services-section .services-text {
+  color: #5a6268;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.services-section .services-features .col-sm-6 {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: var(--bs-dark);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.services-section .services-features .col-sm-6:hover {
+  color: var(--bs-primary);
+  transform: translateX(5px);
+}
+
+.services-section .services-check-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  transition: transform 0.3s ease;
+  color: var(--bs-primary) !important;
+}
+
+.services-section .services-features .col-sm-6:hover .services-check-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.services-section .services-feature-text {
+  font-size: 1rem;
+  color: var(--bs-dark);
+  transition: color 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.services-section .services-features .col-sm-6:hover .services-feature-text {
+  color: var(--bs-primary);
+}
+
+/* ===========================================
+   SERVICES BOOK BUTTON - SOCIAL BUTTON STYLE
+   =========================================== */
+
+/* Services Button Container */
+.services-btn-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Base Button Styles */
+.services-btn {
+  position: relative !important;
+  background-color: var(--bs-primary) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  transition: all 0.5s ease !important;
+  border-radius: 5px !important;
+  overflow: hidden !important;
+  color: var(--bs-white) !important;
+  font-family: var(--font-body) !important;
+  padding: 12px 35px !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-align: center !important;
+  z-index: 10 !important; /* Higher than background text */
+}
+
+/* Social Button Style - Before/After Effects */
+.services-btn::before,
+.services-btn::after {
+  position: absolute !important;
+  content: "" !important;
+  width: calc(100% + 10px) !important;
+  height: calc(100% + 10px) !important;
+  top: -5px !important;
+  left: -5px !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  transition: all 0.3s ease !important;
+  z-index: -1 !important;
+}
+
+/* Border Before Effect (Left/Right Borders) */
+.services-btn::before {
+  top: -10px !important;
+  height: calc(100% + 20px) !important;
+  border-left: 2px solid var(--bs-primary) !important;
+  border-right: 2px solid var(--bs-primary) !important;
+}
+
+/* Border After Effect (Top/Bottom Borders) */
+.services-btn::after {
+  left: -10px !important;
+  width: calc(100% + 20px) !important;
+  border-top: 2px solid var(--bs-primary) !important;
+  border-bottom: 2px solid var(--bs-primary) !important;
+}
+
+/* Original Button Effects (Keep for compatibility) */
+.services-btn.btn.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border: none !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  color: var(--bs-white) !important;
+  font-family: var(--font-body);
+}
+
+.services-btn.btn.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.services-btn.btn.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Hover Effects */
+.services-btn:hover {
+  background-color: var(--bs-dark) !important;
+  color: var(--bs-white) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hover Border Color Change */
+.services-btn:hover::before,
+.services-btn:hover::after {
+  border-color: var(--bs-dark) !important;
+}
+
+/* Button Text Styles */
+.services-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Glow Effect on Hover */
+.services-btn:hover::before {
+  animation: btnBorderGlow 1.5s ease infinite;
+}
+
+@keyframes btnBorderGlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Button Icon (if you want to add an icon) */
+.services-btn i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.services-btn:hover i {
+  transform: translateX(5px);
+}
+
+.services-section .reversed-section {
+  background-color: rgba(248, 249, 250, 0.5);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .services-section .services-title {
+    font-size: 2.8rem;
+  }
+  
+  .services-section .services-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  
+  .services-section .img-twice::before {
+    width: 70%;
+    height: 75%;
+    top: 12.5%;
+    left: 15%;
+  }
+  
+  /* Background text responsive */
+  .services-background-text {
+    font-size: 120px;
+    top: -40px;
+    left: -10px;
+  }
+  
+  /* Reiki text responsive */
+  .reiki-bg-text {
+    left: -10px; /* Keep left positioning for mobile */
+    right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-section .services-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  
+  .services-section .services-subtitle {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+  }
+  
+  .services-section .services-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .services-section .img-twice {
+    margin-bottom: 3rem;
+  }
+  
+  .services-section .img-twice::before {
+    width: 80%;
+    height: 70%;
+    top: 15%;
+    left: 10%;
+    border-width: 0.75rem;
+  }
+  
+  .services-section .services-title-container {
+    margin-bottom: 2rem;
+    padding-bottom: 0; /* Changed from 1.5rem to 0 */
+  }
+  
+  /* Background text responsive */
+  .services-background-text {
+    font-size: 80px;
+    top: -20px;
+    left: 0;
+  }
+  
+  /* Reiki text responsive */
+  .reiki-bg-text {
+    left: 0; /* Keep left positioning for mobile */
+    right: auto;
+  }
+  
+  /* Responsive Styles for Services Button */
+  .services-btn {
+    padding: 10px 30px !important;
+    font-size: 1rem !important;
+  }
+  
+  .services-btn::before {
+    top: -8px !important;
+    height: calc(100% + 16px) !important;
+    border-width: 1.5px !important;
+  }
+  
+  .services-btn::after {
+    left: -8px !important;
+    width: calc(100% + 16px) !important;
+    border-width: 1.5px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-section .services-title {
+    font-size: 1.8rem;
+  }
+  
+  .services-section .services-subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  
+  .services-section .services-features .col-sm-6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .services-section .services-text {
+    font-size: 0.95rem;
+  }
+  
+  /* Background text responsive */
+  .services-background-text {
+    font-size: 60px;
+    top: -10px;
+    left: 0;
+  }
+  
+  /* Reiki text responsive */
+  .reiki-bg-text {
+    left: 0; /* Keep left positioning for mobile */
+    right: auto;
+  }
+  
+  /* Original Button Responsive */
+  .services-section .btn.btn-primary {
+    padding: 0.75rem 2rem !important;
+    font-size: 0.9rem;
+  }
+  
+  /* New Button Responsive */
+  .services-btn {
+    padding: 8px 25px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Background text responsive */
+  .services-background-text {
+    font-size: 50px;
+    top: -5px;
+  }
+  
+  /* Reiki text responsive */
+  .reiki-bg-text {
+    font-size: 50px;
+    left: 0; /* Keep left positioning for mobile */
+    right: auto;
+  }
+}
+
+@keyframes services-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-section .fade-in {
+  animation: services-fadeIn 1s ease forwards;
+}
+
+.services-section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.services-section .col-6 {
+  position: relative;
+}
+
+.services-section .align-self-end {
+  align-self: flex-end;
+}
+
+.services-section .services-text strong {
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+
+.services-section .services-text small {
+  color: #6c757d;
+  font-size: 0.9em;
+}
+
+/* Ensure both button styles work together */
+.services-section .btn.btn-primary.services-btn {
+  /* This will combine both styles */
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Content z-index to appear above background text */
+.services-section .position-relative.z-2 {
+  position: relative;
+  z-index: 2;
+}

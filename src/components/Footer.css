@@ -1,0 +1,753 @@
+/* ===========================================
+   FOOTER STYLES
+   =========================================== */
+
+/* Font Variables - Same as Header */
+:root {
+  --font-title: 'Vendya', serif;
+  --font-signature: 'Autography', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  
+  /* Color Variables */
+  --bs-primary: #9d69cb;
+  --bs-primary-dark: #5a0db3;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-white: #ffffff;
+  --bs-black: #000000;
+  
+  /* Footer Specific Colors */
+  --footer-bg: #121212;
+  --footer-text: rgba(255, 255, 255, 0.9); /* Increased opacity for better visibility */
+  --footer-border: #2d2d2d;
+}
+
+/* Footer Container */
+.footer {
+  background:url('/footer-bg.jpg') no-repeat center center !important;
+  background-size: cover !important;
+  color: var(--footer-text) !important;
+  font-family: var(--font-body);
+  position: relative;
+}
+
+/* Add overlay for better text readability */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Ensure content stays above overlay */
+.footer .container,
+.footer .row,
+.footer .col-lg-6,
+.footer .navbar-brand,
+.footer-description,
+.footer-contact-text,
+.footer .d-flex,
+.footer-heading,
+.footer-link,
+.footer-input,
+.footer-newsletter-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* Vertical Divider for Desktop */
+@media (min-width: 992px) {
+  .footer::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 80%;
+    top: 10%;
+    left: 50%;
+    background: var(--bs-white);
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0.5;
+  }
+}
+
+/* Footer Logo */
+.footer-logo {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-description {
+  color: var(--bs-white) !important;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  font-weight: 300;
+}
+
+/* Contact Info */
+.footer-contact-text {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.footer-contact-text:hover {
+  color: var(--bs-primary) !important;
+}
+
+/* ===========================================
+   SOCIAL LINKS - FIXED GAP FOR ALL DEVICES
+   =========================================== */
+
+/* Social Media Buttons Container */
+.footer-social-links {
+  display: flex !important;
+  gap: 25px !important; /* Consistent gap for all devices */
+  flex-wrap: wrap !important;
+}
+
+/* Remove any default margins */
+.footer-social-links .btn.btn-sm-square.btn-primary {
+  margin: 0 !important;
+}
+
+/* Social Media Buttons */
+.footer-social-links .btn.btn-sm-square {
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0.25rem !important;
+  background-color: transparent !important;
+  border: 2px solid var(--bs-primary) !important;
+  color: var(--bs-primary) !important;
+  transition: all 0.5s ease !important;
+  position: relative;
+  overflow: visible;
+}
+
+/* Social Media Buttons Before/After Effects */
+.footer-social-links .btn.btn-sm-square::before,
+.footer-social-links .btn.btn-sm-square::after {
+  position: absolute;
+  content: "";
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  top: -5px;
+  left: -5px;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+
+.footer-social-links .btn.btn-sm-square::before {
+  top: -10px;
+  height: calc(100% + 20px);
+  border-left: 2px solid var(--bs-primary);
+  border-right: 2px solid var(--bs-primary);
+}
+
+.footer-social-links .btn.btn-sm-square::after {
+  left: -10px;
+  width: calc(100% + 20px);
+  border-top: 2px solid var(--bs-primary);
+  border-bottom: 2px solid var(--bs-primary);
+}
+
+/* Social Media Hover Effects */
+.footer-social-links .btn.btn-sm-square:hover {
+  background: var(--bs-primary) !important;
+  color: var(--bs-white) !important;
+  border-color: var(--bs-primary) !important;
+  transform: translateY(-3px);
+}
+
+.footer-social-links .btn.btn-sm-square:hover i {
+  color: var(--bs-white) !important;
+}
+
+/* ===========================================
+   QUICK LINKS & HEALING SERVICES - ALWAYS SIDE BY SIDE
+   =========================================== */
+
+/* Links Container - Always side by side */
+.links-container {
+  display: flex !important;
+  flex-wrap: nowrap !important; /* Prevent wrapping */
+  gap: 0 !important;
+}
+
+/* Individual Link Sections */
+.links-container .col-sm-6 {
+  flex: 0 0 50% !important; /* Always 50% width */
+  max-width: 50% !important;
+}
+
+/* Section Headings */
+.footer-heading {
+  font-family: var(--font-signature) !important;
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  color: var(--bs-white) !important;
+  margin-bottom: 1.5rem !important;
+  position: relative;
+}
+
+/* Footer Links */
+.footer-link {
+  display: block !important;
+  margin-bottom: 12px !important;
+  padding: 0 !important;
+  text-align: left !important;
+  color: var(--footer-text) !important;
+  font-family: var(--font-body) !important;
+  font-weight: 400 !important;
+  text-transform: capitalize !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.footer-link:hover {
+  color: var(--bs-primary) !important;
+  letter-spacing: 1px !important;
+  transform: translateX(10px);
+}
+
+.footer-link::before {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--footer-text);
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover::before {
+  color: var(--bs-primary);
+  margin-right: 15px;
+}
+
+/* ===========================================
+   NEWSLETTER SECTION - COMPLETELY FIXED
+   =========================================== */
+
+/* Newsletter Container */
+.footer .position-relative.w-100.mb-2 {
+  position: relative;
+  z-index: 1;
+  height: 60px; /* Fixed height for container */
+}
+
+/* Newsletter Input - FIXED FOR ALL SCREENS */
+.footer-input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: var(--bs-white) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease !important;
+  padding-right: 65px !important; /* Space for button */
+  padding-left: 20px !important;
+  height: 100% !important; /* Take full height of container */
+  width: 100% !important;
+}
+
+.footer-input:focus {
+  outline: none !important;
+  border-color: var(--bs-primary) !important;
+  box-shadow: 0 0 0 3px rgba(157, 105, 203, 0.2) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.footer-newsletter-text {
+  color: var(--footer-text) !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Newsletter Send Button - PERFECTLY ALIGNED FOR ALL SCREENS */
+.footer .position-relative.w-100.mb-2 .btn.shadow-none {
+  background: var(--bs-primary) !important;
+  border: 2px solid var(--bs-primary) !important;
+  color: var(--bs-white) !important;
+  transition: all 0.3s ease;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 52px !important; /* Slightly smaller than input height */
+  height: 52px !important; /* Slightly smaller than input height */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: absolute !important;
+  top: 4px !important; /* Adjust to align properly */
+  right: 4px !important; /* Adjust to align properly */
+  transform: none !important; /* Remove translateY since we're using top */
+  border-radius: 50% !important;
+  z-index: 100 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.footer .position-relative.w-100.mb-2 .btn.shadow-none i {
+  color: var(--bs-white) !important;
+  transition: all 0.3s ease;
+  font-size: 1.4rem !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer .position-relative.w-100.mb-2 .btn.shadow-none:hover {
+  transform: scale(1.1) !important;
+  background: var(--bs-white) !important;
+  border-color: var(--bs-white) !important;
+  box-shadow: 0 4px 15px rgba(157, 105, 203, 0.4) !important;
+}
+
+.footer .position-relative.w-100.mb-2 .btn.shadow-none:hover i {
+  color: var(--bs-primary) !important;
+}
+
+/* ===========================================
+   COPYRIGHT SECTION - UPDATED WITH SEPARATE FONTS
+   =========================================== */
+
+/* Copyright Container */
+.border-top.border-secondary {
+  border-color: var(--bs-white) !important;
+  position: relative;
+}
+
+/* Add background image to copyright section too */
+.border-top.border-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/footer-bg.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+/* Copyright Text */
+.container-fluid.bg-dark.text-white .row div {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  text-align: center !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* "Crystal" - Font Title Style */
+.copyright-crystal {
+  font-family: var(--font-title) !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--bs-white) !important;
+}
+
+/* "by Soulmanii" - Font Signature Style */
+.copyright-soulmanii {
+  font-family: var(--font-signature) !important;
+  font-style: italic;
+  color: var(--bs-primary) !important;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Copyright Link Container */
+.footer-copyright-link {
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-copyright-link:hover {
+  border-bottom-color: var(--bs-primary) !important;
+}
+
+/* Hover Effects */
+.footer-copyright-link:hover .copyright-crystal {
+  color: var(--bs-primary) !important;
+}
+
+.footer-copyright-link:hover .copyright-soulmanii {
+  color: var(--bs-white) !important;
+}
+
+/* ===========================================
+   BACK TO TOP BUTTON - FIXED
+   =========================================== */
+
+.back-to-top {
+  position: fixed !important;
+  display: flex !important;
+  right: 45px !important;
+  bottom: 45px !important;
+  z-index: 99 !important;
+  width: 48px !important;
+  height: 48px !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 5px !important;
+  background-color: var(--bs-primary) !important;
+  color: var(--bs-white) !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(157, 105, 203, 0.3) !important;
+  cursor: pointer;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Back to Top Button Before/After Effects */
+.back-to-top::before,
+.back-to-top::after {
+  position: absolute !important;
+  content: "" !important;
+  width: calc(100% + 10px) !important;
+  height: calc(100% + 10px) !important;
+  top: -5px !important;
+  left: -5px !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.back-to-top::before {
+  top: -10px !important;
+  height: calc(100% + 20px) !important;
+  border-left: 2px solid var(--bs-primary) !important;
+  border-right: 2px solid var(--bs-primary) !important;
+}
+
+.back-to-top::after {
+  left: -10px !important;
+  width: calc(100% + 20px) !important;
+  border-top: 2px solid var(--bs-primary) !important;
+  border-bottom: 2px solid var(--bs-primary) !important;
+}
+
+.back-to-top:hover {
+  background-color: var(--bs-white) !important;
+  color: var(--bs-primary) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(157, 105, 203, 0.4) !important;
+}
+
+.back-to-top:hover::before,
+.back-to-top:hover::after {
+  border-color: var(--bs-white) !important;
+}
+
+.back-to-top i {
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* ===========================================
+   RESPONSIVE STYLES (UPDATED)
+   =========================================== */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .footer-logo {
+    height: 100px;
+  }
+  
+  /* Social links gap for desktop */
+  .footer-social-links {
+    gap: 25px !important;
+  }
+  
+  /* Newsletter for desktop */
+  .footer .position-relative.w-100.mb-2 {
+    height: 60px;
+  }
+  
+  .footer-input {
+    font-size: 1.05rem !important;
+    padding-right: 70px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none {
+    width: 52px !important;
+    height: 52px !important;
+    top: 4px !important;
+    right: 4px !important;
+  }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (max-width: 991px) {
+  .footer::after {
+    display: none;
+  }
+  
+  .footer-logo {
+    height: 80px;
+  }
+  
+  .pe-lg-5, .ps-lg-5 {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+  
+  /* Social links gap for tablets */
+  .footer-social-links {
+    gap: 25px !important; /* Same as desktop */
+  }
+  
+  /* Links container adjustments for tablets */
+  .links-container {
+    padding: 0 10px !important;
+  }
+  
+  .links-container .col-sm-6 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  
+  /* Newsletter for tablets */
+  .footer .position-relative.w-100.mb-2 {
+    height: 58px;
+  }
+  
+  .footer-input {
+    font-size: 1rem !important;
+    padding-right: 65px !important;
+    padding-left: 18px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none {
+    width: 50px !important;
+    height: 50px !important;
+    top: 4px !important;
+    right: 4px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none i {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .footer-logo {
+    height: 75px;
+  }
+  
+  .footer-heading {
+    margin-top: 2rem;
+    font-size: 1.5rem !important;
+  }
+  
+  /* Links container adjustments for mobile */
+  .links-container {
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .links-container .col-sm-6 {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  
+  .back-to-top {
+    right: 25px !important;
+    bottom: 25px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+  
+  /* Social links gap for mobile */
+  .footer-social-links {
+    gap: 25px !important; /* Same as all devices */
+  }
+  
+  /* Newsletter for mobile */
+  .footer .position-relative.w-100.mb-2 {
+    height: 56px;
+  }
+  
+  .footer-input {
+    font-size: 0.95rem !important;
+    padding-right: 60px !important;
+    padding-left: 16px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none {
+    width: 48px !important;
+    height: 48px !important;
+    top: 4px !important;
+    right: 4px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none i {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Adjust background for mobile */
+  .footer {
+    background: url('/footer-bg.jpg') no-repeat center center !important;
+    background-size: cover !important;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+  .footer {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .footer-logo {
+    height: 70px;
+  }
+  
+  .footer-description {
+    font-size: 1rem;
+  }
+  
+  /* Links container for small phones */
+  .links-container {
+    padding: 0 5px !important;
+  }
+  
+  .links-container .col-sm-6 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  
+  .footer-heading {
+    font-size: 1.3rem !important;
+  }
+  
+  .footer-social-links .btn.btn-sm-square {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .back-to-top {
+    right: 20px !important;
+    bottom: 20px !important;
+    width: 38px !important;
+    height: 38px !important;
+  }
+  
+  /* Social links gap for small phones - SAME GAP */
+  .footer-social-links {
+    gap: 25px !important; /* Consistent gap */
+  }
+  
+  /* Newsletter for small phones - PERFECTLY ALIGNED */
+  .footer .position-relative.w-100.mb-2 {
+    height: 52px;
+  }
+  
+  .footer-input {
+    font-size: 0.9rem !important;
+    padding-right: 55px !important;
+    padding-left: 14px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none {
+    width: 44px !important;
+    height: 44px !important;
+    top: 4px !important;
+    right: 4px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none i {
+    font-size: 1.2rem !important;
+  }
+  
+  .footer-newsletter-text {
+    font-size: 0.85rem;
+  }
+  
+  /* Adjust background for small phones */
+  .footer {
+    background: url('/footer-bg.jpg') no-repeat center center !important;
+    background-size: cover !important;
+  }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 400px) {
+  /* Further adjustments for very small screens */
+  .footer-social-links {
+    gap: 20px !important; /* Slightly smaller gap for very small screens */
+  }
+  
+  .footer .position-relative.w-100.mb-2 {
+    height: 50px;
+  }
+  
+  .footer-input {
+    font-size: 0.85rem !important;
+    padding-right: 52px !important;
+    padding-left: 12px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none {
+    width: 42px !important;
+    height: 42px !important;
+    top: 4px !important;
+    right: 4px !important;
+  }
+  
+  .footer .position-relative.w-100.mb-2 .btn.shadow-none i {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wow.fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Smooth transitions */
+.footer * {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
