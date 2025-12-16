@@ -10,7 +10,6 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
 
-// Import pages (create these files later)
 const Home = () => (
   <div>
     <HeroSection/>
@@ -79,20 +78,7 @@ function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact-us" element={<ContactUs />} />
             
-            {/* Additional pages that might be needed later */}
-            <Route path="/gallery" element={
-              <div className="container mt-5 pt-5">
-                <h1 style={{fontFamily: 'var(--font-title)'}}>Photo Gallery</h1>
-                <p style={{fontFamily: 'var(--font-body)'}}>Gallery content</p>
-              </div>
-            } />
-            <Route path="/blog" element={
-              <div className="container mt-5 pt-5">
-                <h1 style={{fontFamily: 'var(--font-title)'}}>Crystal Blog</h1>
-                <p style={{fontFamily: 'var(--font-body)'}}>Blog content</p>
-              </div>
-            } />
-            
+           
             {/* 404 catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
