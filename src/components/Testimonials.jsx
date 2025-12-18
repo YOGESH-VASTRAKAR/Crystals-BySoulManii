@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Testimonials.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -7,25 +7,24 @@ import { Pagination, Autoplay } from 'swiper/modules';
 
 const Testimonials = () => {
   const swiperRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    // Initialize Swiper
     if (swiperRef.current && swiperRef.current.swiper) {
       const swiper = swiperRef.current.swiper;
       
-      // Custom dots functionality
-      const updatePagination = () => {
-        const bullets = document.querySelectorAll('.testimonial-dot');
-        bullets.forEach((bullet, index) => {
-          bullet.classList.remove('active');
-          if (index === swiper.realIndex) {
-            bullet.classList.add('active');
-          }
-        });
+      const handleSlideChange = () => {
+        setActiveIndex(swiper.realIndex);
       };
 
-      swiper.on('slideChange', updatePagination);
-      updatePagination(); // Initial update
+      swiper.on('slideChange', handleSlideChange);
+      
+      // Initial index
+      setActiveIndex(swiper.realIndex);
+
+      return () => {
+        swiper.off('slideChange', handleSlideChange);
+      };
     }
   }, []);
 
@@ -62,12 +61,16 @@ const Testimonials = () => {
     }
   ];
 
+  const handleDotClick = (index) => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideToLoop(index);
+    }
+  };
+
   return (
     <section className="testimonial-area">
       <div className="container">
-        {/* Added faded background text like AboutUs component */}
         <div className="testimonial-title-container mb-5 position-relative">
-          {/* Background faded text - NEW ADDITION */}
           <div className="testimonials-background-text">Testimonials</div>
           
           <p className="text-uppercase mb-2 testimonial-subtitle">Client Experiences</p>
@@ -85,8 +88,7 @@ const Testimonials = () => {
               loop={true}
               centeredSlides={false}
               pagination={{
-                el: '.testimonial-custom-pagination',
-                clickable: true,
+                clickable: false, // Disable Swiper's default pagination
               }}
               autoplay={{
                 delay: 4000,
@@ -132,12 +134,9 @@ const Testimonials = () => {
               {testimonials.map((_, index) => (
                 <button 
                   key={index} 
-                  className={`testimonial-dot ${index === 0 ? 'active' : ''}`}
-                  onClick={() => {
-                    if (swiperRef.current && swiperRef.current.swiper) {
-                      swiperRef.current.swiper.slideToLoop(index);
-                    }
-                  }}
+                  className={`testimonial-dot ${index === activeIndex ? 'active' : ''}`}
+                  onClick={() => handleDotClick(index)}
+                  aria-label={`Go to slide ${index + 1}`}
                 ></button>
               ))}
             </div>

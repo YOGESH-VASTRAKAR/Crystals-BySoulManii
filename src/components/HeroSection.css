@@ -317,38 +317,12 @@
   margin-left: 25px;
 }
 
+/* REMOVED ALL PAGINATION RELATED CSS */
 .creative-showcase--slider .banner-horizental .swiper-pagination {
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
+  display: none; /* Hide pagination completely */
 }
 
-.creative-showcase--slider .banner-horizental .swiper-pagination-bullet {
-  background: transparent;
-  margin: 0 10px !important;
-  opacity: 1;
-  width: 16px;
-  height: 16px;
-}
-
-.creative-showcase--slider .banner-horizental .path {
-  display: none;
-  stroke: var(--bs-white);
-}
-
-.creative-showcase--slider .banner-horizental .swiper-pagination-bullet circle:last-child {
-  fill: var(--bs-white);
-}
-
-.creative-showcase--slider .banner-horizental .swiper-pagination-bullet-active .path {
-  display: inline-block !important;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 0;
-  animation: dash linear 10s;
-  animation-iteration-count: unset;
-}
-
+/* REMOVED ALL ANIMATION AND BULLET STYLES */
 @keyframes dash {
   0% {
     stroke-dashoffset: 1000;
@@ -357,20 +331,6 @@
     stroke-dashoffset: 0;
   }
 }
-
-/* Removed overlay-light adjustments for navigation buttons */
-/* .overlay-light .creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom,
-.overlay-light .creative-showcase--slider .creative-button--wrapper .swiper-button-next-custom {
-  color: var(--bs-dark);
-}
-
-.overlay-light .creative-showcase--slider .banner-horizental .swiper-pagination-bullet circle:last-child {
-  fill: var(--bs-dark);
-}
-
-.overlay-light .creative-showcase--slider .banner-horizental .path {
-  stroke: var(--bs-dark);
-} */
 
 /* ====================== Responsive Ipad =============================== */
 @media (max-width: 991px) {
@@ -395,9 +355,9 @@
     font-size: 15px;
   }
   
-  .creative-showcase--slider .banner-horizental .swiper-pagination {
+  /* REMOVED: .creative-showcase--slider .banner-horizental .swiper-pagination {
     display: none;
-  }
+  } */
   
   .creative-showcase--slider .creative-button--wrapper .swiper-button-prev-custom {
     left: 15px;

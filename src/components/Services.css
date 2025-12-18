@@ -1,4 +1,4 @@
-/* Services.css - LINE AND CIRCLE REMOVED */
+/* Services.css - CONSISTENT BEFORE ELEMENT ACROSS ALL VIEWS */
 
 .services-section {
   --font-title: 'Vendya', serif;
@@ -20,7 +20,7 @@
   overflow-x: hidden;
 }
 
-/* Background faded text for Services sections - NEW ADDITION */
+/* Background faded text for Services sections */
 .services-background-text {
   position: absolute;
   top: -50px;
@@ -38,7 +38,7 @@
   white-space: nowrap;
 }
 
-/* Reiki section specific background text positioning - CHANGED TO LEFT */
+/* Reiki section specific background text positioning */
 .reiki-bg-text {
   left: -20px; /* Changed from right: -20px to left: -20px */
   right: auto; /* Remove right positioning */
@@ -49,18 +49,22 @@
   position: relative;
 }
 
+/* BEFORE ELEMENT - DESKTOP VIEW (Vertically and Horizontally Centered) */
 .services-section .img-twice::before {
   position: absolute;
   content: "";
-  width: 60%;
-  height: 80%;
-  top: 10%;
-  left: 20%;
+  width: 50%; /* First image width (col-6 = 50%) */
+  height: 80%; /* Adjusted height */
+  
+  /* Center the element both horizontally and vertically */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
   border: 1rem solid #d8c4ea;
   z-index: 1;
   border-radius: 8px;
   opacity: 1;
-  transform: scale(1);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -75,7 +79,6 @@
   height: auto;
   display: block;
   background-color: #d8c4ea !important;
-  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .services-section .img-fluid.bg-light.p-3:hover {
@@ -119,51 +122,77 @@
   line-height: 1.8;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  text-align: justify;
   font-family: var(--font-body);
   font-weight: 400;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
 
-.services-section .services-features .col-sm-6 {
+/* SERVICES FEATURES - ALWAYS SIDE BY SIDE AND IN ONE LINE */
+.services-section .services-features {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services-section .services-features .col-6 {
+  width: 50% !important; /* Force 50% width for all screen sizes */
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Slightly smaller font */
   color: var(--bs-dark);
   font-weight: 500;
   transition: all 0.3s ease;
+  padding-left: 5px; /* Reduced padding */
+  padding-right: 5px; /* Reduced padding */
+  min-height: 28px; /* Fixed height for consistency */
+  overflow: hidden;
 }
 
-.services-section .services-features .col-sm-6:hover {
+.services-section .services-features .col-6:hover {
   color: var(--bs-primary);
   transform: translateX(5px);
 }
 
 .services-section .services-check-icon {
-  font-size: 1.2rem;
-  width: 24px;
+  font-size: 1.1rem; /* Slightly smaller icon */
+  width: 20px; /* Smaller width */
+  min-width: 20px; /* Ensure icon width is consistent */
+  margin-right: 8px; /* Reduced margin */
   transition: transform 0.3s ease;
   color: var(--bs-primary) !important;
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
-.services-section .services-features .col-sm-6:hover .services-check-icon {
+.services-section .services-features .col-6:hover .services-check-icon {
   transform: scale(1.2) rotate(5deg);
 }
 
 .services-section .services-feature-text {
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller font */
   color: var(--bs-dark);
   transition: color 0.3s ease;
   font-family: var(--font-body);
+  white-space: nowrap !important; /* Force text in one line */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: inline-block;
+  line-height: 1.2;
+  flex-grow: 1; /* Take available space */
 }
 
-.services-section .services-features .col-sm-6:hover .services-feature-text {
+.services-section .services-features .col-6:hover .services-feature-text {
   color: var(--bs-primary);
 }
 
+/* Remove previous col-sm-6 responsive styles that might cause stacking */
+.services-section .services-features .col-sm-6 {
+  width: 50% !important;
+}
+
 /* ===========================================
-   SERVICES BOOK BUTTON - SOCIAL BUTTON STYLE
+   SERVICES READ MORE BUTTON - SOCIAL BUTTON STYLE
    =========================================== */
 
 /* Services Button Container */
@@ -301,7 +330,7 @@
   background-color: rgba(248, 249, 250, 0.5);
 }
 
-/* Responsive Styles */
+/* Responsive Styles - BEFORE ELEMENT SAME FOR ALL VIEWS */
 @media (max-width: 991px) {
   .services-section .services-title {
     font-size: 2.8rem;
@@ -312,23 +341,26 @@
     line-height: 1.7;
   }
   
+  /* BEFORE ELEMENT - Tablet */
   .services-section .img-twice::before {
-    width: 70%;
-    height: 75%;
-    top: 12.5%;
-    left: 15%;
+    width: 50%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 0.75rem; /* Changed from 1rem to 0.75rem */
   }
   
   /* Background text responsive */
   .services-background-text {
-    font-size: 120px;
-    top: -40px;
-    left: -10px;
+    font-size: 80px;
+    top: -30px;
+    left: -15px;
   }
   
   /* Reiki text responsive */
   .reiki-bg-text {
-    left: -10px; /* Keep left positioning for mobile */
+    left: -15px;
     right: auto;
   }
 }
@@ -350,33 +382,57 @@
   }
   
   .services-section .img-twice {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
   
+  /* BEFORE ELEMENT - Mobile */
   .services-section .img-twice::before {
-    width: 80%;
-    height: 70%;
-    top: 15%;
-    left: 10%;
-    border-width: 0.75rem;
+    width: 50%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 0.5rem; /* Changed from 1rem to 0.5rem */
+  }
+  
+  .services-section .img-fluid.bg-light.p-3 {
+    padding: 0.5rem !important; /* Adjust padding as well */
   }
   
   .services-section .services-title-container {
     margin-bottom: 2rem;
-    padding-bottom: 0; /* Changed from 1.5rem to 0 */
+    padding-bottom: 0;
   }
   
   /* Background text responsive */
   .services-background-text {
-    font-size: 80px;
+    font-size: 60px;
     top: -20px;
-    left: 0;
+    left: -10px;
   }
   
   /* Reiki text responsive */
   .reiki-bg-text {
-    left: 0; /* Keep left positioning for mobile */
+    left: -10px;
     right: auto;
+  }
+  
+  /* Features text adjustment for mobile */
+  .services-section .services-features .col-6 {
+    font-size: 0.95rem;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  
+  .services-section .services-feature-text {
+    font-size: 0.9rem;
+  }
+  
+  .services-section .services-check-icon {
+    font-size: 1rem;
+    width: 18px;
+    min-width: 18px;
+    margin-right: 6px;
   }
   
   /* Responsive Styles for Services Button */
@@ -408,25 +464,53 @@
     letter-spacing: 1px;
   }
   
-  .services-section .services-features .col-sm-6 {
-    font-size: 1rem;
+  .services-section .services-features .col-6 {
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    padding-left: 3px;
+    padding-right: 3px;
+    min-height: 24px;
+  }
+  
+  .services-section .services-feature-text {
+    font-size: 0.85rem;
+  }
+  
+  .services-section .services-check-icon {
+    font-size: 0.9rem;
+    width: 16px;
+    min-width: 16px;
+    margin-right: 5px;
   }
   
   .services-section .services-text {
     font-size: 0.95rem;
   }
   
+  /* BEFORE ELEMENT - Small mobile */
+  .services-section .img-twice::before {
+    width: 50%;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 0.5rem;
+  }
+  
+  .services-section .img-fluid.bg-light.p-3 {
+    padding: 0.5rem !important;
+  }
+  
   /* Background text responsive */
   .services-background-text {
-    font-size: 60px;
+    font-size: 40px;
     top: -10px;
-    left: 0;
+    left: -5px;
   }
   
   /* Reiki text responsive */
   .reiki-bg-text {
-    left: 0; /* Keep left positioning for mobile */
+    left: -5px;
     right: auto;
   }
   
@@ -443,17 +527,45 @@
   }
 }
 
+@media (max-width: 360px) {
+  /* For very small screens, make text even smaller but still in one line */
+  .services-section .services-features .col-6 {
+    font-size: 0.85rem;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  
+  .services-section .services-feature-text {
+    font-size: 0.8rem;
+  }
+  
+  .services-section .services-check-icon {
+    font-size: 0.85rem;
+    width: 14px;
+    min-width: 14px;
+    margin-right: 4px;
+  }
+}
+
+/* Ensure no stacking on medium and large screens */
+@media (min-width: 576px) {
+  .services-section .services-features .col-6 {
+    width: 50% !important;
+  }
+}
+
 @media (max-width: 576px) {
   /* Background text responsive */
   .services-background-text {
-    font-size: 50px;
+    font-size: 35px;
     top: -5px;
+    left: 0;
   }
   
   /* Reiki text responsive */
   .reiki-bg-text {
-    font-size: 50px;
-    left: 0; /* Keep left positioning for mobile */
+    font-size: 35px;
+    left: 0;
     right: auto;
   }
 }
@@ -499,7 +611,6 @@
 
 /* Ensure both button styles work together */
 .services-section .btn.btn-primary.services-btn {
-  /* This will combine both styles */
   position: relative !important;
   overflow: visible !important;
 }

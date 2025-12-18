@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Parallax, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Parallax, Navigation } from 'swiper/modules'; // Removed Pagination
 import 'swiper/css';
-import 'swiper/css/pagination';
+// Removed 'swiper/css/pagination' import
 import 'swiper/css/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './HeroSection.css';
@@ -107,14 +107,7 @@ const HeroSection = () => {
     };
   }, []);
 
-  const renderBullet = (index, className) => {
-    return `<span class="${className}">
-      <svg class="fp-arc-loader" width="16" height="16" viewBox="0 0 16 16">
-        <circle class="path" cx="8" cy="8" r="5.5" fill="none" transform="rotate(-90 8 8)" stroke="#FFF" stroke-opacity="1" stroke-width="1px"></circle>
-        <circle cx="8" cy="8" r="3" fill="#FFF"></circle>
-      </svg>
-    </span>`;
-  };
+  // REMOVED renderBullet function completely
 
   return (
     <section className="creative-showcase--slider">
@@ -128,16 +121,12 @@ const HeroSection = () => {
           }}
           parallax={true}
           loop={true}
-          pagination={{
-            el: '.creative-showcase--slider .swiper-pagination',
-            clickable: true,
-            renderBullet: renderBullet,
-          }}
+          // REMOVED pagination configuration completely
           navigation={{
             nextEl: '.swiper-button-next-custom',
             prevEl: '.swiper-button-prev-custom',
           }}
-          modules={[Autoplay, Parallax, Pagination, Navigation]}
+          modules={[Autoplay, Parallax, Navigation]} // Removed Pagination from modules
           className="swiper-container-h"
         >
           {slidesData.map((slide) => (
@@ -213,7 +202,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="swiper-pagination"></div>
+          {/* REMOVED swiper-pagination div completely */}
         </Swiper>
       </div>
     </section>

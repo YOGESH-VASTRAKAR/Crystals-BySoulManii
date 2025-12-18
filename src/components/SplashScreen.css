@@ -1,0 +1,150 @@
+/* components/SplashScreen.css - Complete styles */
+.splash-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Logo Styles */
+.logo-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.logo-image {
+  width: 300px;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+/* Text Styles */
+.text-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  will-change: transform, opacity;
+  text-align: center;
+}
+
+.splash-text {
+  font-family: 'Vendya', serif;
+  font-size: 3.5rem;
+  color: #333;
+  margin: 0;
+  line-height: 1;
+  font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+/* Different text styles for different splash types */
+.splash-text .main-text {
+  color: #9d69cb;
+  font-weight: 500;
+}
+
+.splash-text .highlight-text {
+  color: #9d69cb;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.splash-text .signature-text {
+  color: #000000;
+  font-weight: 400;
+  font-family: 'Autography', cursive;
+  font-size: 4rem;
+  position: relative;
+  top: 2px;
+  margin-left: 15px;
+}
+
+/* First load specific styles */
+.initial-splash .splash-text {
+  font-size: 3.5rem;
+}
+
+.initial-splash .splash-text .highlight-text {
+  color: #9d69cb;
+}
+
+/* Navigate specific styles (no logo, larger text) */
+.navigate-splash .splash-text {
+  font-size: 4rem;
+}
+
+.navigate-splash .splash-text .main-text {
+  color: #9d69cb;
+}
+
+/* Refresh specific styles */
+.refresh-splash .splash-text {
+  font-size: 3.5rem;
+}
+
+.refresh-splash .splash-text .main-text {
+  color: #9d69cb;
+}
+
+/* Back navigation specific styles */
+.back-splash .splash-text {
+  font-size: 3.5rem;
+}
+
+.back-splash .splash-text .main-text {
+  color: #9d69cb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo-image {
+    width: 250px;
+    max-height: 125px;
+  }
+  
+  .splash-text {
+    font-size: 2.8rem;
+  }
+  
+  .splash-text .signature-text {
+    font-size: 3rem;
+  }
+  
+  .navigate-splash .splash-text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 200px;
+    max-height: 100px;
+  }
+  
+  .splash-text {
+    font-size: 2.2rem;
+    white-space: normal;
+    line-height: 1.2;
+  }
+  
+  .splash-text .signature-text {
+    font-size: 2.4rem;
+    margin-left: 8px;
+  }
+  
+  .navigate-splash .splash-text {
+    font-size: 2.5rem;
+  }
+}

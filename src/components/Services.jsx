@@ -1,8 +1,14 @@
-// Services.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import './Services.css';
 
 const Services = () => {
+  const navigate = useNavigate(); 
+  const handleReadMoreClick = () => {
+    window.scrollTo(0, 0);
+    navigate('/services');
+  };
+
   return (
     <div className="services-section">
       {/* Crystal Healing Section */}
@@ -30,7 +36,7 @@ const Services = () => {
             
             <div className="col-lg-6">
               <div className="h-100 position-relative">
-                {/* Background faded text for Crystal Healing - NEW ADDITION */}
+                {/* Background faded text for Crystal Healing */}
                 <div className="services-background-text">Crystals</div>
                 
                 <div className="position-relative z-2">
@@ -40,36 +46,39 @@ const Services = () => {
                   </div>
                   
                   <p className="services-text">
-                    Holistic therapy using natural crystals to balance energy, clear negativity, 
-                    and enhance wellbeing. Personalized remedies including bracelets and stones.
+                    <strong>Crystal Healing</strong> is a holistic therapy that uses natural crystals to balance 
+                    energy, clear negativity, and enhance wellbeing. Each crystal carries unique vibrational 
+                    properties that interact with your energy field to promote healing on physical, emotional, 
+                    and spiritual levels.
                   </p>
                   
-                  <div className="row g-2 mb-4 services-features">
-                    <div className="col-sm-6 fade-in">
-                      <i className="fa fa-check text-primary me-3 services-check-icon"></i>
+                  {/* Features in ROW format for ALL screen sizes - Text in one line */}
+                  <div className="row g-1 mb-4 services-features">
+                    <div className="col-6 fade-in">
+                      <i className="fa fa-check text-primary me-2 services-check-icon"></i>
                       <span className="services-feature-text">Chakra Balancing</span>
                     </div>
-                    <div className="col-sm-6 fade-in">
-                      <i className="fa fa-check text-primary me-3 services-check-icon"></i>
+                    <div className="col-6 fade-in">
+                      <i className="fa fa-check text-primary me-2 services-check-icon"></i>
+                      <span className="services-feature-text">Energy Cleansing</span>
+                    </div>
+                    <div className="col-6 fade-in">
+                      <i className="fa fa-check text-primary me-2 services-check-icon"></i>
+                      <span className="services-feature-text">Emotional Healing</span>
+                    </div>
+                    <div className="col-6 fade-in">
+                      <i className="fa fa-check text-primary me-2 services-check-icon"></i>
                       <span className="services-feature-text">Stress Relief</span>
-                    </div>
-                    <div className="col-sm-6 fade-in">
-                      <i className="fa fa-check text-primary me-3 services-check-icon"></i>
-                      <span className="services-feature-text">Emotional Clarity</span>
-                    </div>
-                    <div className="col-sm-6 fade-in">
-                      <i className="fa fa-check text-primary me-3 services-check-icon"></i>
-                      <span className="services-feature-text">Aura Cleansing</span>
                     </div>
                   </div>
                   
-                  <p className="services-text mb-4">
-                    <strong>Duration:</strong> 60-90 minutes
-                  </p>
-                  
-                  <a className="btn btn-primary py-3 px-5 services-btn fade-in" href="">
-                    Book Session
-                  </a>
+                  {/* Read More button - Now redirects to /services page */}
+                  <button 
+                    className="btn btn-primary py-3 px-5 services-btn fade-in" 
+                    onClick={handleReadMoreClick}
+                  >
+                    Read More
+                  </button>
                 </div>
               </div>
             </div>
@@ -83,7 +92,7 @@ const Services = () => {
           <div className="row g-5">
             <div className="col-lg-6 order-lg-1 order-2">
               <div className="h-100 position-relative">
-                {/* Background faded text for Reiki Healing - NEW ADDITION */}
+                {/* Background faded text for Reiki Healing */}
                 <div className="services-background-text reiki-bg-text">Reiki</div>
                 
                 <div className="position-relative z-2">
@@ -93,37 +102,38 @@ const Services = () => {
                   </div>
                   
                   <p className="services-text">
-                    Gentle energy therapy promoting deep relaxation and natural healing. 
-                    Clears energy blockages and restores harmony to mind, body, and spirit.
+                    <strong>Reiki Healing</strong> is a gentle, non-invasive Japanese energy therapy that promotes 
+                    deep relaxation, emotional balance, and natural healing. Through channeling universal life energy, 
+                    Reiki helps clear blockages, reduce stress, and restore harmony to mind, body, and spirit.
                   </p>
                   
-                  <div className="row g-2 mb-4 services-features">
-                    <div className="col-sm-6 fade-in">
-                      <i className="fa fa-check text-primary me-3 services-check-icon"></i>
+                  {/* Features in ROW format for ALL screen sizes - Text in one line */}
+                  <div className="row g-1 mb-4 services-features">
+                    <div className="col-6 fade-in">
+                      <i className="fa fa-check text-primary me-2 services-check-icon"></i>
                       <span className="services-feature-text">Anxiety Relief</span>
                     </div>
-                    <div className="col-sm-6 fade-in">
-                      <i className="fa fa-check text-primary me-3 services-check-icon"></i>
+                    <div className="col-6 fade-in">
+                      <i className="fa fa-check text-primary me-2 services-check-icon"></i>
                       <span className="services-feature-text">Physical Healing</span>
                     </div>
-                    <div className="col-sm-6 fade-in">
-                      <i className="fa fa-check text-primary me-3 services-check-icon"></i>
+                    <div className="col-6 fade-in">
+                      <i className="fa fa-check text-primary me-2 services-check-icon"></i>
                       <span className="services-feature-text">Better Sleep</span>
                     </div>
-                    <div className="col-sm-6 fade-in">
-                      <i className="fa fa-check text-primary me-3 services-check-icon"></i>
+                    <div className="col-6 fade-in">
+                      <i className="fa fa-check text-primary me-2 services-check-icon"></i>
                       <span className="services-feature-text">Enhanced Immunity</span>
                     </div>
                   </div>
                   
-                  <p className="services-text mb-4">
-                    <strong>Duration:</strong> 60-90 minutes<br/>
-                    <small>Crystal Reiki also available</small>
-                  </p>
-                  
-                  <a className="btn btn-primary py-3 px-5 services-btn fade-in" href="">
-                    Book Session
-                  </a>
+                  {/* Read More button - Now redirects to /services page */}
+                  <button 
+                    className="btn btn-primary py-3 px-5 services-btn fade-in" 
+                    onClick={handleReadMoreClick}
+                  >
+                    Read More
+                  </button>
                 </div>
               </div>
             </div>

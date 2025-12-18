@@ -56,15 +56,15 @@ const Footer = () => {
               </p>
               <p className="mb-2">
                 <i className="fa fa-map-marker-alt me-2"></i>
-                <span className="footer-contact-text">Delhi NCR, India</span>
+                <span className="footer-contact-text">A/503, Radha Madhav, Radha Residency, Siddharth Nagar, Borivali (East), Mumbai - 400066.</span>
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt me-2"></i>
-                <span className="footer-contact-text">+91 98765 43210</span>
+                <span className="footer-contact-text">+91 93210-43100</span>
               </p>
               <p className="mb-4">
                 <i className="fa fa-envelope me-2"></i>
-                <span className="footer-contact-text">info@crystalbysoulmanii.com</span>
+                <span className="footer-contact-text">manishabalsara@gmail.com</span>
               </p>
               <div className="d-flex footer-social-links mt-4">
                 <a className="btn btn-sm-square btn-primary" href="#">

@@ -1,0 +1,650 @@
+/* ServiceDetails.css - Clean Modern Layout */
+
+/* Base Variables */
+.service-details-section {
+  --font-title: 'Vendya', serif;
+  --font-signature: 'Autography', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  --bs-primary: #9d69cb;
+  --bs-primary-dark: #5a0db3;
+  --bs-primary-light: #d8c4ea;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-white: #ffffff;
+  --bs-black: #000000;
+  position: relative;
+  font-family: var(--font-body);
+}
+
+/* Main Container */
+.service-details-section .container-xxl.py-5 {
+  position: relative;
+  background: var(--bs-white);
+  overflow-x: hidden;
+}
+
+/* Background faded text */
+.service-background-text {
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.07);
+  font-family: var(--font-title);
+  letter-spacing: 5px;
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.reiki-bg-text {
+  left: -20px;
+  right: auto;
+  text-align: left;
+}
+
+/* Benefits Section Background Text */
+.benefits-bg-text {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 140px;
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.05);
+  font-family: var(--font-title);
+  letter-spacing: 8px;
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+/* Image Grid */
+.service-details-section .img-twice {
+  position: relative;
+}
+
+.service-details-section .img-twice::before {
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 80%;
+  top: 10%;
+  left: 20%;
+  border: 1rem solid var(--bs-primary-light);
+  z-index: 1;
+  border-radius: 8px;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.service-details-section .img-fluid.bg-light.p-3 {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: var(--bs-primary-light) !important;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.service-details-section .img-fluid.bg-light.p-3:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(106, 17, 203, 0.2);
+}
+
+/* Typography */
+.service-subtitle {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  color: var(--bs-black) !important;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-title);
+  line-height: 30px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.service-title-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.service-title {
+  font-weight: 700;
+  color: var(--bs-dark);
+  line-height: 1.3;
+  margin-top: 10px;
+  font-family: var(--font-signature);
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+}
+
+.service-text {
+  color: #5a6268;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Full Details Section - CLEAN WITHOUT ::before */
+.service-full-details {
+  padding: 3.5rem;
+  margin-top: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* REMOVED: .service-full-details::before */
+
+.service-details-title {
+  font-family: var(--font-signature);
+  color: var(--bs-dark);
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Center the main heading in benefits section */
+.service-full-details .service-details-title {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 3rem;
+}
+
+/* Section Blocks */
+.service-details-block {
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* Benefits Grid - CLEAN CARD LAYOUT WITHOUT ::before */
+.benefits-grid {
+  margin-top: 1.5rem;
+}
+
+.benefit-card {
+  background: var(--bs-white);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.08);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+/* REMOVED: .benefit-card::before */
+
+.benefit-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(157, 105, 203, 0.2);
+  border-color: var(--bs-primary);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--bs-primary), #c5a8e8);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.3);
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, #8a4ec9, var(--bs-primary));
+  border-radius: 50%;
+}
+
+.benefit-title {
+  font-family: var(--font-title);
+  color: var(--bs-dark);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.benefit-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--bs-primary);
+  opacity: 0.5;
+  transition: width 0.3s ease;
+}
+
+.benefit-card:hover .benefit-title::after {
+  width: 60px;
+}
+
+.benefit-card:hover .benefit-title {
+  color: var(--bs-primary);
+}
+
+.benefit-desc {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* MODERN HOW IT WORKS LAYOUT */
+.modern-process-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.process-step-modern {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: var(--bs-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(157, 105, 203, 0.15);
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step-modern:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(157, 105, 203, 0.25);
+  border-color: var(--bs-primary);
+}
+
+.modern-step-header {
+  background: linear-gradient(135deg, var(--bs-primary), #b58fe0);
+  padding: 2rem 2rem 1.5rem;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.modern-step-number {
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: var(--bs-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  align-self: center;
+}
+
+.modern-step-title-content {
+  flex: 1;
+  align-self: flex-start;
+}
+
+.modern-step-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.modern-step-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.modern-step-duration {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.modern-step-tag {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--bs-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.modern-step-body {
+  padding: 2rem;
+}
+
+.modern-step-description {
+  color: #5a6268;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Animation */
+@keyframes service-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-fade-in {
+  animation: service-fadeIn 1s ease forwards;
+}
+
+/* Reversed Section */
+.service-reversed-section {
+  background-color: rgba(248, 249, 250, 0.7);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .service-title {
+    font-size: 2.8rem;
+  }
+  
+  .service-text {
+    font-size: 1.05rem;
+  }
+  
+  .service-details-section .img-twice::before {
+    width: 70%;
+    height: 75%;
+    top: 12.5%;
+    left: 15%;
+  }
+  
+  .service-background-text {
+    font-size: 100px;
+    top: -30px;
+    left: -10px;
+  }
+  
+  .reiki-bg-text {
+    left: -10px;
+  }
+  
+  .benefits-bg-text {
+    font-size: 100px;
+    top: -40px;
+  }
+  
+  .service-full-details {
+    padding: 2.5rem;
+  }
+  
+  .service-details-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .benefit-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.7rem;
+  }
+  
+  .benefit-title {
+    font-size: 1.2rem;
+  }
+  
+  .modern-process-container {
+    gap: 1.5rem;
+  }
+  
+  .process-step-modern {
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-title {
+    font-size: 2.2rem;
+  }
+  
+  .service-subtitle {
+    font-size: 15px;
+  }
+  
+  .service-text {
+    font-size: 1rem;
+  }
+  
+  .service-details-section .img-twice {
+    margin-bottom: 3rem;
+  }
+  
+  .service-details-section .img-twice::before {
+    width: 80%;
+    height: 70%;
+    top: 15%;
+    left: 10%;
+    border-width: 0.75rem;
+  }
+  
+  .service-title-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .service-background-text {
+    font-size: 70px;
+    top: -20px;
+    left: 0;
+  }
+  
+  .reiki-bg-text {
+    left: 0;
+  }
+  
+  .benefits-bg-text {
+    font-size: 70px;
+    top: -30px;
+    letter-spacing: 5px;
+  }
+  
+  .service-full-details {
+    padding: 2rem;
+  }
+  
+  .service-details-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .benefit-card {
+    padding: 1.5rem;
+  }
+  
+  .modern-process-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .process-step-modern {
+    min-width: 100%;
+  }
+  
+  .modern-step-header {
+    padding: 1.5rem;
+  }
+  
+  .modern-step-body {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-title {
+    font-size: 1.8rem;
+  }
+  
+  .service-subtitle {
+    font-size: 14px;
+  }
+  
+  .service-text {
+    font-size: 0.95rem;
+  }
+  
+  .service-background-text {
+    font-size: 50px;
+    top: -10px;
+  }
+  
+  .reiki-bg-text {
+    font-size: 50px;
+  }
+  
+  .benefits-bg-text {
+    font-size: 50px;
+    top: -20px;
+    letter-spacing: 3px;
+  }
+  
+  .service-full-details {
+    padding: 1.5rem;
+  }
+  
+  .service-details-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .benefit-title {
+    font-size: 1.1rem;
+  }
+  
+  .modern-step-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .modern-step-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+  
+  .modern-step-title {
+    font-size: 1.3rem;
+  }
+  
+  .modern-step-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Utility Classes */
+.service-details-section .col-6 {
+  position: relative;
+}
+
+.service-details-section .align-self-end {
+  align-self: flex-end;
+}
+
+.service-details-section .service-text strong {
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+
+.service-details-section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Content z-index to appear above background text */
+.service-details-section .position-relative.z-2 {
+  position: relative;
+  z-index: 2;
+}

@@ -2,7 +2,7 @@
    ABOUT US SECTION STYLES
    =========================================== */
 
-:root {
+.about-us-section {
   --font-title: 'Vendya', serif;
   --font-signature: 'Autography', cursive;
   --font-body: 'Quicksand', sans-serif;
@@ -14,39 +14,48 @@
   --bs-black: #000000;
 }
 
-/* About Section Container */
-.container-xxl.py-5 {
+.about-us-section {
   background: var(--bs-white);
   font-family: var(--font-body);
 }
 
-.container-xxl.py-5 img {
+.about-us-section img {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
-.container-xxl.py-5 img:hover {
+.about-us-section img:hover {
   transform: scale(1.02);
 }
 
+/* Equal height alignment */
+.about-us-section .row.align-items-start {
+  align-items: stretch !important;
+}
+
+.about-us-section .row.g-5 > .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Section Title with background text */
-.section-title {
+.about-us-section .section-title {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   padding-bottom: 0;
   font-family: var(--font-body);
   z-index: 1;
 }
 
 /* Background faded text for About section */
-.about-background-text {
+.about-us-section .about-background-text {
   position: absolute;
   top: -50px;
   left: -20px;
   font-size: 120px;
   font-weight: 900;
-  color: rgba(157, 105, 203, 0.07); /* Very light purple */
+  color: rgba(157, 105, 203, 0.07);
   font-family: var(--font-title);
   letter-spacing: 5px;
   line-height: 1;
@@ -57,7 +66,7 @@
   white-space: nowrap;
 }
 
-.section-title .text-primary {
+.about-us-section .section-title .text-primary {
   color: var(--bs-black) !important;
   letter-spacing: 2px;
   font-family: var(--font-title); 
@@ -71,12 +80,12 @@
   z-index: 2;
 }
 
-.section-title .display-6 {
+.about-us-section .section-title .display-6 {
   font-weight: 700;
   color: var(--bs-dark);
   line-height: 1.3;
   font-family: var(--font-signature);
-  font-size: 3.5rem;
+  font-size: 3rem;
   letter-spacing: 1px;
   margin-top: 10px;
   position: relative;
@@ -84,617 +93,303 @@
 }
 
 /* Content Styling */
-h5 {
-  font-weight: 600;
-  color: var(--bs-dark);
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  font-family: var(--font-signature);
-  line-height: 1.3;
-  letter-spacing: 0.5px;
+.about-us-section .about-content {
+  padding-top: 0.5rem;
+  flex: 1;
 }
 
-p.mb-0 {
+.about-us-section .about-text {
   color: #5a6268;
-  line-height: 1.8;
-  font-size: 1.1rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
   font-family: var(--font-body);
   font-weight: 400;
+  text-align: justify;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  margin-bottom: 1rem;
+}
+
+.about-us-section .about-text:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================================
+   ABOUT READ MORE BUTTON - EXACT COPY OF SERVICES BUTTON
+   =========================================== */
+
+/* Services Button Container - EXACT COPY */
+.about-us-section .about-btn-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Base Button Styles - EXACT COPY from Services */
+.about-us-section .about-read-more-btn {
+  position: relative !important;
+  background-color: var(--bs-primary) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  transition: all 0.5s ease !important;
+  border-radius: 5px !important;
+  overflow: hidden !important;
+  color: var(--bs-white) !important;
+  font-family: var(--font-body) !important;
+  padding: 12px 35px !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-align: center !important;
+  z-index: 10 !important; /* Higher than background text */
+}
+
+/* Social Button Style - Before/After Effects - EXACT COPY */
+.about-us-section .about-read-more-btn::before,
+.about-us-section .about-read-more-btn::after {
+  position: absolute !important;
+  content: "" !important;
+  width: calc(100% + 10px) !important;
+  height: calc(100% + 10px) !important;
+  top: -5px !important;
+  left: -5px !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  transition: all 0.3s ease !important;
+  z-index: -1 !important;
+}
+
+/* Border Before Effect (Left/Right Borders) - EXACT COPY */
+.about-us-section .about-read-more-btn::before {
+  top: -10px !important;
+  height: calc(100% + 20px) !important;
+  border-left: 2px solid var(--bs-primary) !important;
+  border-right: 2px solid var(--bs-primary) !important;
+}
+
+/* Border After Effect (Top/Bottom Borders) - EXACT COPY */
+.about-us-section .about-read-more-btn::after {
+  left: -10px !important;
+  width: calc(100% + 20px) !important;
+  border-top: 2px solid var(--bs-primary) !important;
+  border-bottom: 2px solid var(--bs-primary) !important;
+}
+
+/* Original Button Effects - EXACT COPY */
+.about-us-section .about-read-more-btn.btn.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border: none !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  color: var(--bs-white) !important;
+  font-family: var(--font-body);
+}
+
+/* This is the key - Services has this inner gradient animation */
+.about-us-section .about-read-more-btn.btn.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.about-us-section .about-read-more-btn.btn.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Hover Effects - EXACT COPY */
+.about-us-section .about-read-more-btn:hover {
+  background-color: var(--bs-dark) !important;
+  color: var(--bs-white) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hover Border Color Change - EXACT COPY */
+.about-us-section .about-read-more-btn:hover::before,
+.about-us-section .about-read-more-btn:hover::after {
+  border-color: var(--bs-dark) !important;
+}
+
+/* Button Text Styles - EXACT COPY */
+.about-us-section .about-read-more-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Glow Effect on Hover - EXACT COPY */
+.about-us-section .about-read-more-btn:hover::before {
+  animation: btnBorderGlow 1.5s ease infinite;
+}
+
+@keyframes btnBorderGlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Ensure both button styles work together - EXACT COPY */
+.about-us-section .btn.btn-primary.about-read-more-btn {
+  /* This will combine both styles */
+  position: relative !important;
+  overflow: visible !important;
 }
 
 /* Image styling */
-.img-fluid.bg-white {
+.about-us-section .img-fluid.bg-white {
   background-color: var(--bs-white) !important;
   border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* ===========================================
-   ABOUT TESTIMONIAL SECTION - EXACTLY LIKE REFERENCE
-   =========================================== */
-
-.about-testimonial-area {
-  --font-title: 'Vendya', serif;
-  --font-signature: 'Autography', cursive;
-  --font-body: 'Quicksand', sans-serif;
-  --bs-primary: #9d69cb;
-  --bs-primary-dark: #5a0db3;
-  --bs-light: #f8f9fa;
-  --bs-dark: #212529;
-  --bs-white: #ffffff;
-  --bs-black: #000000;
-  
-  background: var(--bs-white);
-  position: relative;
-  z-index: 2;
-  padding: 50px 0;
-  overflow: hidden;
-  font-family: var(--font-body);
-  margin-top: 40px;
-}
-
-/* Title Section - Exactly like reference */
-.about-testimonial-title-container {
-  position: relative;
-  padding-bottom: 2rem;
-  text-align: center;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-/* Background faded text for Testimonial section */
-.testimonial-background-text {
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 120px;
-  font-weight: 900;
-  color: rgba(157, 105, 203, 0.07); /* Very light purple */
-  font-family: var(--font-title);
-  letter-spacing: 5px;
-  line-height: 1;
-  z-index: -1;
-  user-select: none;
-  pointer-events: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  width: 100%;
-  text-align: center;
-}
-
-.about-testimonial-subtitle {
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  position: relative;
-  display: inline-block;
-  color: var(--bs-black) !important;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-title);
-  line-height: 30px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  z-index: 2;
-}
-
-.about-testimonial-title-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  z-index: 2;
-}
-
-.about-testimonial-main-title {
-  font-weight: 700;
-  color: var(--bs-dark);
-  line-height: 1.3;
-  margin-top: 10px;
-  font-family: var(--font-signature);
-  font-size: 3.5rem;
-  letter-spacing: 1px;
-  display: inline-block;
-  position: relative;
-  z-index: 2;
-}
-
-.about-testimonial-container {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/* FIXED: Center alignment for testimonial wrapper */
-.about-testimonial-carousel-wrapper {
-  padding: 0 20px;
-  margin: 0px 0; /* Changed from -40px to 0 */
-  padding-right: 0; /* Changed from 40px to 0 */
-  overflow: hidden;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-}
-
-/* FIXED: Center alignment for swiper */
-.about-testimonial-swiper {
-  padding: 30px 50px;
-  margin-left: 0; /* Changed from -34px to 0 */
-  width: 100%; /* Changed from calc(100% + 100px) to 100% */
-  box-sizing: border-box;
-  max-width: 1200px; /* Added max-width for better control */
-  margin: 0 auto; /* Center align */
-}
-
-/* Single testimonial - exactly like reference */
-.single-about-testimonial {
-  border: 7px solid #d8c4ea;
-  text-align: center;
-  border-radius: 45px;
-  position: relative;
-  z-index: 2;
-  background: var(--bs-white);
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+/* Image container */
+.about-us-section .col-lg-6 .row.g-3 {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
-.single-about-testimonial:hover {
-  transform: translateY(-5px);
-}
-
-/* Testimonial text - exactly like reference */
-.about-testimonial-text {
-  color: #5a6268;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  padding: 50px;
-  padding-bottom: 20px;
-  position: relative;
-  z-index: 3;
-  margin: 0;
-  font-family: var(--font-body);
-  font-weight: 400;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-align: center;
-}
-
-/* Quote icons - exactly like reference */
-.single-about-testimonial::before {
-  content: "";
-  position: absolute;
-  left: -35px;
-  top: -35px;
-  background: url("/custom.png") no-repeat white;
-  background-size: 60%;
-  width: 126px;
-  height: 100px;
-  transform: rotate(180deg);
-  background-position: 34px 15px;
-}
-
-.single-about-testimonial::after {
-  content: "";
-  position: absolute;
-  right: -35px;
-  bottom: -34px;
- background: url("/custom.png") no-repeat white;
-  background-size: 60%;
-  width: 126px;
-  height: 100px;
-  background-position: 34px 19px;
-}
-
-/* Round corner elements - exactly like reference */
-.about-round {
-  width: 100%;
+.about-us-section .col-lg-6 .row.g-3 > div {
   height: 100%;
-  position: absolute;
-  z-index: 1;
 }
 
-.about-round-1::before {
-  content: "";
-  position: absolute;
-  left: 88px;
-  top: -7px;
-  width: 50px;
-  height: 7px;
-  background: #d8c4ea;
-  border-radius: 30px;
+/* Animation */
+@keyframes about-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.about-round-1::after {
-  content: "";
-  position: absolute;
-  left: -7px;
-  top: 62px;
-  width: 7px;
-  height: 50px;
-  background: #d8c4ea;
-  border-radius: 30px;
-}
-
-.about-round-2::before {
-  content: "";
-  position: absolute;
-  right: 87px;
-  bottom: -7px;
-  width: 50px;
-  height: 7px;
-  background: #d8c4ea;
-  border-radius: 30px;
-  z-index: 1;
-}
-
-.about-round-2::after {
-  content: "";
-  position: absolute;
-  right: -7px;
-  bottom: 62px;
-  width: 7px;
-  height: 50px;
-  background: #d8c4ea;
-  border-radius: 30px;
-  z-index: 1;
-}
-
-/* Client info - exactly like reference */
-.about-client-info {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px 50px 50px;
-  margin-top: auto;
-}
-
-.about-client-details {
-  text-align: center;
-}
-
-.about-client-name {
-  color: var(--bs-dark);
-  font-weight: 500;
-  font-size: 1.3rem;
-  margin: 0;
-  font-family: var(--font-title);
-  letter-spacing: 0.5px;
-}
-
-.about-client-role {
-  display: inline-block;
-  color: var(--bs-primary);
-  font-size: 1rem;
-  margin-top: 5px;
-  font-family: var(--font-body);
-  font-weight: 500;
+.about-us-section img {
+  animation: about-fadeInUp 0.6s ease-out;
 }
 
 /* ===========================================
-   RESPONSIVE STYLES - EXACTLY LIKE REFERENCE
+   RESPONSIVE STYLES - ABOUT US SECTION ONLY
    =========================================== */
 
 /* Responsive Ipad (991px) */
 @media (max-width: 991px) {
-  .section-title .display-6 {
-    font-size: 2.8rem;
+  .about-us-section .section-title .display-6 {
+    font-size: 2.5rem;
   }
   
-  h5 {
-    font-size: 1.3rem;
+  .about-us-section .about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
   
-  p.mb-0 {
-    font-size: 1.05rem;
-    line-height: 1.7;
-  }
-  
-  .container-xxl.py-5 img {
+  .about-us-section img {
     margin-bottom: 1rem;
   }
   
   /* Background text responsive */
-  .about-background-text {
-    font-size: 120px;
-    top: -40px;
+  .about-us-section .about-background-text {
+    font-size: 90px;
+    top: -35px;
     left: -10px;
   }
   
-  .testimonial-background-text {
-    font-size: 120px;
-    top: -40px;
-  }
-  
-  /* Testimonial responsive */
-  .about-testimonial-main-title {
-    font-size: 2.8rem;
-  }
-  
-  .about-testimonial-subtitle {
-    font-size: 15px;
-    letter-spacing: 1.5px;
-  }
-  
-  .about-testimonial-swiper {
-    padding: 20px 40px;
-    width: 100%;
-  }
-  
-  .about-testimonial-carousel-wrapper {
-    padding: 0 15px;
-    margin: 0;
-  }
-  
-  .about-testimonial-text {
-    padding: 40px;
-    padding-bottom: 15px;
-  }
-  
-  .about-client-info {
-    padding: 15px 40px 40px;
+  /* Button Responsive */
+  .about-us-section .about-read-more-btn {
+    padding: 10px 30px !important;
+    font-size: 1rem !important;
   }
 }
 
 /* Responsive Iphone (767px) */
 @media (max-width: 767px) {
-  .section-title .display-6 {
-    font-size: 2.2rem;
+  .about-us-section .row.g-5 > .col-lg-6 {
+    margin-bottom: 2rem;
+  }
+  
+  .about-us-section .section-title .display-6 {
+    font-size: 2rem;
     line-height: 1.2;
   }
   
-  h5 {
-    font-size: 1.2rem;
-    line-height: 1.3;
+  .about-us-section .about-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
   }
   
-  p.mb-0 {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .section-title {
-    margin-bottom: 2rem;
+  .about-us-section .section-title {
+    margin-bottom: 1rem;
     padding-bottom: 0;
   }
   
-  .section-title .text-primary {
+  .about-us-section .section-title .text-primary {
     font-size: 15px;
     letter-spacing: 1.5px;
   }
   
   /* Background text responsive */
-  .about-background-text {
-    font-size: 80px;
-    top: -20px;
+  .about-us-section .about-background-text {
+    font-size: 60px;
+    top: -15px;
     left: 0;
   }
   
-  .testimonial-background-text {
-    font-size: 80px;
-    top: -20px;
+  /* Button Responsive - EXACT COPY from Services */
+  .about-us-section .about-read-more-btn {
+    padding: 10px 30px !important;
+    font-size: 1rem !important;
   }
   
-  /* Testimonial responsive */
-  .about-testimonial-area {
-    padding: 40px 0;
-    padding-top: 60px;
+  .about-us-section .about-read-more-btn::before {
+    top: -8px !important;
+    height: calc(100% + 16px) !important;
+    border-width: 1.5px !important;
   }
   
-  .about-testimonial-main-title {
-    font-size: 2.2rem;
-    line-height: 1.2;
-  }
-  
-  .about-testimonial-subtitle {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-  
-  .about-testimonial-swiper {
-    padding: 15px 30px;
-    width: 100%;
-  }
-  
-  .about-testimonial-carousel-wrapper {
-    padding: 0 10px;
-    margin: 0;
-  }
-  
-  .single-about-testimonial {
-    border-width: 5px;
-    border-radius: 35px;
-  }
-  
-  .about-testimonial-text {
-    padding: 30px;
-    padding-bottom: 15px;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .about-client-info {
-    padding: 15px 30px 30px;
-  }
-  
-  .single-about-testimonial::before {
-    left: -25px;
-    top: -25px;
-    width: 100px;
-    height: 80px;
-    background-size: 50%;
-    background-position: 25px 10px;
-  }
-  
-  .single-about-testimonial::after {
-    right: -25px;
-    bottom: -24px;
-    width: 100px;
-    height: 80px;
-    background-size: 50%;
-    background-position: 25px 15px;
-  }
-  
-  .about-round-1::before {
-    left: 68px;
-    width: 40px;
-  }
-  
-  .about-round-1::after {
-    top: 52px;
-    height: 40px;
-  }
-  
-  .about-round-2::before {
-    right: 67px;
-    width: 40px;
-  }
-  
-  .about-round-2::after {
-    bottom: 52px;
-    height: 40px;
-  }
-  
-  .about-testimonial-title-container {
-    margin-bottom: 2rem;
-    padding-bottom: 0; 
-  }
-  
-  .about-client-name {
-    font-size: 1.2rem;
+  .about-us-section .about-read-more-btn::after {
+    left: -8px !important;
+    width: calc(100% + 16px) !important;
+    border-width: 1.5px !important;
   }
 }
 
 /* Extra small devices (480px) */
 @media (max-width: 480px) {
-  .section-title .display-6 {
-    font-size: 1.8rem;
+  .about-us-section .section-title .display-6 {
+    font-size: 1.6rem;
   }
   
-  h5 {
-    font-size: 1.1rem;
+  .about-us-section .about-text {
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
   }
   
-  p.mb-0 {
-    font-size: 0.95rem;
-  }
-  
-  .section-title .text-primary {
+  .about-us-section .section-title .text-primary {
     font-size: 14px;
     letter-spacing: 1px;
   }
   
   /* Background text responsive */
-  .about-background-text {
-    font-size: 60px;
+  .about-us-section .about-background-text {
+    font-size: 45px;
     top: -10px;
     left: 0;
   }
   
-  .testimonial-background-text {
-    font-size: 60px;
-    top: -10px;
-  }
-  
-  /* Testimonial responsive */
-  .about-testimonial-main-title {
-    font-size: 1.8rem;
-  }
-  
-  .single-about-testimonial {
-    border-width: 4px;
-    border-radius: 25px;
-  }
-  
-  .about-testimonial-text {
-    padding: 25px 20px;
-    padding-bottom: 15px;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-  
-  .about-client-info {
-    padding: 10px 20px 25px;
-  }
-  
-  .about-client-name {
-    font-size: 1.1rem;
-  }
-  
-  .about-client-role {
-    font-size: 0.9rem;
-  }
-  
-  .about-testimonial-swiper {
-    padding: 10px 20px;
-    width: 100%;
-  }
-  
-  .about-testimonial-carousel-wrapper {
-    padding: 0 5px;
-    margin: 0;
-  }
-}
-
-/* Small devices (576px) */
-@media (max-width: 576px) {
-  .section-title .display-6 {
-    font-size: 1.6rem;
-  }
-  
-  /* Background text responsive */
-  .about-background-text {
-    font-size: 50px;
-    top: -5px;
-  }
-  
-  .testimonial-background-text {
-    font-size: 50px;
-    top: -5px;
-  }
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.about-testimonial-title-container,
-.single-about-testimonial {
-  animation: fadeIn 1s ease forwards;
-}
-
-.container-xxl.py-5 img {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  /* Button Responsive - EXACT COPY from Services */
+  .about-us-section .about-read-more-btn {
+    padding: 8px 25px !important;
+    font-size: 0.9rem !important;
   }
 }

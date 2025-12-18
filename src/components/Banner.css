@@ -1,3 +1,4 @@
+/* Banner.css - CLEAN VERSION WITHOUT OVERLAY */
 /* ===========================================
    SIMPLE BANNER STYLES
    =========================================== */
@@ -18,7 +19,6 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.8;
 }
 
 /* Banner Content */
@@ -32,7 +32,7 @@
   text-align: center;
   padding: 0 20px;
   color: white;
-  z-index: 2;
+  z-index: 1;
 }
 
 /* Page Title */
@@ -41,41 +41,42 @@
   font-size: 3.5rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
-  color: var(--bs-white, #ffffff);
+  color: #ffffff;
   text-transform: capitalize;
 }
 
-/* Breadcrumb */
+/* Breadcrumb - ALWAYS IN ONE LINE */
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-body, 'Arial', sans-serif);
+  justify-content: center;
+  font-family: var(--font-body);
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
 }
 
 .breadcrumb-separator {
-  color: var(--bs-primary, #9d69cb);
-  margin: 0 5px;
+  color: #9d69cb;
+  margin: 0 8px;
 }
 
 .breadcrumb-home {
-  color: var(--bs-primary, #9d69cb);
+  color: #9d69cb;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .breadcrumb-home:hover {
-  color: var(--bs-white, #ffffff);
+  color: #ffffff;
   text-decoration: underline;
 }
 
 .breadcrumb-current {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.95);
 }
 
-/* Responsive Styles */
+/* Responsive Styles - BREADCRUMB ALWAYS IN ONE LINE */
 @media (max-width: 768px) {
   .simple-banner {
     height: 250px;
@@ -92,7 +93,7 @@
 
 @media (max-width: 576px) {
   .simple-banner {
-    height: 200px;
+    height: 220px;
   }
   
   .page-title {
@@ -100,12 +101,29 @@
   }
   
   .breadcrumb {
-    font-size: 0.9rem;
-    flex-direction: column;
-    gap: 5px;
+    font-size: 0.95rem;
   }
   
   .breadcrumb-separator {
-    display: none;
+    margin: 0 6px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+  .simple-banner {
+    height: 200px;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
+  .breadcrumb {
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumb-separator {
+    margin: 0 4px;
   }
 }

@@ -1,11 +1,18 @@
+// AboutUs.jsx (updated)
 import React, { useRef, useEffect } from 'react';
 import './AboutUs.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const AboutUs = () => {
   const sectionRef = useRef(null);
   const imagesRef = useRef([]);
+  const navigate = useNavigate();
+  const location = useLocation(); // Current location check karne ke liye
+
+  // Check if we're on the /about-me page
+  const isAboutMePage = location.pathname === '/about-me';
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -34,10 +41,14 @@ const AboutUs = () => {
     }
   };
 
+  const handleReadMore = () => {
+    navigate('/about-me');
+  };
+
   return (
-    <div className="container-xxl py-5 mt-3" ref={sectionRef}>
+    <div className="about-us-section container-xxl py-5 mt-3" ref={sectionRef}>
       <div className="container">
-        <div className="row g-5">
+        <div className="row g-5 align-items-start">
           <div className="col-lg-6">
             <div className="row g-3">
               <div className="col-6 text-end">
@@ -50,7 +61,7 @@ const AboutUs = () => {
                 <img 
                   ref={addToRefs}
                   className="img-fluid bg-white w-50" 
-                  src="about-bg2.jpeg" 
+                  src="master.jpg" 
                   alt="Crystal Healing"
                 />
               </div>
@@ -58,7 +69,7 @@ const AboutUs = () => {
                 <img 
                   ref={addToRefs}
                   className="img-fluid bg-white w-50 mb-3" 
-                  src="about-bg3.jpeg" 
+                  src="master1.jpg" 
                   alt="Energy Work"
                 />
                 <img 
@@ -75,75 +86,38 @@ const AboutUs = () => {
               {/* Background faded text */}
               <div className="about-background-text">About</div>
               
-              <p className="fs-5 fw-medium text-primary">My Healing Journey</p>
+              <p className="fw-medium text-primary">My Healing Journey</p>
               <h1 className="display-6">Manisha Balsara: 25+ Years of Energy Healing</h1>
             </div>
-            <div className="row g-3 mb-4">
-              <div className="col-sm-4">
-                <img 
-                  ref={addToRefs}
-                  className="img-fluid bg-white w-100" 
-                  src="about-bg5.jpeg" 
-                  alt="First Crystal"
-                />
-              </div>
-              <div className="col-sm-8">
-                <h5>Journey Began in 1995</h5>
-                <p className="mb-0">Started with transformative Reiki under Grand Master Rohini Desai. Fell in love with crystals—my first Amethyst pendant remains cherished.</p>
-              </div>
-            </div>
-            <div className="row g-3">
-              <div className="col-sm-8">
-                <h5>Reiki & Crystal Practitioner</h5>
-                <p className="mb-0">Reconnected with healing through Taichi & Qigong. Certified in Reiki (2023) and Crystal Healing (2024). Now blend both for holistic healing.</p>
-              </div>
-              <div className="col-sm-4">
-                <img 
-                  ref={addToRefs}
-                  className="img-fluid bg-white w-100" 
-                  src="about-bg6.jpeg" 
-                  alt="Healing Practice"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Guru/Mentor Testimonial Section - EXACTLY LIKE REFERENCE CODE */}
-        <div className="about-testimonial-area">
-          <div className="container">
-            <div className="about-testimonial-title-container position-relative">
-              {/* Background faded text for testimonial */}
-              <div className="testimonial-background-text">Testimonial</div>
-              
-              <p className="text-uppercase mb-2 about-testimonial-subtitle">Guru's Blessings</p>
-              <div className="about-testimonial-title-wrapper">
-                <h1 className="display-6 about-testimonial-main-title">Words from My Mentor</h1>
-              </div>
-            </div>
             
-            <div className="about-testimonial-container">
-              <div className="about-testimonial-carousel-wrapper">
-                <div className="about-testimonial-swiper">
-                  <div className="single-about-testimonial">
-                    <div className="about-round-1 about-round"></div>
-                    <div className="about-round-2 about-round"></div>
-                    
-                    <p className="about-testimonial-text">
-                      I had the privilege of teaching Manisha Balsara Reiki and Crystal Healing over 26 years ago. From the very beginning, she demonstrated dedication, intuition, a genuine passion for energy healing. Over the years, she has grown into a skilled and compassionate Reiki and Crystal Healing practitioner, creating a nurturing and restorative space for her clients. Her warmth, sensitivity and gentle energy make every session transformative.
-                      <br /><br />
-                      I am proud to see her sharing her gifts and guiding others towards balance, peace and wellbeing.
-                    </p>
-                    
-                    <div className="about-client-info">
-                      <div className="about-client-details">
-                        <h6 className="about-client-name">Rev. Dr. Rohini Desai</h6>
-                        <span className="about-client-role">Grand Master & Mentor</span>
-                      </div>
-                    </div>
-                  </div>
+            <div className="about-content">
+              <p className="about-text">
+                My healing journey began at 22 under Grand Master Rohini Desai, who introduced me to both Reiki and crystals. My first Amethyst pendant, bought 30 years ago, remains cherished.
+              </p>
+              
+              <p className="about-text">
+                After personal challenges in 2021, I returned to energy healing through Taichi and Qigong, rediscovering my passion for holistic wellness.
+              </p>
+              
+              <p className="about-text">
+                In 2023, I relearned Reiki under Grand Master Rohini Desai, and in 2024 completed professional Crystal Healing training under expert mentor Hasmukk Chajedd.
+              </p>
+              
+              <p className="about-text">
+                Today, I blend Reiki and Crystal Healing to bring balance, healing, and harmony. What began as personal healing has grown into a journey of service and transformation.
+              </p>
+              
+              {/* Read More Button - Only show if NOT on /about-me page */}
+              {!isAboutMePage && (
+                <div className="about-btn-container">
+                  <button 
+                    className="btn btn-primary py-3 px-5 about-read-more-btn" 
+                    onClick={handleReadMore}
+                  >
+                    Read More
+                  </button>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

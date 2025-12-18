@@ -1,0 +1,1425 @@
+/* CrystalCare.css - Separate CSS File for Crystal Care Component */
+
+/* Base Variables - Using Same Theme as Services */
+.crystal-care-section {
+  --font-title: 'Vendya', serif;
+  --font-signature: 'Autography', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  --cc-primary: #9d69cb;
+  --cc-primary-dark: #5a0db3;
+  --cc-primary-light: #d8c4ea;
+  --cc-light: #f8f9fa;
+  --cc-dark: #212529;
+  --cc-white: #ffffff;
+  --cc-black: #000000;
+  --cc-success: #28a745;
+  --cc-warning: #ffc107;
+  --cc-danger: #dc3545;
+  --cc-info: #17a2b8;
+  position: relative;
+  font-family: var(--font-body);
+  background: var(--cc-white);
+}
+
+/* Main Container */
+.crystal-care-section .container-xxl.py-5 {
+  position: relative;
+  background: var(--cc-white);
+  overflow-x: hidden;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Background faded text - UPDATED for centered layout */
+.crystal-care-section .cc-background-text {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 140px;
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.05);
+  font-family: var(--font-title);
+  letter-spacing: 8px;
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+/* Guide Section Background Text */
+.crystal-care-section .cc-guide-bg-text {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 140px;
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.04);
+  font-family: var(--font-title);
+  letter-spacing: 8px;
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+/* Typography */
+.crystal-care-section .cc-subtitle {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  color: var(--cc-black) !important;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-family: var(--font-title);
+  line-height: 30px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.crystal-care-section .cc-title-container {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.crystal-care-section .cc-title {
+  font-weight: 700;
+  color: var(--cc-dark);
+  line-height: 1.3;
+  margin-top: 10px;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-signature);
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+}
+
+.crystal-care-section .cc-text {
+  color: #5a6268;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Full Details Section */
+.crystal-care-section .cc-full-details {
+  padding: 3rem 2.5rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.crystal-care-section .cc-details-title {
+  font-family: var(--font-signature);
+  color: var(--cc-dark);
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Center the main heading */
+.crystal-care-section .cc-full-details .cc-details-title {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2.5rem;
+}
+
+/* Section Blocks */
+.crystal-care-section .cc-details-block {
+  margin-bottom: 3rem;
+}
+
+.crystal-care-section .cc-section-subtitle {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+  color: var(--cc-primary);
+}
+
+/* Benefits Grid - FIXED spacing */
+.crystal-care-section .cc-benefits-grid {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.crystal-care-section .cc-benefits-grid .col-md-4,
+.crystal-care-section .cc-benefits-grid .col-sm-6 {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 2rem; /* Fixed: Consistent margin bottom */
+}
+
+.crystal-care-section .cc-benefit-card {
+  background: var(--cc-white);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.08);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  margin: 0; /* Reset margin */
+}
+
+.crystal-care-section .cc-benefit-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(157, 105, 203, 0.2);
+  border-color: var(--cc-primary);
+}
+
+.crystal-care-section .cc-benefit-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--cc-primary), #c5a8e8);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.3);
+}
+
+.crystal-care-section .cc-benefit-card:hover .cc-benefit-icon {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, #8a4ec9, var(--cc-primary));
+  border-radius: 50%;
+}
+
+.crystal-care-section .cc-benefit-title {
+  font-family: var(--font-title);
+  color: var(--cc-dark);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.crystal-care-section .cc-benefit-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--cc-primary);
+  opacity: 0.5;
+  transition: width 0.3s ease;
+}
+
+.crystal-care-section .cc-benefit-card:hover .cc-benefit-title::after {
+  width: 60px;
+}
+
+.crystal-care-section .cc-benefit-card:hover .cc-benefit-title {
+  color: var(--cc-primary);
+}
+
+.crystal-care-section .cc-benefit-desc {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* Process Layout - FIXED gap */
+.crystal-care-section .cc-process-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+.crystal-care-section .cc-process-step {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: var(--cc-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(157, 105, 203, 0.15);
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+.crystal-care-section .cc-process-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(157, 105, 203, 0.25);
+  border-color: var(--cc-primary);
+}
+
+.crystal-care-section .cc-step-header {
+  background: linear-gradient(135deg, var(--cc-primary), #b58fe0);
+  padding: 2rem 2rem 1.5rem;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.crystal-care-section .cc-step-number {
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: var(--cc-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  align-self: center;
+}
+
+.crystal-care-section .cc-step-title-content {
+  flex: 1;
+  align-self: flex-start;
+}
+
+.crystal-care-section .cc-step-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.crystal-care-section .cc-step-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.crystal-care-section .cc-step-duration {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.crystal-care-section .cc-step-tag {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--cc-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.crystal-care-section .cc-step-body {
+  padding: 2rem;
+}
+
+.crystal-care-section .cc-step-description {
+  color: #5a6268;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Animation */
+@keyframes cc-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.crystal-care-section .cc-fade-in {
+  animation: cc-fadeIn 1s ease forwards;
+}
+
+/* ===========================================
+   CRYSTAL CARE SPECIFIC STYLES
+   =========================================== */
+
+/* Tabs Navigation */
+.crystal-care-section .cc-tabs-navigation {
+  background: rgba(157, 105, 203, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  border: 2px solid rgba(157, 105, 203, 0.1);
+}
+
+.crystal-care-section .cc-tab-btn {
+  background: transparent;
+  border: 2px solid rgba(157, 105, 203, 0.2);
+  color: var(--cc-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-family: var(--font-title);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0 0.25rem; /* Fixed: Added margin for spacing */
+}
+
+.crystal-care-section .cc-tab-btn:hover {
+  border-color: var(--cc-primary);
+  background: rgba(157, 105, 203, 0.1);
+  transform: translateY(-2px);
+}
+
+.crystal-care-section .cc-tab-btn.active {
+  background: var(--cc-primary);
+  color: white;
+  border-color: var(--cc-primary);
+  box-shadow: 0 5px 15px rgba(157, 105, 203, 0.3);
+}
+
+/* Warning Banner */
+.crystal-care-section .cc-warning-banner {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.05));
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.crystal-care-section .cc-warning-banner i {
+  color: var(--cc-warning);
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.crystal-care-section .cc-warning-banner h4 {
+  color: var(--cc-dark);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-title);
+}
+
+.crystal-care-section .cc-warning-banner p {
+  color: #5a6268;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Info Box */
+.crystal-care-section .cc-info-box {
+  background: rgba(157, 105, 203, 0.05);
+  border-left: 4px solid var(--cc-primary);
+  padding: 1.5rem;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.crystal-care-section .cc-info-box.important {
+  background: rgba(255, 193, 7, 0.1);
+  border-left-color: var(--cc-warning);
+}
+
+.crystal-care-section .cc-info-box i {
+  color: var(--cc-primary);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.crystal-care-section .cc-info-box.important i {
+  color: var(--cc-warning);
+}
+
+.crystal-care-section .cc-info-box p {
+  margin: 0;
+  color: var(--cc-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Care Tip Cards - FIXED spacing */
+.crystal-care-section .cc-care-tip-card {
+  background: var(--cc-white);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.crystal-care-section .cc-care-tip-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--cc-primary);
+  box-shadow: 0 15px 30px rgba(157, 105, 203, 0.15);
+}
+
+.crystal-care-section .cc-care-tip-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--cc-primary), #c5a8e8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: white;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.crystal-care-section .cc-care-tip-card:hover .cc-care-tip-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #8a4ec9, var(--cc-primary));
+}
+
+.crystal-care-section .cc-care-tip-title {
+  font-family: var(--font-title);
+  color: var(--cc-primary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.crystal-care-section .cc-care-tip-desc {
+  color: #5a6268;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Observation Tips */
+.crystal-care-section .cc-observation-tips {
+  background: rgba(157, 105, 203, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  margin: 2rem 0;
+}
+
+/* Tab Header */
+.crystal-care-section .cc-tab-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.crystal-care-section .cc-tab-header h4 {
+  font-family: var(--font-signature);
+  color: var(--cc-primary);
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.crystal-care-section .cc-tab-header p {
+  color: #5a6268;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* List Styles */
+.crystal-care-section ul {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.crystal-care-section ul li {
+  padding: 0.25rem 0;
+  color: #5a6268;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.crystal-care-section ul li:before {
+  content: "•";
+  color: var(--cc-primary);
+  position: absolute;
+  left: -1.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Utility Classes */
+.crystal-care-section .cc-position-relative-z2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Content z-index to appear above background text */
+.crystal-care-section .position-relative.z-2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Text Center Utility */
+.crystal-care-section .text-center {
+  text-align: center !important;
+}
+
+/* Margin Utilities - FIXED spacing */
+.crystal-care-section .mt-2 { margin-top: 0.5rem !important; }
+.crystal-care-section .mt-3 { margin-top: 1rem !important; }
+.crystal-care-section .mt-4 { margin-top: 1.5rem !important; }
+.crystal-care-section .mt-5 { margin-top: 2rem !important; }
+.crystal-care-section .mt-6 { margin-top: 3rem !important; }
+.crystal-care-section .mb-2 { margin-bottom: 0.5rem !important; }
+.crystal-care-section .mb-3 { margin-bottom: 1rem !important; }
+.crystal-care-section .mb-4 { margin-bottom: 1.5rem !important; }
+.crystal-care-section .mb-5 { margin-bottom: 2rem !important; }
+.crystal-care-section .mb-6 { margin-bottom: 3rem !important; }
+.crystal-care-section .pt-4 { padding-top: 1.5rem !important; }
+.crystal-care-section .pt-5 { padding-top: 2rem !important; }
+.crystal-care-section .pb-4 { padding-bottom: 1.5rem !important; }
+.crystal-care-section .pb-5 { padding-bottom: 2rem !important; }
+
+/* ===========================================
+   MOBILE DROPDOWN STYLES - UPDATED
+   =========================================== */
+
+.crystal-care-section .cc-tabs-mobile {
+  position: relative;
+  width: 100%;
+  display: none;
+  /* margin-bottom: 2rem; */
+}
+
+.crystal-care-section .cc-dropdown-header {
+  background: white;
+  border: 2px solid var(--cc-primary);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(157, 105, 203, 0.1);
+  margin: 0;
+}
+
+.crystal-care-section .cc-dropdown-header:hover {
+  box-shadow: 0 8px 25px rgba(157, 105, 203, 0.15);
+}
+
+.crystal-care-section .cc-dropdown-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-title);
+  font-weight: 500;
+  color: var(--cc-primary);
+  font-size: 1.1rem;
+}
+
+/* Updated: Equal font size and weight for dropdown options */
+.crystal-care-section .cc-dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid rgba(157, 105, 203, 0.2);
+  border-radius: 0 0 12px 12px;
+  border-top: none;
+  margin-top: 2px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  animation: cc-dropdownFade 0.3s ease;
+}
+
+@keyframes cc-dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* UPDATED: All dropdown options have equal font properties */
+.crystal-care-section .cc-dropdown-option {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(157, 105, 203, 0.1);
+  color: var(--cc-dark);
+  font-family: var(--font-title);
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.crystal-care-section .cc-dropdown-option:last-child {
+  border-bottom: none;
+}
+
+.crystal-care-section .cc-dropdown-option:hover {
+  background: rgba(157, 105, 203, 0.05);
+  color: var(--cc-primary);
+}
+
+.crystal-care-section .cc-dropdown-option.active {
+  background: rgba(157, 105, 203, 0.1);
+  color: var(--cc-primary);
+  position: relative;
+}
+
+.crystal-care-section .cc-dropdown-option.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--cc-primary);
+  border-radius: 0 2px 2px 0;
+}
+
+.crystal-care-section .cc-dropdown-option i:first-child {
+  margin-right: 0.75rem;
+  color: var(--cc-primary);
+  font-size: 1rem;
+}
+
+.crystal-care-section .cc-dropdown-option.active i:first-child {
+  color: var(--cc-primary-dark);
+}
+
+.crystal-care-section .cc-dropdown-option i.fa-check {
+  color: var(--cc-primary);
+  font-size: 0.9rem;
+}
+
+/* Desktop tabs by default visible */
+.crystal-care-section .cc-tabs-desktop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+/* ===========================================
+   RESPONSIVE BREAKPOINTS - UPDATED SPACING
+   =========================================== */
+
+@media (max-width: 1200px) {
+  .crystal-care-section .cc-full-details {
+    padding: 2.5rem 2rem;
+  }
+  
+  .crystal-care-section .cc-process-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .crystal-care-section .cc-title {
+    font-size: 2.8rem;
+  }
+  
+  .crystal-care-section .cc-text {
+    font-size: 1.05rem;
+  }
+  
+  .crystal-care-section .cc-background-text,
+  .crystal-care-section .cc-guide-bg-text {
+    font-size: 100px;
+    top: -30px;
+  }
+  
+  .crystal-care-section .cc-full-details {
+    padding: 2.5rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .crystal-care-section .cc-details-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .crystal-care-section .cc-section-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .crystal-care-section .cc-benefit-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.7rem;
+  }
+  
+  .crystal-care-section .cc-benefit-title {
+    font-size: 1.2rem;
+  }
+  
+  .crystal-care-section .cc-process-container {
+    gap: 1.25rem;
+  }
+  
+  .crystal-care-section .cc-process-step {
+    min-width: 280px;
+  }
+  
+  /* Benefits Grid - 3 columns on medium screens */
+  .crystal-care-section .cc-benefits-grid .col-md-4 {
+    width: 33.333%;
+  }
+  
+  .crystal-care-section .cc-benefits-grid {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  
+  .crystal-care-section .cc-benefits-grid .col-md-4,
+  .crystal-care-section .cc-benefits-grid .col-sm-6 {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 1.75rem;
+  }
+  
+  /* Crystal Care Specific */
+  .crystal-care-section .cc-tabs-navigation {
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .crystal-care-section .cc-tabs-navigation .row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin: 0 -0.75rem;
+    padding: 0 0.75rem;
+  }
+  
+  .crystal-care-section .cc-tabs-navigation .col-auto {
+    flex: 0 0 auto;
+  }
+  
+  .crystal-care-section .cc-tab-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    margin: 0 0.2rem;
+  }
+  
+  .crystal-care-section .cc-care-tip-card {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .crystal-care-section .cc-care-tip-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  /* Dropdown font sizes for tablet */
+  .crystal-care-section .cc-dropdown-selected {
+    font-size: 1rem;
+  }
+  
+  .crystal-care-section .cc-dropdown-option {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.25rem;
+  }
+}
+
+/* Tablet and Mobile (768px and below) */
+@media (max-width: 768px) {
+  /* Hide desktop tabs on mobile */
+  .crystal-care-section .cc-tabs-desktop {
+    display: none !important;
+  }
+  
+  /* Show mobile dropdown on mobile */
+  .crystal-care-section .cc-tabs-mobile {
+    display: block !important;
+    /* margin-bottom: 1.5rem; */
+  }
+  
+  /* Benefits Grid - 2 columns on tablet */
+  .crystal-care-section .cc-benefits-grid .col-sm-6 {
+    width: 50%;
+  }
+  
+  /* Process steps full width on mobile */
+  .crystal-care-section .cc-process-step {
+    min-width: 100% !important;
+    margin-bottom: 1.25rem;
+  }
+  
+  /* Care tips vertical on mobile */
+  .crystal-care-section .cc-care-tip-card {
+    margin-bottom: 1.25rem;
+  }
+  
+  .crystal-care-section .cc-tabs-navigation {
+    margin-bottom: 2rem;
+  }
+  
+  .crystal-care-section .cc-process-container {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .crystal-care-section .container-xxl.py-5 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .crystal-care-section .cc-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .crystal-care-section .cc-subtitle {
+    font-size: 15px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .crystal-care-section .cc-text {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .crystal-care-section .cc-background-text,
+  .crystal-care-section .cc-guide-bg-text {
+    font-size: 70px;
+    top: -20px;
+    letter-spacing: 5px;
+  }
+  
+  .crystal-care-section .cc-full-details {
+    padding: 2rem 1.25rem;
+    margin-top: 1rem;
+  }
+  
+  .crystal-care-section .cc-details-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .crystal-care-section .cc-section-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .crystal-care-section .cc-benefit-card {
+    padding: 1.5rem 1.25rem;
+    margin-bottom: 0;
+  }
+  
+  .crystal-care-section .cc-process-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .crystal-care-section .cc-process-step {
+    min-width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .crystal-care-section .cc-step-header {
+    padding: 1.5rem;
+  }
+  
+  .crystal-care-section .cc-step-body {
+    padding: 1.5rem;
+  }
+  
+  /* Benefits Grid - 2 columns on small screens */
+  .crystal-care-section .cc-benefits-grid .col-md-4,
+  .crystal-care-section .cc-benefits-grid .col-sm-6 {
+    width: 50%;
+  }
+  
+  .crystal-care-section .cc-benefits-grid {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  
+  .crystal-care-section .cc-benefits-grid .col-md-4,
+  .crystal-care-section .cc-benefits-grid .col-sm-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Crystal Care Specific */
+  .crystal-care-section .cc-warning-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+  
+  .crystal-care-section .cc-warning-banner i {
+    margin-bottom: 0.5rem;
+  }
+  
+  .crystal-care-section .cc-info-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    gap: 0.75rem;
+  }
+  
+  .crystal-care-section .cc-info-box i {
+    margin-bottom: 0.5rem;
+  }
+  
+  .crystal-care-section .cc-tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    margin: 0 0.15rem;
+  }
+  
+  .crystal-care-section .cc-tab-btn i {
+    margin-right: 0.5rem;
+  }
+  
+  /* Dropdown mobile adjustments */
+  .crystal-care-section .cc-dropdown-header {
+    padding: 0.9rem 1.25rem;
+    margin-bottom: 0;
+  }
+  
+  .crystal-care-section .cc-dropdown-option {
+    padding: 0.9rem 1.25rem;
+  }
+  
+  .crystal-care-section .cc-care-tip-card {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .crystal-care-section .mt-5 { margin-top: 1.5rem !important; }
+  .crystal-care-section .mb-5 { margin-bottom: 1.5rem !important; }
+  .crystal-care-section .pt-4 { padding-top: 1.25rem !important; }
+  .crystal-care-section .pb-4 { padding-bottom: 1.25rem !important; }
+}
+
+@media (max-width: 576px) {
+  .crystal-care-section .container-xxl.py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .crystal-care-section .cc-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .crystal-care-section .cc-subtitle {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .crystal-care-section .cc-text {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .crystal-care-section .cc-background-text,
+  .crystal-care-section .cc-guide-bg-text {
+    font-size: 50px;
+    top: -15px;
+    letter-spacing: 3px;
+  }
+  
+  .crystal-care-section .cc-full-details {
+    padding: 1.5rem 1rem;
+    margin-top: 0.75rem;
+    border-radius: 16px;
+  }
+  
+  .crystal-care-section .cc-details-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .crystal-care-section .cc-section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .crystal-care-section .cc-benefit-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .crystal-care-section .cc-benefit-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Benefits Grid - 1 column on extra small screens */
+  .crystal-care-section .cc-benefits-grid .col-md-4,
+  .crystal-care-section .cc-benefits-grid .col-sm-6 {
+    width: 100%;
+  }
+  
+  .crystal-care-section .cc-benefits-grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .crystal-care-section .cc-benefits-grid .col-md-4,
+  .crystal-care-section .cc-benefits-grid .col-sm-6 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 1.25rem;
+  }
+  
+  .crystal-care-section .cc-benefit-card {
+    padding: 1.25rem;
+    margin-bottom: 0;
+  }
+  
+  .crystal-care-section .cc-step-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+  
+  .crystal-care-section .cc-step-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+  
+  .crystal-care-section .cc-step-title {
+    font-size: 1.3rem;
+  }
+  
+  .crystal-care-section .cc-step-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .crystal-care-section .cc-step-body {
+    padding: 1.25rem;
+  }
+  
+  /* Crystal Care Specific */
+  .crystal-care-section .cc-care-tip-title {
+    font-size: 1.1rem;
+  }
+  
+  .crystal-care-section .cc-care-tip-desc {
+    font-size: 0.95rem;
+  }
+  
+  .crystal-care-section .cc-tab-header h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .crystal-care-section .cc-tab-header p {
+    font-size: 1rem;
+  }
+  
+  .crystal-care-section .cc-warning-banner {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .crystal-care-section .cc-warning-banner h4 {
+    font-size: 1.3rem;
+  }
+  
+  .crystal-care-section .cc-warning-banner p {
+    font-size: 1rem;
+  }
+  
+  /* Adjust dropdown for mobile - Equal font properties */
+  .crystal-care-section .cc-dropdown-option {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+  }
+  
+  .crystal-care-section .cc-dropdown-header {
+    min-height: 56px;
+    padding: 0.75rem 1rem;
+  }
+  
+  .crystal-care-section .cc-dropdown-selected {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  .crystal-care-section .cc-tabs-navigation {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .crystal-care-section .cc-tab-header {
+    margin-bottom: 2rem;
+  }
+  
+  .crystal-care-section .cc-care-tip-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  
+  .crystal-care-section .mt-5 { margin-top: 1.25rem !important; }
+  .crystal-care-section .mb-5 { margin-bottom: 1.25rem !important; }
+}
+
+/* Extra Small Screens */
+@media (max-width: 360px) {
+  .crystal-care-section .cc-title {
+    font-size: 1.6rem;
+  }
+  
+  .crystal-care-section .cc-details-title {
+    font-size: 1.3rem;
+  }
+  
+  .crystal-care-section .cc-tab-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    margin: 0 0.1rem;
+  }
+  
+  .crystal-care-section .cc-tab-btn i {
+    margin-right: 0.3rem;
+  }
+  
+  .crystal-care-section .cc-dropdown-header {
+    padding: 0.7rem 0.9rem;
+  }
+  
+  .crystal-care-section .cc-dropdown-option {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  
+  .crystal-care-section .cc-dropdown-selected {
+    font-size: 0.9rem;
+  }
+  
+  .crystal-care-section .cc-full-details {
+    padding: 1.25rem 0.75rem;
+  }
+  
+  .crystal-care-section .cc-benefit-card {
+    padding: 1rem;
+  }
+}
+
+/* ===========================================
+   ENHANCED RESPONSIVE DESIGN - FIXED SPACING
+   =========================================== */
+
+/* Touch-friendly tap targets for mobile */
+@media (max-width: 767px) {
+  .crystal-care-section button,
+  .crystal-care-section .cc-benefit-card,
+  .crystal-care-section .cc-dropdown-header {
+    cursor: pointer;
+  }
+}
+
+/* Scrollbar styling for dropdown */
+.crystal-care-section .cc-dropdown-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.crystal-care-section .cc-dropdown-options::-webkit-scrollbar-track {
+  background: rgba(157, 105, 203, 0.1);
+  border-radius: 10px;
+}
+
+.crystal-care-section .cc-dropdown-options::-webkit-scrollbar-thumb {
+  background: var(--cc-primary);
+  border-radius: 10px;
+}
+
+/* Smooth transitions */
+.crystal-care-section .cc-dropdown-options,
+.crystal-care-section .cc-process-step,
+.crystal-care-section .cc-benefit-card,
+.crystal-care-section .cc-care-tip-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Better hover effects for desktop (on devices that support hover) */
+@media (hover: hover) and (pointer: fine) {
+  .crystal-care-section .cc-benefit-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .crystal-care-section .cc-dropdown-option:hover {
+    background: rgba(157, 105, 203, 0.08);
+  }
+  
+  .crystal-care-section .cc-process-step:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* Accessibility improvements */
+.crystal-care-section .cc-tab-btn:focus,
+.crystal-care-section .cc-dropdown-header:focus {
+  outline: 2px solid var(--cc-primary);
+  outline-offset: 2px;
+}
+
+/* Active state for desktop tabs */
+.crystal-care-section .cc-tab-btn.active {
+  position: relative;
+}
+
+.crystal-care-section .cc-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: var(--cc-primary);
+  border-radius: 2px;
+}
+
+/* Print styles */
+@media print {
+  .crystal-care-section .cc-tabs-navigation,
+  .crystal-care-section .cc-dropdown-header,
+  .crystal-care-section .cc-background-text,
+  .crystal-care-section .cc-guide-bg-text,
+  .crystal-care-section .cc-care-tip-card {
+    display: none !important;
+  }
+  
+  .crystal-care-section .cc-full-details {
+    padding: 0 !important;
+    box-shadow: none !important;
+    margin-top: 0 !important;
+  }
+  
+  .crystal-care-section .cc-benefit-card,
+  .crystal-care-section .cc-process-step {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Loading state (optional) */
+.crystal-care-section .cc-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.crystal-care-section .cc-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(157, 105, 203, 0.1);
+  border-top-color: var(--cc-primary);
+  border-radius: 50%;
+  animation: cc-spin 1s linear infinite;
+}
+
+@keyframes cc-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .crystal-care-section .cc-dropdown-options {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Grid fix for equal spacing */
+.crystal-care-section .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.crystal-care-section .row > [class*='col-'] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
