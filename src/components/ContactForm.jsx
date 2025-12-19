@@ -104,6 +104,9 @@ const ContactForm = () => {
     'Reiki Session'
   ];
 
+  // Get current date for min date
+  const today = new Date().toISOString().split('T')[0];
+
   return (
     <div className="contact-form-section container-xxl py-5 mt-3" ref={sectionRef}>
       <div className="container">
@@ -175,6 +178,8 @@ const ContactForm = () => {
                       value={formData.mobile}
                       onChange={handleChange}
                       required
+                      pattern="[0-9]{10}"
+                      title="Please enter a valid 10-digit mobile number"
                     />
                   </div>
                 </div>
@@ -238,6 +243,7 @@ const ContactForm = () => {
                       value={formData.appointmentDate}
                       onChange={handleChange}
                       required
+                      min={today}
                     />
                   </div>
                 </div>
@@ -326,7 +332,7 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                {/* Consent Checkbox */}
+                {/* Consent Checkbox - Container के अंदर और input fields की symmetry में */}
                 <div className="col-12">
                   <div className="form-group">
                     <div className="form-check">
@@ -350,7 +356,7 @@ const ContactForm = () => {
                   </div>
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit Button - NOT full width */}
                 <div className="col-12 text-center mt-4">
                   <button type="submit" className="btn btn-primary btn-lg book-btn">
                     Book My Session

@@ -47,12 +47,12 @@
   text-align: left;
 }
 
-/* Benefits Section Background Text */
+/* Benefits Section Background Text - FIXED FOR MOBILE */
 .benefits-bg-text {
   position: absolute;
   top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0; /* Changed from 50% to 0 */
+  width: 100%; /* Full width */
   font-size: 140px;
   font-weight: 900;
   color: rgba(157, 105, 203, 0.05);
@@ -63,9 +63,8 @@
   user-select: none;
   pointer-events: none;
   text-transform: uppercase;
-  white-space: nowrap;
-  width: 100%;
-  text-align: center;
+  text-align: center; /* Center align text */
+  overflow: hidden; /* Prevent overflow */
 }
 
 /* Image Grid */
@@ -73,18 +72,22 @@
   position: relative;
 }
 
+/* BEFORE ELEMENT - DESKTOP VIEW (Vertically and Horizontally Centered) */
 .service-details-section .img-twice::before {
   position: absolute;
   content: "";
-  width: 60%;
-  height: 80%;
-  top: 10%;
-  left: 20%;
+  width: 50%; /* First image width (col-6 = 50%) */
+  height: 80%; /* Adjusted height */
+  
+  /* Center the element both horizontally and vertically */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
   border: 1rem solid var(--bs-primary-light);
   z-index: 1;
   border-radius: 8px;
   opacity: 1;
-  transform: scale(1);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -140,11 +143,132 @@
 
 .service-text {
   color: #5a6268;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  text-align: justify;
   font-size: 1.1rem;
   font-family: var(--font-body);
   font-weight: 400;
+}
+
+/* BOOK MY SESSION BUTTON - EXACT LIKE REFERENCE CODE */
+.service-btn-container {
+  position: relative;
+  display: inline-block;
+}
+
+.service-btn {
+  position: relative !important;
+  background-color: var(--bs-primary) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  transition: all 0.5s ease !important;
+  border-radius: 5px !important;
+  overflow: hidden !important;
+  color: var(--bs-white) !important;
+  font-family: var(--font-body) !important;
+  padding: 12px 35px !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-align: center !important;
+  z-index: 10 !important;
+  cursor: pointer;
+}
+
+/* Social Button Style - Before/After Effects */
+.service-btn::before,
+.service-btn::after {
+  position: absolute !important;
+  content: "" !important;
+  width: calc(100% + 10px) !important;
+  height: calc(100% + 10px) !important;
+  top: -5px !important;
+  left: -5px !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  transition: all 0.3s ease !important;
+  z-index: -1 !important;
+}
+
+/* Border Before Effect (Left/Right Borders) */
+.service-btn::before {
+  top: -10px !important;
+  height: calc(100% + 20px) !important;
+  border-left: 2px solid var(--bs-primary) !important;
+  border-right: 2px solid var(--bs-primary) !important;
+}
+
+/* Border After Effect (Top/Bottom Borders) */
+.service-btn::after {
+  left: -10px !important;
+  width: calc(100% + 20px) !important;
+  border-top: 2px solid var(--bs-primary) !important;
+  border-bottom: 2px solid var(--bs-primary) !important;
+}
+
+/* Original Button Effects */
+.service-btn.btn.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border: none !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  color: var(--bs-white) !important;
+  font-family: var(--font-body);
+}
+
+.service-btn.btn.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.service-btn.btn.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Hover Effects */
+.service-btn:hover {
+  background-color: var(--bs-dark) !important;
+  color: var(--bs-white) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hover Border Color Change */
+.service-btn:hover::before,
+.service-btn:hover::after {
+  border-color: var(--bs-dark) !important;
+}
+
+/* Button Text Styles */
+.service-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Glow Effect on Hover */
+.service-btn:hover::before {
+  animation: btnBorderGlow 1.5s ease infinite;
+}
+
+@keyframes btnBorderGlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 /* Full Details Section - CLEAN WITHOUT ::before */
@@ -154,8 +278,6 @@
   position: relative;
   overflow: hidden;
 }
-
-/* REMOVED: .service-full-details::before */
 
 .service-details-title {
   font-family: var(--font-signature);
@@ -208,8 +330,6 @@
   overflow: hidden;
   backdrop-filter: blur(10px);
 }
-
-/* REMOVED: .benefit-card::before */
 
 .benefit-card:hover {
   transform: scale(1.03);
@@ -407,7 +527,11 @@
   background-color: rgba(248, 249, 250, 0.7);
 }
 
-/* Responsive Styles */
+/* ===========================================
+   RESPONSIVE STYLES - EXACTLY LIKE REFERENCE CODE
+   =========================================== */
+
+/* Tablet (max-width: 991px) */
 @media (max-width: 991px) {
   .service-title {
     font-size: 2.8rem;
@@ -415,28 +539,39 @@
   
   .service-text {
     font-size: 1.05rem;
+    line-height: 1.7;
   }
   
+  /* BEFORE ELEMENT - Tablet (Exactly like reference code) */
   .service-details-section .img-twice::before {
-    width: 70%;
-    height: 75%;
-    top: 12.5%;
-    left: 15%;
+    width: 50%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 0.75rem;
   }
   
+  /* Background text responsive */
   .service-background-text {
-    font-size: 100px;
+    font-size: 80px;
     top: -30px;
-    left: -10px;
+    left: -15px;
   }
   
+  /* Reiki text responsive */
   .reiki-bg-text {
-    left: -10px;
+    left: -15px;
+    right: auto;
   }
   
+  /* Benefits background text - Tablet */
   .benefits-bg-text {
     font-size: 100px;
     top: -40px;
+    letter-spacing: 6px;
+    left: 0; /* Ensure it stays at left 0 */
+    width: 100%; /* Full width */
   }
   
   .service-full-details {
@@ -468,51 +603,92 @@
   .process-step-modern {
     min-width: 280px;
   }
+  
+  /* Button Responsive for Tablet */
+  .service-btn {
+    padding: 10px 30px !important;
+    font-size: 1rem !important;
+  }
+  
+  .service-btn::before {
+    top: -8px !important;
+    height: calc(100% + 16px) !important;
+    border-width: 1.5px !important;
+  }
+  
+  .service-btn::after {
+    left: -8px !important;
+    width: calc(100% + 16px) !important;
+    border-width: 1.5px !important;
+  }
 }
 
+/* Mobile (max-width: 767px) - EXACT LIKE REFERENCE CODE */
 @media (max-width: 767px) {
   .service-title {
     font-size: 2.2rem;
+    line-height: 1.2;
   }
   
   .service-subtitle {
     font-size: 15px;
+    letter-spacing: 1.5px;
   }
   
   .service-text {
     font-size: 1rem;
+    line-height: 1.6;
   }
   
+  /* IMAGE SECTION - EXACTLY LIKE REFERENCE CODE */
   .service-details-section .img-twice {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
   
+  /* BEFORE ELEMENT - Mobile (Exactly like reference code) */
   .service-details-section .img-twice::before {
-    width: 80%;
-    height: 70%;
-    top: 15%;
-    left: 10%;
-    border-width: 0.75rem;
+    width: 50%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 0.5rem;
+  }
+  
+  /* Image padding adjustment like reference code */
+  .service-details-section .img-fluid.bg-light.p-3 {
+    padding: 0.5rem !important;
   }
   
   .service-title-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
   }
   
+  /* Background text responsive like reference code */
   .service-background-text {
-    font-size: 70px;
+    font-size: 60px;
     top: -20px;
-    left: 0;
+    left: -10px;
   }
   
+  /* Reiki text responsive like reference code */
   .reiki-bg-text {
-    left: 0;
+    left: -10px;
+    right: auto;
   }
   
+  /* Benefits background text - Mobile - FIXED CENTER */
   .benefits-bg-text {
     font-size: 70px;
     top: -30px;
-    letter-spacing: 5px;
+    letter-spacing: 4px; /* Reduced for mobile */
+    left: 0; /* Left 0 to align properly */
+    width: 100%; /* Full width */
+    white-space: nowrap; /* Keep on one line */
+    text-align: center; /* Center text */
+    padding: 0 15px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in width */
   }
   
   .service-full-details {
@@ -547,34 +723,81 @@
   .modern-step-body {
     padding: 1.5rem;
   }
+  
+  /* Button Responsive for Mobile */
+  .service-btn {
+    padding: 10px 30px !important;
+    font-size: 1rem !important;
+  }
+  
+  .service-btn::before {
+    top: -8px !important;
+    height: calc(100% + 16px) !important;
+    border-width: 1.5px !important;
+  }
+  
+  .service-btn::after {
+    left: -8px !important;
+    width: calc(100% + 16px) !important;
+    border-width: 1.5px !important;
+  }
 }
 
-@media (max-width: 576px) {
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
   .service-title {
     font-size: 1.8rem;
   }
   
   .service-subtitle {
     font-size: 14px;
+    letter-spacing: 1px;
   }
   
   .service-text {
     font-size: 0.95rem;
   }
   
+  /* BEFORE ELEMENT - Small mobile (Like reference code) */
+  .service-details-section .img-twice::before {
+    width: 50%;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 0.5rem;
+  }
+  
+  /* Image padding like reference code */
+  .service-details-section .img-fluid.bg-light.p-3 {
+    padding: 0.5rem !important;
+  }
+  
+  /* Background text responsive like reference code */
   .service-background-text {
-    font-size: 50px;
+    font-size: 40px;
     top: -10px;
+    left: -5px;
   }
   
+  /* Reiki text responsive like reference code */
   .reiki-bg-text {
-    font-size: 50px;
+    font-size: 40px;
+    left: -5px;
+    right: auto;
   }
   
+  /* Benefits background text - Small Mobile - FIXED CENTER */
   .benefits-bg-text {
     font-size: 50px;
     top: -20px;
-    letter-spacing: 3px;
+    letter-spacing: 3px; /* Further reduced for small mobile */
+    left: 0; /* Left 0 to align properly */
+    width: 100%; /* Full width */
+    white-space: nowrap; /* Keep on one line */
+    text-align: center; /* Center text */
+    padding: 0 10px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in width */
   }
   
   .service-full-details {
@@ -621,6 +844,110 @@
     align-items: flex-start;
     gap: 0.5rem;
   }
+  
+  /* Button Responsive for Small Mobile */
+  .service-btn {
+    padding: 8px 25px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .service-btn::before {
+    top: -6px !important;
+    height: calc(100% + 12px) !important;
+    border-width: 1px !important;
+  }
+  
+  .service-btn::after {
+    left: -6px !important;
+    width: calc(100% + 12px) !important;
+    border-width: 1px !important;
+  }
+}
+
+/* Very Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+  /* For very small screens, adjust like reference code */
+  .service-title {
+    font-size: 1.6rem;
+  }
+  
+  .service-text {
+    font-size: 0.9rem;
+  }
+  
+  /* Background text responsive for very small screens */
+  .service-background-text {
+    font-size: 35px;
+    top: -5px;
+    left: 0;
+  }
+  
+  /* Reiki text responsive for very small screens */
+  .reiki-bg-text {
+    font-size: 35px;
+    left: 0;
+    right: auto;
+  }
+  
+  /* Benefits background text - Very Small Mobile - FIXED CENTER */
+  .benefits-bg-text {
+    font-size: 40px;
+    top: -15px;
+    letter-spacing: 2px; /* Very small letter spacing */
+    left: 0; /* Left 0 to align properly */
+    width: 100%; /* Full width */
+    white-space: nowrap; /* Keep on one line */
+    text-align: center; /* Center text */
+    padding: 0 5px; /* Minimal padding */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  /* Button Responsive for Very Small Mobile */
+  .service-btn {
+    padding: 7px 20px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+  /* Background text responsive like reference code */
+  .service-background-text {
+    font-size: 35px;
+    top: -5px;
+    left: 0;
+  }
+  
+  /* Reiki text responsive like reference code */
+  .reiki-bg-text {
+    font-size: 35px;
+    left: 0;
+    right: auto;
+  }
+  
+  /* Benefits background text - 576px breakpoint */
+  .benefits-bg-text {
+    font-size: 45px;
+    top: -15px;
+    letter-spacing: 3px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .service-full-details {
+    padding: 1.5rem;
+  }
+  
+  .service-details-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+  }
 }
 
 /* Utility Classes */
@@ -647,4 +974,10 @@
 .service-details-section .position-relative.z-2 {
   position: relative;
   z-index: 2;
+}
+
+/* Ensure both button styles work together */
+.service-details-section .btn.btn-primary.service-btn {
+  position: relative !important;
+  overflow: visible !important;
 }

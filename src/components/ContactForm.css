@@ -191,7 +191,7 @@ textarea.form-control {
   min-height: 120px;
 }
 
-/* Consent Checkbox */
+/* Consent Checkbox - Container के अंदर और aligned */
 .form-check {
   display: flex;
   align-items: flex-start;
@@ -206,32 +206,11 @@ textarea.form-control {
   border: 2px solid #e9ecef;
 }
 
-.form-check-input:checked {
-  background-color: var(--bs-primary);
-  border-color: var(--bs-primary);
+.form-check .form-check-input {
+
+    margin-left: 0em!important;
 }
 
-.form-check-input:focus {
-  box-shadow: 0 0 0 3px rgba(157, 105, 203, 0.1);
-}
-
-.consent-label {
-  color: var(--bs-dark);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  font-family: var(--font-body);
-  cursor: pointer;
-  flex: 1;
-}
-
-.disclaimer-text {
-  display: block;
-  color: #6c757d;
-  font-size: 0.85rem;
-  font-style: italic;
-  margin-top: 5px;
-  line-height: 1.4;
-}
 
 /* ===========================================
    CONTACT FORM BUTTON - SERVICES BUTTON EXACT SAME LAYOUT
@@ -259,6 +238,7 @@ textarea.form-control {
   z-index: 10 !important;
   margin-top: 10px;
   cursor: pointer;
+  width: auto !important; /* NOT full width */
 }
 
 /* Social Button Style - Before/After Effects (EXACTLY LIKE SERVICES) */
@@ -364,7 +344,7 @@ textarea.form-control {
 .form-group:nth-child(10) { animation-delay: 1s; }
 
 /* ===========================================
-   RESPONSIVE STYLES
+   RESPONSIVE STYLES - ONLY MINIMAL ADJUSTMENTS
    =========================================== */
 
 /* Responsive Ipad (991px) */
@@ -387,6 +367,20 @@ textarea.form-control {
   .contact-form-subtitle {
     font-size: 1.05rem;
     padding: 0 20px;
+  }
+  
+  .contact-form-container::before {
+    left: 70px;
+    top: -5px;
+    width: 40px;
+    height: 5px;
+  }
+  
+  .contact-form-container::after {
+    right: 70px;
+    bottom: -5px;
+    width: 40px;
+    height: 5px;
   }
 }
 
@@ -434,6 +428,11 @@ textarea.form-control {
     width: calc(100% + 16px) !important;
     border-width: 1.5px !important;
   }
+  
+  .contact-form-container::before,
+  .contact-form-container::after {
+    display: none; /* Hide decorative elements on mobile */
+  }
 }
 
 /* Extra small devices (480px) */
@@ -469,19 +468,42 @@ textarea.form-control {
   }
   
   .book-btn {
-    padding: 8px 25px !important;
-    font-size: 0.9rem !important;
-    width: 100% !important;
+    padding: 10px 25px !important;
+    font-size: 0.95rem !important;
+    width: auto !important; /* Still not full width */
   }
 }
 
 /* Small devices (576px) */
 @media (max-width: 576px) {
   .contact-form-section .section-title .display-6 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-background-text {
+    font-size: 50px;
+  }
+  
+  /* Make form fields stack on mobile */
+  .col-md-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+}
+
+/* Very small devices (360px) */
+@media (max-width: 360px) {
+  .contact-form-section .section-title .display-6 {
     font-size: 1.6rem;
   }
   
   .contact-background-text {
     font-size: 40px;
+  }
+  
+  .book-btn {
+    padding: 8px 20px !important;
+    font-size: 0.9rem !important;
   }
 }

@@ -1,8 +1,16 @@
 // ServiceDetails.jsx - Clean Modern Layout
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ServiceDetails.css';
 
 const ServiceDetails = () => {
+  const navigate = useNavigate();
+  
+  const handleBookSessionClick = () => {
+    window.scrollTo(0, 0);
+    navigate('/contact-us');
+  };
+
   return (
     <div className="service-details-section">
       {/* Crystal Healing Section */}
@@ -54,6 +62,16 @@ const ServiceDetails = () => {
                       a gentle pathway to inner harmony and radiant living.
                     </p>
                   </div>
+                  
+                  {/* BOOK MY SESSION BUTTON - Added here */}
+                  <div className="service-btn-container">
+                    <button 
+                      className="btn btn-primary py-3 px-5 service-btn service-fade-in" 
+                      onClick={handleBookSessionClick}
+                    >
+                      Book My Session
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -63,7 +81,6 @@ const ServiceDetails = () => {
           <div className="row mt-5 pt-4">
             <div className="col-12">
               <div className="service-full-details">
-                {/* REMOVED container and added background text for heading */}
                 <div className="position-relative text-center mb-5">
                   <div className="service-background-text benefits-bg-text">Benefits</div>
                   <h3 className="service-details-title position-relative z-2">
@@ -246,6 +263,16 @@ const ServiceDetails = () => {
                       approach to complete well-being.
                     </p>
                   </div>
+                  
+                  {/* BOOK MY SESSION BUTTON - Added here */}
+                  <div className="service-btn-container">
+                    <button 
+                      className="btn btn-primary py-3 px-5 service-btn service-fade-in" 
+                      onClick={handleBookSessionClick}
+                    >
+                      Book My Session
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -274,7 +301,6 @@ const ServiceDetails = () => {
           <div className="row mt-5 pt-4">
             <div className="col-12">
               <div className="service-full-details">
-                {/* REMOVED container and added background text for heading */}
                 <div className="position-relative text-center mb-5">
                   <div className="service-background-text benefits-bg-text">Benefits</div>
                   <h3 className="service-details-title position-relative z-2">
