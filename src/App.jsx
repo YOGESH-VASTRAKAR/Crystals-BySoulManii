@@ -16,6 +16,7 @@ import AboutTestimonial from './components/AboutTestimonial';
 import ServiceDetails from './components/ServiceDetails';
 import ProductDetails from './components/ProductDetails';
 import SplashScreen from './components/SplashScreen';
+import ContactDetails from './components/ContactDetails';
 
 // Page Components
 const Home = () => (
@@ -62,6 +63,7 @@ const ContactUs = () => (
   <div>
     <Banner/>
     <ContactForm/>
+    <ContactDetails/>
   </div>
 );
 

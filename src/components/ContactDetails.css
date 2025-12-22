@@ -1,0 +1,908 @@
+/* ContactDetails.css - Vertical Layout - UPDATED with ServiceDetails-style hover effects */
+
+/* Base Variables */
+.contact-details-section.vertical {
+  --font-title: 'Vendya', serif;
+  --font-signature: 'Autography', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  --cd-primary: #9d69cb;
+  --cd-primary-dark: #5a0db3;
+  --cd-primary-light: #d8c4ea;
+  --cd-white: #ffffff;
+  --cd-dark: #212529;
+  position: relative;
+  font-family: var(--font-body);
+  background: var(--cd-white);
+}
+
+/* Main Container - More Compact */
+.contact-details-section.vertical .container-xxl.py-4 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Background faded text - FIXED */
+.contact-details-section.vertical .cd-background-text {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(60px, 12vw, 120px);
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.05);
+  font-family: var(--font-title);
+  letter-spacing: clamp(4px, 2vw, 8px);
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Typography - More Compact */
+.contact-details-section.vertical .cd-subtitle {
+  font-size: clamp(14px, 1.8vw, 17px);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  position: relative;
+  display: inline-block;
+  color: var(--cd-dark) !important;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-title);
+  line-height: 1.4;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contact-details-section.vertical .cd-title-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.contact-details-section.vertical .cd-title {
+  font-weight: 700;
+  color: var(--cd-dark);
+  line-height: 1.2;
+  margin-top: 10px;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-signature);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  letter-spacing: 0.5px;
+}
+
+.contact-details-section.vertical .cd-text {
+  color: #5a6268;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.contact-details-section.vertical .cd-text-sm {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* Section Title */
+.contact-details-section.vertical .cd-section-title {
+  margin-bottom: 1.5rem;
+}
+
+.contact-details-section.vertical .cd-section-title h3 {
+  font-family: var(--font-title);
+  color: var(--cd-primary);
+  font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+/* ===========================================
+   UPDATED CONTACT CARDS - SERVICE DETAILS STYLE HOVER EFFECTS
+   =========================================== */
+.contact-details-section.vertical .cd-contact-cards {
+  margin-bottom: 1rem;
+}
+
+.contact-details-section.vertical .cd-contact-card-item {
+  background: var(--cd-white);
+  border-radius: 16px; /* Increased from 12px */
+  padding: 1.8rem 1.5rem; /* Increased padding */
+  text-align: center;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth cubic bezier like ServiceDetails */
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.08);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SERVICE DETAILS STYLE HOVER EFFECT */
+.contact-details-section.vertical .cd-contact-card-item:hover {
+  transform: scale(1.03); /* Scale effect like ServiceDetails */
+  box-shadow: 0 20px 40px rgba(157, 105, 203, 0.2);
+  border-color: var(--cd-primary);
+}
+
+.contact-details-section.vertical .cd-card-icon {
+  width: 80px; /* Increased from 55px */
+  height: 80px; /* Increased from 55px */
+  background: linear-gradient(135deg, var(--cd-primary), #c5a8e8);
+  border-radius: 20px; /* Increased from 12px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem; /* Increased margin */
+  color: white;
+  font-size: 2rem; /* Increased from 1.3rem */
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.3); /* Added shadow like ServiceDetails */
+}
+
+/* SERVICE DETAILS STYLE ICON HOVER */
+.contact-details-section.vertical .cd-contact-card-item:hover .cd-card-icon {
+  transform: scale(1.15); /* Scale like ServiceDetails */
+  background: linear-gradient(135deg, #8a4ec9, var(--cd-primary));
+  border-radius: 50%; /* Become circular on hover like ServiceDetails */
+}
+
+.contact-details-section.vertical .cd-card-title {
+  font-family: var(--font-title);
+  color: var(--cd-dark);
+  font-size: 1.3rem; /* Increased from 1rem */
+  font-weight: 500;
+  margin-bottom: 0.75rem; /* Increased margin */
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  width: 100%;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Underline effect like ServiceDetails */
+.contact-details-section.vertical .cd-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--cd-primary);
+  opacity: 0.5;
+  transition: width 0.3s ease;
+}
+
+.contact-details-section.vertical .cd-contact-card-item:hover .cd-card-title::after {
+  width: 60px;
+}
+
+.contact-details-section.vertical .cd-contact-card-item:hover .cd-card-title {
+  color: var(--cd-primary);
+}
+
+.contact-details-section.vertical .cd-card-value {
+  color: #5a6268;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+  word-break: break-word;
+  width: 100%;
+}
+
+.contact-details-section.vertical .cd-card-value:hover {
+  color: var(--cd-primary);
+  text-decoration: none;
+}
+
+.contact-details-section.vertical .cd-address-value {
+  margin: 0;
+}
+
+.contact-details-section.vertical .cd-card-meta {
+  color: #6c757d;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* ===========================================
+   TIP ITEMS - UPDATED WITH SERVICE DETAILS STYLE
+   =========================================== */
+.contact-details-section.vertical .cd-tip-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.8rem 1.5rem; /* Match card padding */
+  background: var(--cd-white);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.08);
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+/* SERVICE DETAILS STYLE HOVER FOR TIP ITEMS */
+.contact-details-section.vertical .cd-tip-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(157, 105, 203, 0.2);
+  border-color: var(--cd-primary);
+  background: rgba(157, 105, 203, 0.05); /* Slightly changed from original */
+}
+
+.contact-details-section.vertical .cd-tip-icon {
+  width: 80px; /* Increased from 70px */
+  height: 80px; /* Increased from 70px */
+  background: linear-gradient(135deg, var(--cd-primary), #c5a8e8);
+  border-radius: 20px; /* Changed from 50% */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.3); /* Added shadow */
+}
+
+/* SERVICE DETAILS STYLE ICON HOVER FOR TIPS */
+.contact-details-section.vertical .cd-tip-item:hover .cd-tip-icon {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, #8a4ec9, var(--cd-primary));
+  border-radius: 50%; /* Become circular on hover */
+}
+
+.contact-details-section.vertical .cd-tip-item h6 {
+  font-family: var(--font-title);
+  color: var(--cd-primary);
+  font-size: 1.3rem; /* Slightly increased */
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+  width: 100%;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Underline effect like ServiceDetails */
+.contact-details-section.vertical .cd-tip-item h6::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--cd-primary);
+  opacity: 0.5;
+  transition: width 0.3s ease;
+}
+
+.contact-details-section.vertical .cd-tip-item:hover h6::after {
+  width: 60px;
+}
+
+.contact-details-section.vertical .cd-tip-item p {
+  color: #5a6268;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  width: 100%;
+}
+
+/* ===========================================
+   FEATURE ITEMS - UPDATED WITH SERVICE DETAILS STYLE
+   =========================================== */
+.contact-details-section.vertical .cd-feature-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem; /* Increased padding */
+  background: rgba(157, 105, 203, 0.05);
+  border-radius: 12px; /* Increased from 8px */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+  border: 2px solid transparent;
+}
+
+/* SERVICE DETAILS STYLE HOVER FOR FEATURE ITEMS */
+.contact-details-section.vertical .cd-feature-item:hover {
+  background: rgba(157, 105, 203, 0.1);
+  transform: scale(1.05); /* Changed from translateY */
+  border-color: rgba(157, 105, 203, 0.2);
+  box-shadow: 0 10px 25px rgba(157, 105, 203, 0.15);
+}
+
+.contact-details-section.vertical .cd-feature-icon {
+  width: 40px; /* Increased from 30px */
+  height: 40px; /* Increased from 30px */
+  background: linear-gradient(135deg, var(--cd-primary), #c5a8e8);
+  border-radius: 10px; /* Increased from 6px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem; /* Increased from 0.9rem */
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  transition: all 0.4s ease;
+}
+
+.contact-details-section.vertical .cd-feature-item:hover .cd-feature-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #8a4ec9, var(--cd-primary));
+  border-radius: 50%;
+}
+
+.contact-details-section.vertical .cd-feature-item span {
+  color: #5a6268;
+  font-size: 0.85rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.contact-details-section.vertical .cd-feature-item:hover span {
+  color: var(--cd-primary);
+}
+
+/* Action Buttons - FIXED FOR MOBILE */
+.contact-details-section.vertical .cd-action-buttons {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.contact-details-section.vertical .cd-action-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-family: var(--font-title);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  min-width: 140px;
+  flex: 0 0 auto;
+}
+
+.contact-details-section.vertical .cd-action-primary {
+  background: var(--cd-primary);
+  color: white;
+  box-shadow: 0 5px 15px rgba(157, 105, 203, 0.3);
+}
+
+.contact-details-section.vertical .cd-action-primary:hover {
+  background: var(--cd-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.35);
+  color: white;
+}
+
+.contact-details-section.vertical .cd-action-secondary {
+  background: white;
+  color: var(--cd-primary);
+  border: 2px solid var(--cd-primary);
+  box-shadow: 0 5px 15px rgba(157, 105, 203, 0.1);
+}
+
+.contact-details-section.vertical .cd-action-secondary:hover {
+  background: var(--cd-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.2);
+}
+
+.contact-details-section.vertical .cd-action-tertiary {
+  background: rgba(157, 105, 203, 0.1);
+  color: var(--cd-primary);
+  border: 2px solid rgba(157, 105, 203, 0.2);
+  box-shadow: 0 5px 15px rgba(157, 105, 203, 0.08);
+}
+
+.contact-details-section.vertical .cd-action-tertiary:hover {
+  background: var(--cd-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.2);
+  border-color: var(--cd-primary);
+}
+
+/* Map Section - Full Width */
+.contact-details-section.vertical .cd-map-section {
+  margin-bottom: 1.5rem;
+}
+
+.contact-details-section.vertical .cd-map-header {
+  margin-bottom: 1rem;
+}
+
+.contact-details-section.vertical .cd-map-title {
+  font-family: var(--font-title);
+  color: var(--cd-primary);
+  font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact-details-section.vertical .cd-map-subtitle {
+  color: #5a6268;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.contact-details-section.vertical .cd-map-container {
+  background: var(--cd-white);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.1);
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  transition: all 0.4s ease;
+}
+
+/* SERVICE DETAILS STYLE HOVER FOR MAP CONTAINER */
+.contact-details-section.vertical .cd-map-container:hover {
+  box-shadow: 0 15px 35px rgba(157, 105, 203, 0.15);
+  border-color: rgba(157, 105, 203, 0.3);
+  transform: translateY(-5px);
+}
+
+.contact-details-section.vertical .cd-map-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(250px, 40vh, 350px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-details-section.vertical .cd-map-container:hover .cd-map-iframe-wrapper {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-details-section.vertical .cd-google-map {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+  filter: grayscale(10%);
+  transition: filter 0.3s ease;
+}
+
+.contact-details-section.vertical .cd-map-container:hover .cd-google-map {
+  filter: grayscale(0%);
+}
+
+/* Address Details Below Map */
+.contact-details-section.vertical .cd-map-address-details {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(157, 105, 203, 0.1);
+}
+
+.contact-details-section.vertical .cd-address-full {
+  margin-bottom: 1rem;
+}
+
+.contact-details-section.vertical .cd-address-title {
+  font-family: var(--font-title);
+  color: var(--cd-dark);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact-details-section.vertical .cd-address-text {
+  color: #5a6268;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* Directions Button */
+.contact-details-section.vertical .cd-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--cd-primary), #c5a8e8);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: var(--font-title);
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(157, 105, 203, 0.25);
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.contact-details-section.vertical .cd-directions-btn:hover {
+  background: linear-gradient(135deg, #8a4ec9, var(--cd-primary));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.35);
+  color: white;
+  text-decoration: none;
+}
+
+/* Info Box */
+.contact-details-section.vertical .cd-info-box {
+  background: rgba(157, 105, 203, 0.05);
+  border-left: 3px solid var(--cd-primary);
+  padding: 1rem;
+  border-radius: 0 12px 12px 0; /* Increased radius */
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+/* SERVICE DETAILS STYLE HOVER FOR INFO BOX */
+.contact-details-section.vertical .cd-info-box:hover {
+  background: rgba(157, 105, 203, 0.1);
+  transform: translateX(5px);
+  box-shadow: 0 10px 20px rgba(157, 105, 203, 0.1);
+}
+
+.contact-details-section.vertical .cd-info-box i {
+  color: var(--cd-primary);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.contact-details-section.vertical .cd-info-box p {
+  margin: 0;
+  color: var(--cd-dark);
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
+  line-height: 1.4;
+}
+
+.contact-details-section.vertical .cd-tips-title {
+  font-family: var(--font-title);
+  color: var(--cd-primary);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+/* Utility Classes */
+.contact-details-section.vertical .cd-position-relative-z2 {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-details-section.vertical .position-relative.z-2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Design - UPDATED */
+@media (max-width: 1200px) {
+  .contact-details-section.vertical .cd-action-buttons {
+    gap: 0.5rem;
+  }
+  
+  .contact-details-section.vertical .cd-action-btn {
+    min-width: 130px;
+    padding: 0.65rem 1.25rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .contact-details-section.vertical .cd-contact-cards .col-lg-3 {
+    width: 50%;
+  }
+  
+  .contact-details-section.vertical .cd-contact-card-item,
+  .contact-details-section.vertical .cd-tip-item {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-icon,
+  .contact-details-section.vertical .cd-tip-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.7rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-title,
+  .contact-details-section.vertical .cd-tip-item h6 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-details-section.vertical .container-xxl.py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .contact-details-section.vertical .cd-contact-cards .col-md-6 {
+    width: 100%;
+  }
+  
+  .contact-details-section.vertical .cd-contact-card-item {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-icon {
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    border-radius: 15px;
+  }
+  
+  .contact-details-section.vertical .cd-card-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .contact-details-section.vertical .cd-card-title {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    text-align: left;
+    padding-bottom: 0.25rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-title::after {
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .contact-details-section.vertical .cd-contact-card-item:hover .cd-card-title::after {
+    width: 50px;
+  }
+  
+  .contact-details-section.vertical .cd-card-value {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-meta {
+    justify-content: flex-start;
+  }
+  
+  .contact-details-section.vertical .cd-action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .contact-details-section.vertical .cd-action-btn {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .contact-details-section.vertical .cd-address-text {
+    padding-left: 0;
+    font-size: 0.95rem;
+  }
+  
+  .contact-details-section.vertical .cd-feature-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0.75rem;
+  }
+  
+  .contact-details-section.vertical .cd-feature-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-details-section.vertical .cd-tips-title {
+    font-size: 1.5rem;
+  }
+  
+  .contact-details-section.vertical .cd-tip-item {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .contact-details-section.vertical .cd-tip-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-details-section.vertical .cd-background-text {
+    font-size: clamp(40px, 10vw, 60px);
+    top: -20px;
+    letter-spacing: 2px;
+  }
+  
+  .contact-details-section.vertical .cd-title {
+    font-size: 2rem;
+  }
+  
+  .contact-details-section.vertical .cd-contact-card-item {
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-title {
+    font-size: 1rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-value {
+    font-size: 0.9rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-meta {
+    font-size: 0.75rem;
+  }
+  
+  .contact-details-section.vertical .cd-action-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .contact-details-section.vertical .cd-map-iframe-wrapper {
+    height: 220px;
+  }
+  
+  .contact-details-section.vertical .cd-map-container {
+    padding: 1rem;
+  }
+  
+  .contact-details-section.vertical .cd-feature-item span {
+    font-size: 0.8rem;
+  }
+  
+  .contact-details-section.vertical .cd-tip-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+  }
+  
+  .contact-details-section.vertical .cd-tip-item h6 {
+    font-size: 1.1rem;
+  }
+  
+  .contact-details-section.vertical .cd-tip-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-details-section.vertical .cd-contact-card-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-icon {
+    margin: 0 auto 0.5rem;
+  }
+  
+  .contact-details-section.vertical .cd-card-content {
+    width: 100%;
+  }
+  
+  .contact-details-section.vertical .cd-card-title {
+    text-align: center;
+  }
+  
+  .contact-details-section.vertical .cd-card-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .contact-details-section.vertical .cd-contact-card-item:hover .cd-card-title::after {
+    width: 40px;
+  }
+  
+  .contact-details-section.vertical .cd-card-meta {
+    justify-content: center;
+  }
+  
+  .contact-details-section.vertical .cd-tip-item {
+    padding: 1.25rem;
+  }
+  
+  .contact-details-section.vertical .cd-tip-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation */
+@keyframes cd-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-details-section.vertical .cd-contact-card-item,
+.contact-details-section.vertical .cd-map-container,
+.contact-details-section.vertical .cd-tip-item,
+.contact-details-section.vertical .cd-feature-item {
+  animation: cd-fadeIn 0.5s ease forwards;
+}
+
+/* Print Styles */
+@media print {
+  .contact-details-section.vertical .cd-action-buttons,
+  .contact-details-section.vertical .cd-map-iframe-wrapper,
+  .contact-details-section.vertical .cd-directions-btn {
+    display: none;
+  }
+  
+  .contact-details-section.vertical .cd-background-text {
+    color: rgba(157, 105, 203, 0.1);
+  }
+}

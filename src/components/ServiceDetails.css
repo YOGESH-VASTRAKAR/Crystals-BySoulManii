@@ -50,12 +50,12 @@
 /* Benefits Section Background Text - FIXED FOR MOBILE */
 .benefits-bg-text {
   position: absolute;
-  top: -60px;
+  top: -40px;
   left: 0; /* Changed from 50% to 0 */
   width: 100%; /* Full width */
-  font-size: 140px;
+  font-size: 120px;
   font-weight: 900;
-  color: rgba(157, 105, 203, 0.05);
+  color: rgba(157, 105, 203, 0.07);
   font-family: var(--font-title);
   letter-spacing: 8px;
   line-height: 1;
