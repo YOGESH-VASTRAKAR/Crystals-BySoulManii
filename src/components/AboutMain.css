@@ -1,0 +1,1031 @@
+/* AboutMain.css - Clean Modern Layout with Parent Classes */
+
+/* Inherit Base Variables from ServiceDetails */
+.about-main-section {
+  --font-title: 'Vendya', serif;
+  --font-signature: 'Autography', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  --bs-primary: #9d69cb;
+  --bs-primary-dark: #5a0db3;
+  --bs-primary-light: #d8c4ea;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-white: #ffffff;
+  --bs-black: #000000;
+  position: relative;
+  font-family: var(--font-body);
+}
+
+/* Main Container */
+.about-main-section .container-xxl.py-5 {
+  position: relative;
+  background: var(--bs-white);
+  overflow-x: hidden;
+}
+
+/* Background faded text - About specific */
+.about-main-section .about-background-text.about-bg-text {
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.07);
+  font-family: var(--font-title);
+  letter-spacing: 5px;
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Milestones background text */
+.about-main-section .about-background-text.milestones-bg-text {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.07);
+  font-family: var(--font-title);
+  letter-spacing: 8px;
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Signature Text */
+.about-main-section .signature-text {
+  font-family: var(--font-signature);
+  font-size: 1.5rem;
+  color: var(--bs-primary);
+  margin-top: -0.5rem;
+  font-weight: 400;
+}
+
+/* Typography */
+.about-main-section .about-subtitle {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  color: var(--bs-black) !important;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-title);
+  line-height: 30px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.about-main-section .about-title-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.about-main-section .about-title {
+  font-weight: 700;
+  color: var(--bs-dark);
+  line-height: 1.3;
+  margin-top: 10px;
+  font-family: var(--font-signature);
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+}
+
+.about-main-section .about-text {
+  color: #5a6268;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  text-align: justify;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* ===========================================
+   MODERN IMAGE SECTION STYLES (Simplified)
+   =========================================== */
+
+/* Modern Image Container */
+.about-main-section .modern-image-container {
+  position: relative;
+  padding: 20px;
+}
+
+/* Main Image Wrapper */
+.about-main-section .main-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(157, 105, 203, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 15px;
+}
+
+.about-main-section .main-image-wrapper:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 70px rgba(157, 105, 203, 0.3);
+}
+
+.about-main-section .main-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  filter: grayscale(10%) contrast(110%);
+}
+
+.about-main-section .main-image-wrapper:hover .main-image {
+  transform: scale(1.02);
+  filter: grayscale(0%) contrast(120%);
+}
+
+/* Image Overlay - PERMANENTLY VISIBLE */
+.about-main-section .image-overlay.permanent-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 40%, rgba(157, 105, 203, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 30px;
+  opacity: 1;
+  transition: all 0.5s ease;
+  border-radius: 12px;
+}
+
+.about-main-section .overlay-content {
+  text-align: center;
+  color: white;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+
+.about-main-section .overlay-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.about-main-section .overlay-content h5 {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.about-main-section .overlay-content p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Image Decoration */
+.about-main-section .image-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-main-section .decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--bs-primary);
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+.about-main-section .circle-1 {
+  width: 80px;
+  height: 80px;
+  top: -20px;
+  right: -20px;
+  animation-delay: 0s;
+}
+
+.about-main-section .circle-2 {
+  width: 60px;
+  height: 60px;
+  bottom: -15px;
+  left: -15px;
+  animation-delay: 2s;
+}
+
+.about-main-section .decoration-square {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--bs-primary-light);
+  top: 50%;
+  right: -10px;
+  transform: rotate(45deg);
+  opacity: 0.4;
+  animation: rotate 20s linear infinite;
+}
+
+/* Image Stack for Part 2 */
+.about-main-section .image-stack {
+  position: relative;
+  height: 500px;
+}
+
+.about-main-section .stacked-image {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s ease;
+}
+
+.about-main-section .main-stack {
+  width: 85%;
+  height: 85%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.about-main-section .main-stack img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stack Overlay - PERMANENTLY VISIBLE */
+.about-main-section .stack-overlay.permanent-stack-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(157, 105, 203, 0.3) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 30px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.about-main-section .stack-content.permanent-stack-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px 30px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+
+.about-main-section .stack-content i {
+  font-size: 1.5rem;
+  color: var(--bs-primary);
+}
+
+.about-main-section .stack-content h6 {
+  margin: 0;
+  font-family: var(--font-title);
+  color: var(--bs-dark);
+  font-weight: 600;
+}
+
+/* Stack Border */
+.about-main-section .stack-border {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  border-radius: 25px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Image Right Specific */
+.about-main-section .image-right .image-stack {
+  height: 550px;
+}
+
+.about-main-section .image-right .main-stack {
+  width: 90%;
+  height: 90%;
+  left: auto;
+  right: 0;
+}
+
+/* ===========================================
+   EXISTING STYLES (Updated for consistency)
+   =========================================== */
+
+/* Part 1 and Part 2 common styles */
+.about-main-section .part-1,
+.about-main-section .part-2 {
+  margin-bottom: 4rem;
+}
+
+/* Journey Timeline */
+.about-main-section .journey-timeline {
+  margin-top: 0.5rem;
+}
+
+.about-main-section .milestone-card {
+  background: var(--bs-white);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.08);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.about-main-section .milestone-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(157, 105, 203, 0.2);
+  border-color: var(--bs-primary);
+}
+
+.about-main-section .milestone-year {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--bs-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-main-section .milestone-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--bs-primary), #c5a8e8);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: white;
+  font-size: 1.8rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.3);
+}
+
+.about-main-section .milestone-card:hover .milestone-icon {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, #8a4ec9, var(--bs-primary));
+  border-radius: 50%;
+}
+
+.about-main-section .milestone-title {
+  font-family: var(--font-title);
+  color: var(--bs-dark);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.about-main-section .milestone-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--bs-primary);
+  opacity: 0.5;
+  transition: width 0.3s ease;
+}
+
+.about-main-section .milestone-card:hover .milestone-title::after {
+  width: 60px;
+}
+
+.about-main-section .milestone-card:hover .milestone-title {
+  color: var(--bs-primary);
+}
+
+.about-main-section .milestone-desc {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* Full Details Section */
+.about-main-section .about-full-details {
+  padding: 2.5rem 3.5rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-main-section .about-details-title {
+  font-family: var(--font-signature);
+  color: var(--bs-dark);
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-main-section .about-section-subtitle {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* MODERN HOW IT WORKS LAYOUT */
+.about-main-section .modern-process-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-main-section .process-step-modern {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: var(--bs-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(157, 105, 203, 0.15);
+  border: 2px solid rgba(157, 105, 203, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.about-main-section .process-step-modern:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(157, 105, 203, 0.25);
+  border-color: var(--bs-primary);
+}
+
+.about-main-section .modern-step-header {
+  background: linear-gradient(135deg, var(--bs-primary), #b58fe0);
+  padding: 2rem 2rem 1.5rem;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.about-main-section .modern-step-number {
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: var(--bs-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  align-self: center;
+}
+
+.about-main-section .modern-step-title-content {
+  flex: 1;
+  align-self: flex-start;
+}
+
+.about-main-section .modern-step-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.about-main-section .modern-step-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-main-section .modern-step-duration {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.about-main-section .modern-step-tag {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--bs-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.about-main-section .modern-step-body {
+  padding: 2rem;
+}
+
+.about-main-section .modern-step-description {
+  color: #5a6268;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Healing Philosophy Section */
+.about-main-section .about-details-block.mt-5.pt-5 {
+  margin-top: 3rem !important;
+  padding-top: 3rem !important;
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+
+@keyframes about-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+.about-main-section .about-fade-in {
+  animation: about-fadeIn 1s ease forwards;
+}
+
+/* ===========================================
+   RESPONSIVE STYLES
+   =========================================== */
+
+/* Tablet (max-width: 991px) */
+@media (max-width: 991px) {
+  .about-main-section .about-title {
+    font-size: 2.8rem;
+  }
+  
+  .about-main-section .signature-text {
+    font-size: 1.3rem;
+  }
+  
+  .about-main-section .about-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  
+  .about-main-section .about-background-text.about-bg-text {
+    font-size: 80px;
+    top: -30px;
+    left: -15px;
+  }
+  
+  .about-main-section .about-background-text.milestones-bg-text {
+    font-size: 100px;
+    top: -50px;
+    letter-spacing: 6px;
+  }
+  
+  .about-main-section .about-full-details {
+    padding: 2rem 2.5rem;
+  }
+  
+  .about-main-section .about-details-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-main-section .about-section-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-main-section .milestone-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
+  }
+  
+  .about-main-section .modern-process-container {
+    gap: 1.5rem;
+  }
+  
+  .about-main-section .process-step-modern {
+    min-width: 280px;
+  }
+  
+  /* Modern Image Section Tablet */
+  .about-main-section .main-image {
+    height: 400px;
+  }
+  
+  .about-main-section .image-stack {
+    height: 400px;
+  }
+  
+  .about-main-section .image-right .image-stack {
+    height: 450px;
+  }
+  
+  /* Two-part layout tablet styles */
+  .about-main-section .part-1,
+  .about-main-section .part-2 {
+    margin-bottom: 3rem;
+  }
+  
+  .about-main-section .part-2 .about-text-content {
+    padding-right: 0;
+  }
+  
+  .about-main-section .journey-timeline {
+    margin-top: 0.5rem;
+  }
+  
+  .about-main-section .about-details-block.mt-5.pt-5 {
+    margin-top: 2.5rem !important;
+    padding-top: 2.5rem !important;
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .about-main-section .about-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  
+  .about-main-section .signature-text {
+    font-size: 1.2rem;
+  }
+  
+  .about-main-section .about-subtitle {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+  }
+  
+  .about-main-section .about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .about-main-section .about-background-text.about-bg-text {
+    font-size: 60px;
+    top: -20px;
+    left: -10px;
+  }
+  
+  .about-main-section .about-background-text.milestones-bg-text {
+    font-size: 70px;
+    top: -40px;
+    letter-spacing: 4px;
+  }
+  
+  .about-main-section .about-full-details {
+    padding: 1.5rem 2rem;
+  }
+  
+  .about-main-section .about-details-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .about-main-section .about-section-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-main-section .milestone-card {
+    padding: 1.5rem;
+  }
+  
+  .about-main-section .modern-process-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-main-section .process-step-modern {
+    min-width: 100%;
+  }
+  
+  .about-main-section .modern-step-header {
+    padding: 1.5rem;
+  }
+  
+  .about-main-section .modern-step-body {
+    padding: 1.5rem;
+  }
+  
+  /* Modern Image Section Mobile */
+  .about-main-section .modern-image-container {
+    padding: 15px;
+  }
+  
+  .about-main-section .main-image {
+    height: 350px;
+  }
+  
+  .about-main-section .image-stack {
+    height: 350px;
+  }
+  
+  /* Two-part layout mobile styles */
+  .about-main-section .part-1,
+  .about-main-section .part-2 {
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Part 1 mobile view: IMAGE ABOVE, TEXT BELOW */
+  .about-main-section .part-1 .order-lg-1 {
+    order: 1 !important;
+  }
+  
+  .about-main-section .part-1 .order-lg-2 {
+    order: 2 !important;
+    margin-top: 2rem;
+  }
+  
+  /* Part 2 mobile view: ALSO IMAGE ABOVE, TEXT BELOW */
+  .about-main-section .part-2 .order-lg-1 {
+    order: 2 !important;
+    margin-top: 2rem;
+  }
+  
+  .about-main-section .part-2 .order-lg-2 {
+    order: 1 !important;
+  }
+  
+  .about-main-section .about-text-content {
+    margin-top: 0;
+  }
+  
+  .about-main-section .journey-timeline {
+    margin-top: 0.25rem;
+  }
+  
+  .about-main-section .about-details-block.mt-5.pt-5 {
+    margin-top: 2rem !important;
+    padding-top: 2rem !important;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .about-main-section .about-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-main-section .signature-text {
+    font-size: 1rem;
+  }
+  
+  .about-main-section .about-subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  
+  .about-main-section .about-text {
+    font-size: 0.95rem;
+  }
+  
+  .about-main-section .about-background-text.about-bg-text {
+    font-size: 40px;
+    top: -10px;
+    left: -5px;
+  }
+  
+  .about-main-section .about-background-text.milestones-bg-text {
+    font-size: 50px;
+    top: -30px;
+    letter-spacing: 3px;
+  }
+  
+  .about-main-section .about-full-details {
+    padding: 1rem 1.5rem;
+  }
+  
+  .about-main-section .about-details-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-main-section .about-section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-main-section .milestone-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+  }
+  
+  .about-main-section .modern-step-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .about-main-section .modern-step-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+  
+  .about-main-section .modern-step-title {
+    font-size: 1.3rem;
+  }
+  
+  .about-main-section .modern-step-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  /* Modern Image Section Small Mobile */
+  .about-main-section .main-image {
+    height: 300px;
+  }
+  
+  .about-main-section .image-stack {
+    height: 300px;
+  }
+  
+  .about-main-section .modern-image-container {
+    padding: 10px;
+  }
+  
+  /* Two-part layout small mobile styles */
+  .about-main-section .part-1,
+  .about-main-section .part-2 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Part 1 mobile view: IMAGE ABOVE, TEXT BELOW */
+  .about-main-section .part-1 .order-lg-1 {
+    order: 1 !important;
+  }
+  
+  .about-main-section .part-1 .order-lg-2 {
+    order: 2 !important;
+    margin-top: 1.5rem;
+  }
+  
+  /* Part 2 mobile view: ALSO IMAGE ABOVE, TEXT BELOW */
+  .about-main-section .part-2 .order-lg-1 {
+    order: 2 !important;
+    margin-top: 1.5rem;
+  }
+  
+  .about-main-section .part-2 .order-lg-2 {
+    order: 1 !important;
+  }
+  
+  .about-main-section .journey-timeline {
+    margin-top: 0;
+  }
+  
+  .about-main-section .about-details-block.mt-5.pt-5 {
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+  }
+}
+
+/* Very Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+  .about-main-section .about-title {
+    font-size: 1.6rem;
+  }
+  
+  .about-main-section .signature-text {
+    font-size: 0.9rem;
+  }
+  
+  .about-main-section .about-text {
+    font-size: 0.9rem;
+  }
+  
+  .about-main-section .about-background-text.about-bg-text {
+    font-size: 35px;
+    top: -5px;
+    left: 0;
+  }
+  
+  .about-main-section .about-background-text.milestones-bg-text {
+    font-size: 40px;
+    top: -25px;
+    letter-spacing: 2px;
+  }
+  
+  .about-main-section .modern-process-container {
+    gap: 1rem;
+  }
+  
+  .about-main-section .process-step-modern {
+    min-width: 100%;
+  }
+  
+  /* Modern Image Section Very Small Mobile */
+  .about-main-section .main-image {
+    height: 250px;
+  }
+  
+  .about-main-section .image-stack {
+    height: 250px;
+  }
+  
+  /* Very small mobile layout */
+  .about-main-section .part-1 .order-lg-1 {
+    order: 1 !important;
+  }
+  
+  .about-main-section .part-1 .order-lg-2 {
+    order: 2 !important;
+    margin-top: 1rem;
+  }
+  
+  .about-main-section .part-2 .order-lg-1 {
+    order: 2 !important;
+    margin-top: 1rem;
+  }
+  
+  .about-main-section .part-2 .order-lg-2 {
+    order: 1 !important;
+  }
+  
+  .about-main-section .about-full-details {
+    padding: 0.75rem 1rem;
+  }
+  
+  .about-main-section .about-details-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .about-main-section .about-details-block.mt-5.pt-5 {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+  }
+}

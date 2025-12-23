@@ -1,4 +1,4 @@
-// ServiceDetails.jsx - Clean Modern Layout
+// ServiceDetails.jsx - Fixed Issues
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ServiceDetails.css';
@@ -177,13 +177,14 @@ const ServiceDetails = () => {
                   </div>
                 </div>
                 
-                {/* How It Works Section - MODERN SIDE BY SIDE */}
+                {/* How It Works Section - FIXED HEADING */}
                 <div className="service-details-block mt-5 pt-5">
                   <h4 className="section-subtitle text-center mb-4">
                     How It Works
                   </h4>
                   
                   <div className="modern-process-container">
+                    {/* Card 1 - Personalized Crystal Remedy */}
                     <div className="process-step-modern">
                       <div className="modern-step-header">
                         <div className="modern-step-number">1</div>
@@ -192,19 +193,19 @@ const ServiceDetails = () => {
                           <div className="modern-step-meta">
                             <span className="modern-step-duration">
                               <i className="fa fa-clock me-2"></i>
-                              <strong>60-90 min</strong>
+                              <strong>60-90 mins</strong>
                             </span>
-                            <span className="modern-step-tag">Customized</span>
                           </div>
                         </div>
                       </div>
                       <div className="modern-step-body">
                         <p className="modern-step-description">
-                          Tailored crystal remedies—bracelets, jewellery, stones—crafted for your specific energy needs.
+                          Customized crystal bracelets, jewellery or stones based on your specific requirements.
                         </p>
                       </div>
                     </div>
                     
+                    {/* Card 2 - Crystal Reiki Healing */}
                     <div className="process-step-modern">
                       <div className="modern-step-header">
                         <div className="modern-step-number">2</div>
@@ -213,15 +214,14 @@ const ServiceDetails = () => {
                           <div className="modern-step-meta">
                             <span className="modern-step-duration">
                               <i className="fa fa-clock me-2"></i>
-                              <strong>50-60 min</strong>
+                              <strong>50-60 mins</strong>
                             </span>
-                            <span className="modern-step-tag">Synergy</span>
                           </div>
                         </div>
                       </div>
                       <div className="modern-step-body">
                         <p className="modern-step-description">
-                          Strategic crystal placement with Reiki energy to activate chakras and accelerate healing.
+                          Crystals placed on energy centers to restore natural flow and accelerate healing.
                         </p>
                       </div>
                     </div>
@@ -397,55 +397,124 @@ const ServiceDetails = () => {
                   </div>
                 </div>
                 
-                {/* How It Works Section - MODERN SIDE BY SIDE */}
+                {/* How It Works Section - FIXED HEADING */}
                 <div className="service-details-block mt-5 pt-5">
                   <h4 className="section-subtitle text-center mb-4">
                     How It Works
                   </h4>
                   
                   <div className="modern-process-container">
+                    {/* Card 1 - Traditional Reiki Healing */}
                     <div className="process-step-modern">
                       <div className="modern-step-header">
                         <div className="modern-step-number">1</div>
                         <div className="modern-step-title-content">
-                          <h5 className="modern-step-title">Reiki Healing Session</h5>
+                          <h5 className="modern-step-title">Traditional Reiki Healing</h5>
                           <div className="modern-step-meta">
                             <span className="modern-step-duration">
                               <i className="fa fa-clock me-2"></i>
-                              <strong>60-90 min</strong>
+                              <strong>60-90 mins</strong>
                             </span>
-                            <span className="modern-step-tag">Deep Healing</span>
                           </div>
                         </div>
                       </div>
                       <div className="modern-step-body">
                         <p className="modern-step-description">
-                          Universal energy channeled to clear blockages, promoting deep relaxation and restoration.
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="process-step-modern">
-                      <div className="modern-step-header">
-                        <div className="modern-step-number">2</div>
-                        <div className="modern-step-title-content">
-                          <h5 className="modern-step-title">Crystal Reiki Synergy</h5>
-                          <div className="modern-step-meta">
-                            <span className="modern-step-duration">
-                              <i className="fa fa-clock me-2"></i>
-                              <strong>70-80 min</strong>
-                            </span>
-                            <span className="modern-step-tag">Integrated</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="modern-step-body">
-                        <p className="modern-step-description">
-                          Combined crystal vibrations with Reiki energy for accelerated healing and transformation.
+                          Practitioner channels Universal life force energy to clear blockages and restore harmony.
                         </p>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <div className="service-full-details text-center">
+                <div className="position-relative mb-4">
+                  <h3 className="service-details-title position-relative z-2 mb-4">
+                    We Offer Personalized Sessions
+                  </h3>
+                  <p className="service-text mx-auto mb-5" style={{maxWidth: '800px'}}>
+                    Unlock your potential for self-healing through Crystal Reiki synergy. 
+                    Elevate your wellness journey with our integrated healing services.
+                  </p>
+                </div>
+                
+                {/* 3 Cards - ORIGINAL WIDTH PRESERVED */}
+                <div className="modern-process-container">
+                  {/* Card 1 */}
+                  <div className="process-step-modern">
+                    <div className="modern-step-header">
+                      <div className="modern-step-number">1</div>
+                      <div className="modern-step-title-content">
+                        <h5 className="modern-step-title">Crystal Remedies</h5>
+                        <div className="modern-step-meta">
+                          <span className="modern-step-duration">
+                            <i className="fa fa-clock me-2"></i>
+                            <strong>60-90 mins</strong>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="modern-step-body">
+                      <p className="modern-step-description">
+                        Personalized crystal remedies for health, finances, relationships.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Card 2 */}
+                  <div className="process-step-modern">
+                    <div className="modern-step-header">
+                      <div className="modern-step-number">2</div>
+                      <div className="modern-step-title-content">
+                        <h5 className="modern-step-title">Crystal Reiki</h5>
+                        <div className="modern-step-meta">
+                          <span className="modern-step-duration">
+                            <i className="fa fa-clock me-2"></i>
+                            <strong>40-80 mins</strong>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="modern-step-body">
+                      <p className="modern-step-description">
+                        Crystals combined with Reiki for aura cleansing and chakra healing.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Card 3 */}
+                  <div className="process-step-modern">
+                    <div className="modern-step-header">
+                      <div className="modern-step-number">3</div>
+                      <div className="modern-step-title-content">
+                        <h5 className="modern-step-title">General Reiki</h5>
+                        <div className="modern-step-meta">
+                          <span className="modern-step-duration">
+                            <i className="fa fa-clock me-2"></i>
+                            <strong>60-90 mins</strong>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="modern-step-body">
+                      <p className="modern-step-description">
+                        Traditional Reiki for overall wellness and stress relief.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-4 pt-3">
+                  <button 
+                    className="btn btn-primary py-3 px-5 service-btn service-fade-in" 
+                    onClick={handleBookSessionClick}
+                  >
+                    Book Your Personalized Session
+                  </button>
                 </div>
               </div>
             </div>

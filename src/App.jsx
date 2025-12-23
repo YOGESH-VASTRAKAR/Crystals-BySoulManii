@@ -17,6 +17,7 @@ import ServiceDetails from './components/ServiceDetails';
 import ProductDetails from './components/ProductDetails';
 import SplashScreen from './components/SplashScreen';
 import ContactDetails from './components/ContactDetails';
+import AboutMain from './components/AboutMain';
 
 // Page Components
 const Home = () => (
@@ -32,7 +33,7 @@ const Home = () => (
 const AboutMe = () => (
   <div>
     <Banner/>
-    <AboutUs/>
+    <AboutMain/>
     <AboutTestimonial/>
   </div>
 );

@@ -274,7 +274,6 @@
 /* Full Details Section - CLEAN WITHOUT ::before */
 .service-full-details {
   padding: 3.5rem;
-  margin-top: 3rem;
   position: relative;
   overflow: hidden;
 }
@@ -409,10 +408,13 @@
   margin: 0 auto;
 }
 
+/* Equal Card Styling */
 .process-step-modern {
   flex: 1;
   min-width: 300px;
-  max-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background: var(--bs-white);
   border-radius: 20px;
   overflow: hidden;
@@ -437,6 +439,8 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  min-height: 120px;
+  text-align: left; /* FIX: Card titles left align */
 }
 
 .modern-step-number {
@@ -458,6 +462,7 @@
 .modern-step-title-content {
   flex: 1;
   align-self: flex-start;
+  text-align: left; /* FIX: Card titles left align */
 }
 
 .modern-step-title {
@@ -466,6 +471,7 @@
   font-weight: 500;
   margin: 0 0 0.5rem 0;
   color: white;
+  text-align: left; /* FIX: Card titles left align */
 }
 
 .modern-step-meta {
@@ -473,6 +479,7 @@
   gap: 1rem;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: flex-start; /* FIX: Left align meta content */
 }
 
 .modern-step-duration {
@@ -496,14 +503,19 @@
 
 .modern-step-body {
   padding: 2rem;
+  flex-grow: 1;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
 }
 
 .modern-step-description {
   color: #5a6268;
-  line-height: 1.7;
+  line-height: 1.6;
   font-size: 1.1rem;
   margin: 0;
   font-weight: 400;
+  text-align: left; /* FIX: Description left aligned */
 }
 
 /* Animation */
@@ -527,8 +539,89 @@
   background-color: rgba(248, 249, 250, 0.7);
 }
 
+/* Personalized Sessions Section */
+.service-full-details.text-center .service-details-title {
+  margin-bottom: 2rem;
+}
+
+.service-full-details.text-center .service-text {
+  text-align: center !important;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-full-details.text-center {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Additional button styling for 3-card section */
+.service-full-details.text-center .service-btn {
+  margin-top: 2rem;
+}
+
 /* ===========================================
-   RESPONSIVE STYLES - EXACTLY LIKE REFERENCE CODE
+   RESPONSIVE STYLES - CARDS LAYOUT
+   =========================================== */
+
+/* Smart Grid Layout for Equal Cards */
+@media (min-width: 992px) {
+  .modern-process-container {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  /* When there are 3 cards (Personalized Sessions) */
+  .modern-process-container:has(.process-step-modern:nth-child(3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* When there are 2 cards (Crystal Healing) */
+  .modern-process-container:has(.process-step-modern:nth-child(2):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* When there's only 1 card (Reiki Healing) */
+  .modern-process-container:has(.process-step-modern:only-child) {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet Layout for 2 Cards (768px to 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .modern-process-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* When there's only 1 card on tablet */
+  .modern-process-container:has(.process-step-modern:only-child) {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Layout for 1 Card (767px and below) */
+@media (max-width: 767px) {
+  .modern-process-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* ===========================================
+   RESPONSIVE STYLES - OTHER ELEMENTS
    =========================================== */
 
 /* Tablet (max-width: 991px) */
@@ -596,12 +689,15 @@
     font-size: 1.2rem;
   }
   
-  .modern-process-container {
-    gap: 1.5rem;
+  .modern-step-header {
+    padding: 1.5rem;
+    min-height: 100px;
+    text-align: left; /* Maintain left align on tablet */
   }
   
-  .process-step-modern {
-    min-width: 280px;
+  .modern-step-body {
+    padding: 1.5rem;
+    min-height: 110px;
   }
   
   /* Button Responsive for Tablet */
@@ -707,21 +803,35 @@
     padding: 1.5rem;
   }
   
-  .modern-process-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .process-step-modern {
-    min-width: 100%;
-  }
-  
   .modern-step-header {
-    padding: 1.5rem;
+    padding: 1.25rem;
+    min-height: 90px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    text-align: left; /* Maintain left align on mobile */
   }
   
   .modern-step-body {
-    padding: 1.5rem;
+    padding: 1.25rem;
+    min-height: 100px;
+  }
+  
+  .modern-step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+  
+  .modern-step-title {
+    font-size: 1.3rem;
+    text-align: left; /* Maintain left align on mobile */
+  }
+  
+  .modern-step-description {
+    font-size: 1rem;
+    text-align: left; /* Maintain left align on mobile */
   }
   
   /* Button Responsive for Mobile */
@@ -823,26 +933,30 @@
   }
   
   .modern-step-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
+    min-height: 80px;
+    padding: 1rem;
+    text-align: left; /* Maintain left align on small mobile */
+  }
+  
+  .modern-step-body {
+    min-height: 90px;
+    padding: 1rem;
   }
   
   .modern-step-number {
-    width: 45px;
-    height: 45px;
-    font-size: 1.5rem;
-    align-self: flex-start;
-  }
-  
-  .modern-step-title {
+    width: 35px;
+    height: 35px;
     font-size: 1.3rem;
   }
   
-  .modern-step-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  .modern-step-title {
+    font-size: 1.1rem;
+    text-align: left; /* Maintain left align on small mobile */
+  }
+  
+  .modern-step-description {
+    font-size: 0.95rem;
+    text-align: left; /* Maintain left align on small mobile */
   }
   
   /* Button Responsive for Small Mobile */
@@ -907,6 +1021,13 @@
     padding: 7px 20px !important;
     font-size: 0.85rem !important;
   }
+  
+  /* Maintain left align for cards on very small mobile */
+  .modern-step-header,
+  .modern-step-title,
+  .modern-step-description {
+    text-align: left !important;
+  }
 }
 
 /* Mobile (max-width: 576px) */
@@ -948,6 +1069,13 @@
   .section-subtitle {
     font-size: 1.2rem;
   }
+  
+  /* Maintain left align for cards on 576px */
+  .modern-step-header,
+  .modern-step-title,
+  .modern-step-description {
+    text-align: left !important;
+  }
 }
 
 /* Utility Classes */
@@ -980,4 +1108,50 @@
 .service-details-section .btn.btn-primary.service-btn {
   position: relative !important;
   overflow: visible !important;
+}
+
+/* ===========================================
+   FIX: Card Titles Left Align (Not Center)
+   =========================================== */
+
+/* Ensure all modern-step content is left aligned */
+.modern-step-header,
+.modern-step-title-content,
+.modern-step-title,
+.modern-step-meta {
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+.modern-step-description {
+  text-align: left !important;
+}
+
+/* Ensure text alignment is preserved in all responsive states */
+@media (max-width: 991px) {
+  .modern-step-header,
+  .modern-step-title-content,
+  .modern-step-title,
+  .modern-step-meta {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+  
+  .modern-step-description {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .modern-step-header,
+  .modern-step-title-content,
+  .modern-step-title,
+  .modern-step-meta {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+  
+  .modern-step-description {
+    text-align: left !important;
+  }
 }

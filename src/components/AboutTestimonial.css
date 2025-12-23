@@ -192,6 +192,37 @@
   z-index: 1;
 }
 
+/* Client info Wrapper */
+.client-info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Mentor Image */
+.mentor-image-container {
+  flex-shrink: 0;
+}
+
+.mentor-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bs-primary);
+  box-shadow: 0 5px 15px rgba(157, 105, 203, 0.3);
+  transition: all 0.3s ease;
+}
+
+.mentor-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(157, 105, 203, 0.4);
+}
+
 /* Client info */
 .about-client-info {
   position: relative;
@@ -199,20 +230,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   padding: 20px 50px 50px;
   margin-top: auto;
 }
 
 .about-client-details {
-  text-align: center;
+  text-align: left;
+  flex: 1;
 }
 
 .about-client-name {
   color: var(--bs-dark);
   font-weight: 500;
   font-size: 1.3rem;
-  margin: 0;
+  margin: 0 0 5px 0;
   font-family: var(--font-title);
   letter-spacing: 0.5px;
 }
@@ -221,7 +253,6 @@
   display: inline-block;
   color: var(--bs-primary);
   font-size: 1rem;
-  margin-top: 5px;
   font-family: var(--font-body);
   font-weight: 500;
 }
@@ -263,6 +294,16 @@
   
   .about-client-info {
     padding: 15px 40px 40px;
+  }
+  
+  .mentor-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .client-info-wrapper {
+    gap: 15px;
+    max-width: 350px;
   }
 }
 
@@ -312,6 +353,22 @@
   
   .about-client-info {
     padding: 15px 30px 30px;
+  }
+  
+  .client-info-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    max-width: 300px;
+  }
+  
+  .mentor-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .about-client-details {
+    text-align: left;
   }
   
   .single-about-testimonial::before {
@@ -387,6 +444,17 @@
   
   .about-client-info {
     padding: 10px 20px 25px;
+  }
+  
+  .client-info-wrapper {
+    gap: 12px;
+    max-width: 280px;
+  }
+  
+  .mentor-image {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
   }
   
   .about-client-name {

@@ -57,9 +57,21 @@ const AboutTestimonial = () => {
                 </p>
                 
                 <div className="about-client-info">
-                  <div className="about-client-details">
-                    <h6 className="about-client-name">Rev. Dr. Rohini Desai</h6>
-                    <span className="about-client-role">Grand Master & Mentor</span>
+                  <div className="client-info-wrapper">
+                    {/* Mentor Image - LEFT SIDE */}
+                    <div className="mentor-image-container">
+                      <img 
+                        src="/mentor.png" 
+                        alt="Rev. Dr. Rohini Desai - Grand Master & Mentor" 
+                        className="mentor-image"
+                      />
+                    </div>
+                    
+                    {/* Name and Role - RIGHT SIDE (Centered within their container) */}
+                    <div className="about-client-details">
+                      <h6 className="about-client-name">Rev. Dr. Rohini Desai</h6>
+                      <span className="about-client-role">Grand Master & Mentor</span>
+                    </div>
                   </div>
                 </div>
               </div>

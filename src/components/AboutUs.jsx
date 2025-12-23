@@ -61,7 +61,7 @@ const AboutUs = () => {
                 <img 
                   ref={addToRefs}
                   className="img-fluid bg-white w-50" 
-                  src="master.jpg" 
+                  src="about3.jpg" 
                   alt="Crystal Healing"
                 />
               </div>
@@ -69,7 +69,7 @@ const AboutUs = () => {
                 <img 
                   ref={addToRefs}
                   className="img-fluid bg-white w-50 mb-3" 
-                  src="master1.jpg" 
+                  src="about4.jpg" 
                   alt="Energy Work"
                 />
                 <img 
