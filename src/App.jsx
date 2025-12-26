@@ -18,6 +18,9 @@ import ProductDetails from './components/ProductDetails';
 import SplashScreen from './components/SplashScreen';
 import ContactDetails from './components/ContactDetails';
 import AboutMain from './components/AboutMain';
+import ProductShowcase from './components/ProductShowcase';
+import CrystalShowcase from './components/CrystalShowcase';
+import ProductGallery from './components/ProductGallery';
 
 // Page Components
 const Home = () => (
@@ -41,8 +44,9 @@ const AboutMe = () => (
 const Crystals = () => (
   <div>
     <Banner/>
-    <Crystal/>
+    <CrystalShowcase/>
     <CrystalCare/>
+    <ProductGallery/>
   </div>
 );
 

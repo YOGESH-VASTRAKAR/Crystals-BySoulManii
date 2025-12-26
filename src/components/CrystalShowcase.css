@@ -1,0 +1,452 @@
+/* Crystal Showcase Section */
+.crystal-showcase-section {
+  --crystal-showcase-color: #444;
+  --crystal-showcase-bgColor: #ffffff;
+  overflow: hidden;
+  font-family: var(--font-body);
+}
+
+.crystal-showcase-section .crystal-showcase-container-xxl.py-5 {
+  position: relative;
+}
+
+/* Section Title */
+.crystal-showcase-section .crystal-showcase-section-title {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-bottom: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Background faded text */
+.crystal-showcase-background-text {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(157, 105, 203, 0.07);
+  font-family: var(--font-title);
+  letter-spacing: 5px;
+  line-height: 1;
+  z-index: -1;
+  user-select: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+.crystal-showcase-section .crystal-showcase-section-title .crystal-showcase-text-primary {
+  color: var(--bs-black) !important;
+  letter-spacing: 2px;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 500;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 2;
+}
+
+.crystal-showcase-section .crystal-showcase-section-title .crystal-showcase-display-6 {
+  font-weight: 700;
+  color: var(--bs-dark);
+  line-height: 1.3;
+  font-family: var(--font-signature);
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Swiper Container */
+.crystal-showcase-swiper-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Swiper Wrapper */
+.crystal-showcase-swiper {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* Grid Layout - Original grid but now in flex for swiper */
+.crystal-showcase-section .crystal-showcase-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+/* Card Design - ORIGINAL STYLES (No changes) */
+.crystal-showcase-section .crystal-showcase-card {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f5ff 100%);
+  border-radius: 16px;
+  padding: 0;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(157, 105, 203, 0.1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(157, 105, 203, 0.1);
+  transform: translateZ(0);
+  flex-shrink: 0;
+  min-width: calc((100% / 6) - 25px); /* Original 6 column layout */
+}
+
+.crystal-showcase-section .crystal-showcase-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(157, 105, 203, 0.2);
+  border-color: rgba(157, 105, 203, 0.3);
+}
+
+/* Card Top Section */
+.crystal-showcase-section .crystal-showcase-card .crystal-showcase-card-top {
+  position: relative;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0ebff 0%, #e6ddf9 100%);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+
+/* Card Glow Effect */
+.crystal-showcase-section .crystal-showcase-card .crystal-showcase-card-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(157, 105, 203, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Card Icon */
+.crystal-showcase-section .crystal-showcase-card .crystal-showcase-card-icon {
+  position: relative;
+  z-index: 2;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(157, 105, 203, 0.25);
+  border: 3px solid white;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+}
+
+.crystal-showcase-section .crystal-showcase-card:hover .crystal-showcase-card-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(157, 105, 203, 0.35);
+}
+
+/* Crystal Image */
+.crystal-showcase-section .crystal-showcase-card .crystal-showcase-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+  transform: translateZ(0);
+}
+
+/* Fallback Icon */
+.crystal-showcase-section .crystal-showcase-card .crystal-showcase-fallback-icon {
+  font-size: 2.2rem;
+  color: #9d69cb;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Card Bottom Section */
+.crystal-showcase-section .crystal-showcase-card .crystal-showcase-card-bottom {
+  flex: 1;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  border-radius: 0 0 16px 16px;
+}
+
+/* Card Content */
+.crystal-showcase-section .crystal-showcase-card .crystal-showcase-card-content {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Crystal Title - Single Line */
+.crystal-showcase-section .crystal-showcase-card .crystal-showcase-title {
+  font-family: var(--font-signature);
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+}
+
+/* Link Wrapper */
+.crystal-showcase-section .crystal-showcase-link-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  width: calc((100% / 6) - 25px); /* Match card width */
+}
+
+/* Left and right fade overlays - LIKE REFERENCE CODE */
+.crystal-showcase-swiper-container::before,
+.crystal-showcase-swiper-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.crystal-showcase-swiper-container::before {
+  left: 0;
+  background: linear-gradient(to right, 
+    var(--crystal-showcase-bgColor) 0%, 
+    transparent 100%);
+}
+
+.crystal-showcase-swiper-container::after {
+  right: 0;
+  background: linear-gradient(to left, 
+    var(--crystal-showcase-bgColor) 0%, 
+    transparent 100%);
+}
+
+/* Animation */
+@keyframes crystal-showcase-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.crystal-showcase-section .crystal-showcase-card {
+  animation: crystal-showcase-fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--index, 0) * 0.05s);
+}
+
+/* Tablet View (768px - 1024px) - 3 columns - ORIGINAL */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .crystal-showcase-section .crystal-showcase-grid {
+    gap: 25px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card,
+  .crystal-showcase-section .crystal-showcase-link-wrapper {
+    min-width: calc((100% / 3) - 17px); /* 3 columns */
+    width: calc((100% / 3) - 17px);
+  }
+  
+  .crystal-showcase-swiper-container::before,
+  .crystal-showcase-swiper-container::after {
+    width: 80px;
+  }
+}
+
+/* Mobile View (767px and below) - 2 columns - ORIGINAL */
+@media (max-width: 767px) {
+  .crystal-showcase-section .crystal-showcase-grid {
+    gap: 20px;
+    padding: 15px 0;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card,
+  .crystal-showcase-section .crystal-showcase-link-wrapper {
+    min-width: calc((100% / 2) - 10px); /* 2 columns */
+    width: calc((100% / 2) - 10px);
+    height: 160px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-container-xxl.py-5 {
+    padding: 1.5rem 0;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-section-title {
+    margin-bottom: 2rem;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-section-title .crystal-showcase-display-6 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    padding: 0 15px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-section-title .crystal-showcase-text-primary {
+    font-size: 15px;
+  }
+  
+  .crystal-showcase-background-text {
+    font-size: 60px;
+    top: -20px;
+  }
+  
+  .crystal-showcase-swiper-container::before,
+  .crystal-showcase-swiper-container::after {
+    width: 50px;
+  }
+  
+  /* Mobile touch optimization */
+  .crystal-showcase-main {
+    touch-action: pan-y;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card .crystal-showcase-card-top {
+    height: 100px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card .crystal-showcase-card-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card .crystal-showcase-image {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card .crystal-showcase-card-bottom {
+    padding: 10px 8px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card .crystal-showcase-title {
+    font-size: 1.1em;
+  }
+}
+
+/* Small Mobile (Below 480px) */
+@media (max-width: 480px) {
+  .crystal-showcase-section .crystal-showcase-grid {
+    gap: 15px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card,
+  .crystal-showcase-section .crystal-showcase-link-wrapper {
+    min-width: calc((100% / 2) - 7.5px);
+    width: calc((100% / 2) - 7.5px);
+    height: 160px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card .crystal-showcase-title {
+    font-size: 1em;
+  }
+  
+  .crystal-showcase-background-text {
+    font-size: 50px;
+    top: -10px;
+  }
+  
+  .crystal-showcase-swiper-container::before,
+  .crystal-showcase-swiper-container::after {
+    width: 40px;
+  }
+}
+
+/* Extra Small Mobile (Below 360px) */
+@media (max-width: 360px) {
+  .crystal-showcase-section .crystal-showcase-grid {
+    gap: 12px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card,
+  .crystal-showcase-section .crystal-showcase-link-wrapper {
+    min-width: calc((100% / 2) - 6px);
+    width: calc((100% / 2) - 6px);
+    height: 150px;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card .crystal-showcase-title {
+    font-size: 0.9em;
+  }
+  
+  .crystal-showcase-swiper-container::before,
+  .crystal-showcase-swiper-container::after {
+    width: 30px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .crystal-showcase-section .crystal-showcase-card:hover {
+    transform: none;
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card:active {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(157, 105, 203, 0.15);
+  }
+  
+  .crystal-showcase-section .crystal-showcase-card {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+  }
+}
+
+/* Accessibility */
+.crystal-showcase-section .crystal-showcase-card:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+/* Performance optimizations */
+.crystal-showcase-section .crystal-showcase-card {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.crystal-showcase-section .crystal-showcase-swiper {
+  will-change: transform;
+  backface-visibility: hidden;
+}

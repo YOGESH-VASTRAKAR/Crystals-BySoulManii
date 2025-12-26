@@ -1,5 +1,5 @@
 /* ===========================================
-   FOOTER STYLES
+   FOOTER STYLES - Updated with Lower Z-Index
    =========================================== */
 
 /* Font Variables - Same as Header */
@@ -29,6 +29,7 @@
   color: var(--footer-text) !important;
   font-family: var(--font-body);
   position: relative;
+  z-index: 1 !important; /* LOWER Z-INDEX */
 }
 
 /* Add overlay for better text readability */
@@ -55,7 +56,7 @@
 .footer-input,
 .footer-newsletter-text {
   position: relative;
-  z-index: 2;
+  z-index: 2 !important;
 }
 
 /* Vertical Divider for Desktop */
@@ -396,7 +397,7 @@
 }
 
 /* ===========================================
-   BACK TO TOP BUTTON - FIXED
+   BACK TO TOP BUTTON - MODAL SE LOWER Z-INDEX
    =========================================== */
 
 .back-to-top {
@@ -404,7 +405,7 @@
   display: flex !important;
   right: 45px !important;
   bottom: 45px !important;
-  z-index: 99 !important;
+  z-index: 9999 !important; /* MODAL (99999) SE KAM */
   width: 48px !important;
   height: 48px !important;
   padding: 0 !important;
